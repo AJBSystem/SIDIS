@@ -1,9 +1,5 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+	
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");
@@ -14,7 +10,7 @@
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 		$active_usuarios="active";	
-	$title="Usuarios | Simple Stock";
+	$title="Usuarios | ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +22,7 @@
 	include("navbar.php");
 	?> 
     <div class="container">
-		<div class="panel panel-success">
+		<div class="panel panel-primary">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
 				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" ></span> Nuevo Usuario</button>

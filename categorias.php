@@ -1,9 +1,5 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");
@@ -15,7 +11,7 @@
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
 	$active_categoria="active";
-	$title="Categorías | Simple Invoice";
+	$title="Categorías | ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +24,7 @@
 	?>
 	
     <div class="container">
-	<div class="panel panel-success">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
 				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Categoría</button>

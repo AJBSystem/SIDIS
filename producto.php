@@ -107,13 +107,13 @@
                       <span class="current-stock">Stock disponible</span>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
-                      <span class="item-quantity"><?php echo number_format($row['stock'],2);?></span>
+                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
                     </div>
 					<div class="col-sm-12">
                       <span class="current-stock"> Precio venta  </span>
                     </div>
 					<div class="col-sm-12">
-                      <span class="item-price">$ <?php echo number_format($row['precio_producto'],2);?></span>
+                      <span class="item-price">$ <?php echo number_format($row['precio_producto']);?></span>
                     </div>
 					
                     <div class="col-sm-12 margin-btm-10">
@@ -162,8 +162,8 @@
 							<td>Fecha</td>
 							<td>Hora</td>
 							<td>Descripción</td>
-							<td>Referencia</td>
-							<td class='text-center'>Total</td>
+							<td>Código</td>
+							<td class='text-center'>Total Bs/F</td>
 						</tr>
 						<?php
 							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
@@ -174,7 +174,7 @@
 							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
 							<td><?php echo $row['nota'];?></td>
 							<td><?php echo $row['referencia'];?></td>
-							<td class='text-center'><?php echo number_format($row['cantidad'],2);?></td>
+							<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
 						</tr>		
 								<?php
 							}

@@ -1,10 +1,5 @@
 <?php
 
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
 	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	/* Connect To Database*/
 	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
@@ -16,7 +11,7 @@
 		$id_producto=intval($_GET['id']);
 		if ($delete1=mysqli_query($con,"DELETE FROM products WHERE id_producto='".$id_producto."'")){
 		?>
-			<div class="alert alert-success alert-dismissible" role="alert">
+			<div class="alert alert-primary alert-dismissible" role="alert">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Aviso!</strong> Datos eliminados exitosamente.
 			</div>

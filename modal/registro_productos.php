@@ -40,6 +40,8 @@
 							<option value="<?php echo $rw['id_categoria'];?>"><?php echo $rw['nombre_categoria'];?></option>			
 								<?php
 							}
+
+
 							?>
 					</select>			  
 				</div>
@@ -56,6 +58,13 @@
 				<label for="stock" class="col-sm-3 control-label">Stock</label>
 				<div class="col-sm-8">
 				  <input type="number" min="0" class="form-control" id="stock" name="stock" placeholder="Inventario inicial" required  maxlength="8">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="stock" class="col-sm-3 control-label">Responsable</label>
+				<div class="col-sm-8">
+				  <input type="number" min="0" class="form-control" id="stock" name="stock" placeholder="Personal Responsable" required  maxlength="8">
 				</div>
 			</div>
 			 
