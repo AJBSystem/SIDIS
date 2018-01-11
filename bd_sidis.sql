@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-01-2018 a las 14:59:53
+-- Tiempo de generación: 11-01-2018 a las 17:09:52
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -19,6 +19,30 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_sidis`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `area`
+--
+
+CREATE TABLE IF NOT EXISTS `area` (
+  `id_area` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_area` char(200) NOT NULL,
+  `descripcion_area` char(200) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_area`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `area`
+--
+
+INSERT INTO `area` (`id_area`, `nombre_area`, `descripcion_area`, `fecha`) VALUES
+(1, 'Direccion de Tecnologia', 'Direccion', '2018-01-11 00:00:00'),
+(2, 'Division Sistema', 'Division', '2018-01-11 00:00:00'),
+(3, 'Division Proyectos Especiales', 'Division', '2018-01-11 00:00:00'),
+(4, 'Division Telematica', 'Division', '2018-01-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -42,8 +66,14 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categ
 (1, 'Repuestos', 'Equipos para el hogar', '2016-12-19 00:00:00'),
 (2, 'Equipos', 'Equipos stihl', '2016-12-19 21:06:37'),
 (3, 'Accesorios', 'Accesorios stihl', '2016-12-19 21:06:39'),
-(4, 'Equipos de ComputaciÃ³n', 'Todo lo que tenga que ver con equipos de computaciÃ³n.', '2017-08-08 22:14:01'),
-(5, 'Mobiliario', 'Todo lo relacionado con muebles, mesas, sillas, escritorios, arturitos', '2017-08-08 22:31:34');
+(4, 'Equipos de Computacion', 'Todo lo que tenga que ver con equipos de computaciÃ³n.', '2017-08-08 22:14:01'),
+(5, 'Escritorio', 'Mesas', '2018-01-11 00:00:00'),
+(10, 'Archivador', 'Archivador', '2018-01-11 00:00:00'),
+(6, 'Teclado', 'Teclado', '2018-01-11 00:00:00'),
+(11, 'Biblioteca', 'Biblioteca', '2018-01-11 00:00:00'),
+(7, 'Monitor', 'Monitor', '2018-01-11 00:00:00'),
+(8, 'Mouse', 'Mouse', '2018-01-11 00:00:00'),
+(9, 'Impresora', 'Impresora', '2018-01-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -73,14 +103,18 @@ CREATE TABLE IF NOT EXISTS `historial` (
   `asignacion_producto` char(50) NOT NULL,
   PRIMARY KEY (`id_historial`),
   KEY `id_producto` (`id_producto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `historial`
 --
 
 INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `nota`, `referencia`, `cantidad`, `serial`, `codigo_producto`, `nombre_producto`, `precio_producto`, `stock`, `id_categoria`, `numero_de_bien`, `area`, `responsable_entrega`, `concepto_producto`, `condicion_producto`, `asignacion_producto`) VALUES
-(1, 9, 254, '2018-01-08 00:00:00', 'Ingreso', 'Tramite', 25, 'cncc', '', '', 0, 0, 0, '', '', '', '', '', '');
+(1, 9, 254, '2018-01-08 00:00:00', 'Ingreso', 'Tramite', 25, 'cncc', '', '', 0, 0, 0, '', '', '', '', '', ''),
+(2, 18, 1, '2018-01-11 16:38:00', 'Arnaldo agregÃ³ 2 producto(s) al inventario', '101', 2, '', '', '', 0, 0, 0, '', '', '', '', '', ''),
+(3, 19, 1, '2018-01-11 16:47:45', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '14', 1, '', '', '', 0, 0, 0, '', '', '', '', '', ''),
+(4, 20, 1, '2018-01-11 16:55:40', 'Arnaldo agregÃ³ 28 producto(s) al inventario', '172', 28, '', '', '', 0, 0, 0, '', '', '', '', '', ''),
+(5, 21, 1, '2018-01-11 16:59:42', 'Arnaldo agregÃ³ 14 producto(s) al inventario', '1025', 14, '', '', '', 0, 0, 0, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -105,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `condicion_producto` char(50) NOT NULL,
   PRIMARY KEY (`id_producto`),
   UNIQUE KEY `codigo_producto` (`codigo_producto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `products`
@@ -120,7 +154,69 @@ INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `da
 (12, '700', 'Computador All in one', '2017-12-05 20:42:46', 300, 250, 10, '', '', '', '', '', '', ''),
 (13, '800', 'Servidores', '2017-12-06 20:30:45', 100, 2, 10, '', '', '', '', '', '', ''),
 (14, '1000', 'Escritorio Aereo', '2017-12-06 21:20:21', 50, 1485, 11, '', '', '', '', '', '', ''),
-(17, '20021', 'Teclado', '2018-01-05 20:08:09', 100, 38, 5, '', '', '', '', '', '', '');
+(17, '20021', 'Teclado', '2018-01-05 20:08:09', 100, 38, 5, '', '', '', '', '', '', ''),
+(18, '101', 'fgew', '2018-01-11 16:38:00', 58, 2, 3, '', '', '', '', '', '', ''),
+(19, '145', 'Estante', '2018-01-11 16:47:45', 175, 1, 3, '', '', '', '', '', '', ''),
+(20, '172', 'Modelos', '2018-01-11 16:55:40', 88, 28, 3, '', '', '', '', '', '', ''),
+(21, '1025', 'Teclado', '2018-01-11 16:59:42', 852, 14, 6, '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rango`
+--
+
+CREATE TABLE IF NOT EXISTS `rango` (
+  `id_rango` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_rango` char(150) NOT NULL,
+  `descripcion_rango` char(150) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_rango`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+
+--
+-- Volcado de datos para la tabla `rango`
+--
+
+INSERT INTO `rango` (`id_rango`, `nombre_rango`, `descripcion_rango`, `fecha`) VALUES
+(1, 'Asesor Juridico', 'Asesor', '2018-01-10 00:00:00'),
+(2, 'Asist. Administrativo I', 'Asistente', '2018-01-10 00:00:00'),
+(3, 'Asist. Administrativo II', 'Asistente', '2018-01-10 00:00:00'),
+(4, 'Asist. Administrativo III', 'Asistente', '2018-01-10 00:00:00'),
+(5, 'Asist. Administrativo IV', 'Asistente', '2018-01-10 00:00:00'),
+(6, 'Asist. Administrativo V', 'Asistente', '2018-01-10 00:00:00'),
+(7, 'Asist. Administrativo VI', 'Asistente', '2018-01-10 00:00:00'),
+(8, 'Asist. Administrativo VII', 'Asistente', '2018-01-10 00:00:00'),
+(9, 'Auxiliar Adm. I', 'Auxiliar', '2018-01-10 00:00:00'),
+(10, 'Auxiliar Adm. II', 'Auxiliar', '2018-01-10 00:00:00'),
+(11, 'Auxiliar Adm. III', 'Auxiliar', '2018-01-10 00:00:00'),
+(12, 'Auxiliar Adm. IV', 'Auxiliar', '2018-01-10 00:00:00'),
+(13, 'Auxiliar Adm. V', 'Auxiliar', '2018-01-10 00:00:00'),
+(14, 'Auxiliar Adm. VI', 'Auxiliar', '2018-01-10 00:00:00'),
+(15, 'Auxiliar Adm. VII', 'Auxiliar', '2018-01-10 00:00:00'),
+(16, 'Comisario', 'Comisario', '2018-01-10 00:00:00'),
+(17, 'Comisario General', 'Comisario', '2018-01-10 00:00:00'),
+(18, 'Comisario Jefe', 'Comisario', '2018-01-10 00:00:00'),
+(19, 'Detective', 'Detective', '2018-01-10 00:00:00'),
+(20, 'Detective Agregado', 'Detective', '2018-01-10 00:00:00'),
+(21, 'Detective Jefe', 'Detective', '2018-01-10 00:00:00'),
+(22, 'Director General Nacional', 'Director', '2018-01-10 00:00:00'),
+(23, 'Experto Profesional I', 'Experto', '2018-01-10 00:00:00'),
+(24, 'Experto Profesional II', 'Experto', '2018-01-10 00:00:00'),
+(25, 'Experto Profesional III', 'Experto', '2018-01-10 00:00:00'),
+(26, 'Experto Profesional IV', 'Experto', '2018-01-10 00:00:00'),
+(27, 'Experto Tecnico I', 'Experto', '2018-01-10 00:00:00'),
+(28, 'Experto Tecnico II', 'Experto', '2018-01-10 00:00:00'),
+(29, 'Experto Tecnico III', 'Experto', '2018-01-10 00:00:00'),
+(30, 'Experto Tecnico IV', 'Experto', '2018-01-10 00:00:00'),
+(31, 'Experto Tecnico V', 'Experto', '2018-01-10 00:00:00'),
+(32, 'Experto Tecnico VI', 'Experto', '2018-01-10 00:00:00'),
+(33, 'Experto Tecnico VII', 'Experto', '2018-01-10 00:00:00'),
+(34, 'Inspector', 'Inspector', '2018-01-10 00:00:00'),
+(35, 'Inspector Agregado', 'Inspector', '2018-01-10 00:00:00'),
+(36, 'Inspector General', 'Inspector', '2018-01-10 00:00:00'),
+(37, 'Inspector Jefe', 'Inspector', '2018-01-10 00:00:00'),
+(38, 'Sub-Director', 'Sub', '2018-01-10 00:00:00');
 
 -- --------------------------------------------------------
 
