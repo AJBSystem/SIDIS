@@ -20,6 +20,7 @@
 					<input type="hidden" name="mod_id" id="mod_id">
 				</div>
 			  </div>
+
 			   <div class="form-group">
 				<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
 				<div class="col-sm-8">
@@ -43,21 +44,75 @@
 					</select>			  
 				</div>
 			  </div>
-			  
+
 			  <div class="form-group">
-				<label for="mod_precio" class="col-sm-3 control-label">Precio</label>
+				<label for="mod_area" class="col-sm-3 control-label">Área</label>
 				<div class="col-sm-8">
-				  <input type="text" class="form-control" id="mod_precio" name="mod_precio" placeholder="Precio de venta del producto" required pattern="^[0-9]{1,5}(\.[0-9]{0,2})?$" title="Ingresa sólo números con 0 ó 2 decimales" maxlength="8">
+					<select class='form-control' name='mod_area' id='mod_area' required>
+						<option value="">Seleccione un área</option>
+							<?php 
+							$query_area=mysqli_query($con,"select * from area order by nombre_area");
+							while($rw=mysqli_fetch_array($query_area))	{
+								?>
+							<option value="<?php echo $rw['id_area'];?>"><?php echo $rw['nombre_area'];?></option>			
+								<?php
+							}
+							?>
+					</select>			  
 				</div>
 			  </div>
-			 
+
+			   <div class="form-group">
+				<label for="mod_condicion" class="col-sm-3 control-label">Condición</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_condicion" name="mod_condicion" placeholder="Condición del producto" required></textarea>
+				</div>
+			  </div>	
+
+			   <div class="form-group">
+				<label for="mod_responsable" class="col-sm-3 control-label">Responsable</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_responsable" name="mod_responsable" placeholder="Responsable de la entrega de producto" required></textarea>
+				</div>
+			  </div>			  		  
+			  
+			   <div class="form-group">
+				<label for="mod_asignacion" class="col-sm-3 control-label">Asignación</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_asignacion" name="mod_asignacion" placeholder="Asignación del producto" required></textarea>
+				</div>
+			  </div>
+
+			  <div class="form-group">
+				<label for="mod_rango" class="col-sm-3 control-label">Rango</label>
+				<div class="col-sm-8">
+					<select class='form-control' name='mod_rango' id='mod_rango' required>
+						<option value="">Seleccione un Rango</option>
+							<?php 
+							$query_rango=mysqli_query($con,"select * from rango order by nombre_rango");
+							while($rw=mysqli_fetch_array($query_rango))	{
+								?>
+							<option value="<?php echo $rw['id_rango'];?>"><?php echo $rw['nombre_rango'];?></option>			
+								<?php
+							}
+							?>
+					</select>			  
+				</div>
+			  </div>			 
+
 			 <div class="form-group">
 				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>
 				<div class="col-sm-8">
 				  <input type="number" min="0" class="form-control" id="mod_stock" name="mod_stock" placeholder="Inventario inicial" required  maxlength="8" readonly>
 				</div>
 			</div>
-			 
+
+			  <div class="form-group">
+				<label for="mod_precio" class="col-sm-3 control-label">Precio</label>
+				<div class="col-sm-8">
+				  <input type="text" class="form-control" id="mod_precio" name="mod_precio" placeholder="Precio de venta del producto" required pattern="^[0-9]{1,5}(\.[0-9]{0,2})?$" title="Ingresa sólo números con 0 ó 2 decimales" maxlength="8">
+				</div>
+			  </div>			 
 			
 		  </div>
 		  <div class="modal-footer">
