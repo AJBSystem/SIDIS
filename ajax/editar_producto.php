@@ -6,9 +6,19 @@
         }else if (empty($_POST['mod_codigo'])) {
            $errors[] = "Código vacío";
         } else if (empty($_POST['mod_nombre'])){
-			$errors[] = "Nombre del producto vacío";
+			$errors[] = "Nombre del producto vacío";					
 		} else if ($_POST['mod_categoria']==""){
 			$errors[] = "Selecciona la categoría del producto";
+		} else if ($_POST['mod_area']==""){
+			$errors[] = "Seleccione el area del producto";						
+		} else if (empty($_POST['mod_condicion'])){
+			$errors[] = "Nombre del producto vacío";
+		} else if (empty($_POST['mod_responsable'])){
+			$errors[] = "Responsable del producto vacío";
+		} else if (empty($_POST['mod_asignacion'])){
+			$errors[] = "Asignación del producto vacío";			
+		} else if ($_POST['mod_rango']==""){
+			$errors[] = "Seleccione el rango";
 		} else if (empty($_POST['mod_precio'])){
 			$errors[] = "Precio de venta vacío";
 		} else if (
@@ -16,6 +26,11 @@
 			!empty($_POST['mod_codigo']) &&
 			!empty($_POST['mod_nombre']) &&
 			$_POST['mod_categoria']!="" &&
+			$_POST['mod_area']!="" &&
+			!empty($_POST['mod_condicion']) &&
+			!empty($_POST['mod_responsable']) &&
+			!empty($_POST['mod_asignacion']) &&
+			$_POST['mod_rango']!="" &&
 			!empty($_POST['mod_precio'])
 		){
 		/* Connect To Database*/
@@ -25,10 +40,15 @@
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
 		$categoria=intval($_POST['mod_categoria']);
+		$area=intval($_POST['mod_area']);
+		$condicion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_condicion"],ENT_QUOTES)));
+		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["mod_responsable"],ENT_QUOTES)));
+		$asignacion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_asignacion"],ENT_QUOTES)));
+		$rango=intval($_POST['mod_rango']);				
 		$stock=intval($_POST['mod_stock']);
 		$precio_venta=floatval($_POST['mod_precio']);
 		$id_producto=$_POST['mod_id'];
-		$sql="UPDATE products SET codigo_producto='".$codigo."', nombre_producto='".$nombre."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
+		$sql="UPDATE products SET codigo_producto='".$codigo."', nombre_producto='".$nombre."', id_area='".$area."', condicion_producto='".$condicion."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', precio_producto='".$precio_venta."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Producto ha sido actualizado satisfactoriamente.";

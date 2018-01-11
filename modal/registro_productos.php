@@ -26,8 +26,8 @@
 				<div class="col-sm-8">
 					<textarea class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto" required maxlength="255" ></textarea>				  
 				</div>
-			  </div>
-			  
+			  </div>			
+
 			 <div class="form-group">
 				<label for="categoria" class="col-sm-3 control-label">Categoría</label>
 				<div class="col-sm-8">
@@ -84,7 +84,7 @@
 			 <div class="form-group">
 				<label for="asignacion" class="col-sm-3 control-label">Asignación</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="asignacion" name="responsable" placeholder="Asignación del producto" required maxlength="100" ></textarea>		  
+					<textarea class="form-control" id="asignacion" name="asignacion" placeholder="Asignación del producto" required maxlength="100" ></textarea>		  
 				</div>
 			  </div> 	
 

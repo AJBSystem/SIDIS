@@ -9,7 +9,6 @@
         header("location: login.php");
 		exit;
         }
-
 	/* Connect To Database*/
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
@@ -89,7 +88,7 @@
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-condicion='<?php echo $row['condicion_producto'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
@@ -98,9 +97,23 @@
                     <div class="col-sm-12">
                       <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
                     </div>
+
                     <div class="col-sm-12 margin-btm-10">
                       <span class="item-number"><?php echo $row['codigo_producto'];?></span>
                     </div>
+
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-number"><?php echo $row['condicion_producto'];?></span>
+                    </div>
+
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-number"><?php echo $row['responsable_entrega'];?></span>
+                    </div>
+
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-number"><?php echo $row['asignacion_producto'];?></span>
+                    </div>  
+
                     <div class="col-sm-12 margin-btm-10">
                     </div>
                     <div class="col-sm-12">
@@ -225,19 +238,28 @@ $( "#editar_producto" ).submit(function( event ) {
 	});
   event.preventDefault();
 })
-
 	$('#myModal2').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var codigo = button.data('codigo') // Extract info from data-* attributes
 		var nombre = button.data('nombre')
+		var condicion = button.data ('condicion')
+		var responsable = button.data ('responsable')
+		var asignacion = button.data ('asignacion')
 		var categoria = button.data('categoria')
+		var area = button.data('area')
+		var rango = button.data('rango')
 		var precio = button.data('precio')
 		var stock = button.data('stock')
 		var id = button.data('id')
 		var modal = $(this)
 		modal.find('.modal-body #mod_codigo').val(codigo)
 		modal.find('.modal-body #mod_nombre').val(nombre)
+		modal.find('.modal-body #mod_condicion').val(condicion)
+		modal.find('.modal-body #mod_responsable').val(responsable)
+		modal.find('.modal-body #mod_asignacion').val(asignacion)
 		modal.find('.modal-body #mod_categoria').val(categoria)
+		modal.find('.modal-body #mod_area').val(area)
+		modal.find('.modal-body #mod_rango').val(rango)
 		modal.find('.modal-body #mod_precio').val(precio)
 		modal.find('.modal-body #mod_stock').val(stock)
 		modal.find('.modal-body #mod_id').val(id)
