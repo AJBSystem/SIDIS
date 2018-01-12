@@ -29,10 +29,10 @@
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="mod_categoria" class="col-sm-3 control-label">Categoría</label>
+				<label for="mod_categoria" class="col-sm-3 control-label">Categoria</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='mod_categoria' id='mod_categoria' required>
-						<option value="">Selecciona una categoría</option>
+						<option value="">Seleccione una Categoria</option>
 							<?php 
 							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
 							while($rw=mysqli_fetch_array($query_categoria))	{

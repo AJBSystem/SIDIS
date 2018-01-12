@@ -42,7 +42,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$precio_venta=floatval($_POST['precio']);
 		$date_added=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, id_area, condicion_producto, responsable_entrega, asignacion_producto, id_rango ) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria','$id_area','$condicion','$responsable','$asignacion','$id_rango')";
+		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, id_area, condicion_producto, responsable_entrega, asignacion_producto, id_rango ) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$responsable','$asignacion','$id_rango')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
