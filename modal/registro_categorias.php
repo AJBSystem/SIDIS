@@ -1,4 +1,4 @@
-	<?php
+<?php
 		if (isset($con))
 		{
 	?>
@@ -14,7 +14,6 @@
 			<form class="form-horizontal" method="post" id="guardar_categoria" name="guardar_categoria">
 			<div id="resultados_ajax"></div>
 			  <div class="form-group">
-			  
 				<label for="nombre" class="col-sm-3 control-label">Nombre</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="nombre" name="nombre" required>

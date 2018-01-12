@@ -88,7 +88,7 @@
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-serial='<?php echo $row['serial_producto'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_producto'];?>'data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['motivo_inventario']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-serial='<?php echo $row['id_serial'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_producto'];?>'data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['motivo_inventario']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
@@ -100,7 +100,7 @@
                     </div>
 
                      <div class="col-sm-12 margin-btm-10">
-                      <span class="item-number"><?php echo $row['serial_producto'];?></span>
+                      <span class="item-number"><?php echo $row['id_serial'];?></span>
                     </div>                   
 
 
@@ -190,6 +190,7 @@
 							<td>Hora</td>
 							<td>Descripción</td>
 							<td>Código</td>
+							<td>Serial</td>
 							<td class='text-center'>Total Bs/F</td>
 						</tr>
 						<?php

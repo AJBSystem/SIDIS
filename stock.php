@@ -43,8 +43,8 @@
 						
 				<div class="row">
 					<div class='col-md-4'>
-						<label>Filtrar por código o nombre</label>
-						<input type="text" class="form-control" id="q" placeholder="Código o nombre del producto" onkeyup='load(1);'>
+						<label>Filtrar por serial o nombre</label>
+						<input type="text" class="form-control" id="q" placeholder="Serial o nombre del producto" onkeyup='load(1);'>
 					</div>
 					
 					<div class='col-md-4'>
