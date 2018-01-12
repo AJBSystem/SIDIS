@@ -28,6 +28,20 @@
 				</div>
 			  </div>			
 
+			  <div class="form-group">
+				<label for="marca" class="col-sm-3 control-label">Marca</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="marca" name="marca" placeholder="Marca del producto" required maxlength="255" ></textarea>				  
+				</div>
+			  </div>
+
+			  <div class="form-group">
+				<label for="modelo" class="col-sm-3 control-label">Modelo</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="modelo" name="modelo" placeholder="Modelo del producto" required maxlength="255" ></textarea>				  
+				</div>
+			  </div>
+
 			 <div class="form-group">
 				<label for="categoria" class="col-sm-3 control-label">Categoría</label>
 				<div class="col-sm-8">
@@ -68,9 +82,16 @@
 			  </div>
 
 			 <div class="form-group">
+				<label for="numero" class="col-sm-3 control-label">Número de Bien</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="numero" name="numero" placeholder="Número de bien del producto" required maxlength="100" ></textarea>				  
+				</div>
+			  </div> 
+
+			 <div class="form-group">
 				<label for="condicion" class="col-sm-3 control-label">Condición</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="condicion" name="condicion" placeholder="Condicion del producto" required maxlength="100" ></textarea>				  
+					<textarea class="form-control" id="condicion" name="condicion" placeholder="Condición del producto" required maxlength="100" ></textarea>				  
 				</div>
 			  </div> 
 

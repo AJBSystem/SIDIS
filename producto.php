@@ -88,18 +88,31 @@
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-condicion='<?php echo $row['condicion_producto'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-condicion='<?php echo $row['condicion_producto'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
               <div class="col-sm-4 text-left">
                 <div class="row margin-btm-20">
-                    <div class="col-sm-12">
+                   
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
+                    </div>
+
+					 <div class="col-sm-12">
                       <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
                     </div>
 
+                    <div class="col-sm-12">
+                      <span class="item-title"> <?php echo $row['marca_producto'];?></span>
+                    </div>
+
+                    <div class="col-sm-12">
+                      <span class="item-title"> <?php echo $row['modelo_producto'];?></span>
+                    </div>
+
                     <div class="col-sm-12 margin-btm-10">
-                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
+                      <span class="item-number"><?php echo $row['numero_bien'];?></span>
                     </div>
 
                     <div class="col-sm-12 margin-btm-10">
@@ -242,6 +255,9 @@ $( "#editar_producto" ).submit(function( event ) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var codigo = button.data('codigo') // Extract info from data-* attributes
 		var nombre = button.data('nombre')
+		var marca = button.data('marca')
+		var modelo = button.data('modelo')
+		var numero = button.data('numero')
 		var condicion = button.data ('condicion')
 		var responsable = button.data ('responsable')
 		var asignacion = button.data ('asignacion')
@@ -254,6 +270,9 @@ $( "#editar_producto" ).submit(function( event ) {
 		var modal = $(this)
 		modal.find('.modal-body #mod_codigo').val(codigo)
 		modal.find('.modal-body #mod_nombre').val(nombre)
+		modal.find('.modal-body #mod_marca').val(marca)
+		modal.find('.modal-body #mod_modelo').val(modelo)
+		modal.find('.modal-body #mod_numero').val(numero)
 		modal.find('.modal-body #mod_condicion').val(condicion)
 		modal.find('.modal-body #mod_responsable').val(responsable)
 		modal.find('.modal-body #mod_asignacion').val(asignacion)

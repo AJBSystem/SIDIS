@@ -27,6 +27,20 @@
 				  <textarea class="form-control" id="mod_nombre" name="mod_nombre" placeholder="Nombre del producto" required></textarea>
 				</div>
 			  </div>
+
+			   <div class="form-group">
+				<label for="mod_marca" class="col-sm-3 control-label">Marca</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_marca" name="mod_marca" placeholder="Marca del producto" required></textarea>
+				</div>
+			  </div>
+
+			   <div class="form-group">
+				<label for="mod_modelo" class="col-sm-3 control-label">Modelo</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_modelo" name="mod_modelo" placeholder="Modelo del producto" required></textarea>
+				</div>
+			  </div>			  
 			  
 			  <div class="form-group">
 				<label for="mod_categoria" class="col-sm-3 control-label">Categoria</label>
@@ -59,6 +73,13 @@
 							}
 							?>
 					</select>			  
+				</div>
+			  </div>
+
+			   <div class="form-group">
+				<label for="mod_numero" class="col-sm-3 control-label">Número de Bien</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_numero" name="mod_numero" placeholder="Número de bien del producto" required></textarea>
 				</div>
 			  </div>
 

@@ -6,6 +6,12 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
            $errors[] = "Código vacío";
         } else if (empty($_POST['nombre'])){
 			$errors[] = "Nombre del producto vacío";
+        } else if (empty($_POST['marca'])){
+			$errors[] = "Marca del producto vacío";	
+		} else if (empty($_POST['modelo'])){
+			$errors[] = "Modelo del producto vacío";
+        } else if (empty($_POST['numero'])){
+			$errors[] = "Número de bien del producto vacío";								
         } else if (empty($_POST['condicion'])){
 			$errors[] = "Condición del producto vacío";	
         } else if (empty($_POST['responsable'])){
@@ -19,6 +25,9 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		} else if (
 			!empty($_POST['codigo']) &&
 			!empty($_POST['nombre']) &&
+			!empty($_POST['marca']) &&
+			!empty($_POST['modelo']) &&
+			!empty($_POST['numero']) &&
 			!empty($_POST['condicion']) &&
 			!empty($_POST['responsable']) &&
 			!empty($_POST['asignacion']) &&
@@ -32,6 +41,9 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+		$marca=mysqli_real_escape_string($con,(strip_tags($_POST["marca"],ENT_QUOTES)));
+		$modelo=mysqli_real_escape_string($con,(strip_tags($_POST["modelo"],ENT_QUOTES)));
+		$numero=mysqli_real_escape_string($con,(strip_tags($_POST["numero"],ENT_QUOTES)));
 		$stock=intval($_POST['stock']);
 		$id_categoria=intval($_POST['categoria']);
 		$id_area=intval($_POST['area']);
@@ -42,7 +54,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$precio_venta=floatval($_POST['precio']);
 		$date_added=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, id_area, condicion_producto, responsable_entrega, asignacion_producto, id_rango ) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$responsable','$asignacion','$id_rango')";
+		$sql="INSERT INTO products (codigo_producto, nombre_producto, marca_producto, modelo_producto, numero_bien, date_added, precio_producto, stock, id_categoria, id_area, condicion_producto, responsable_entrega, asignacion_producto, id_rango ) VALUES ('$codigo','$nombre','$marca','$modelo','$numero','$date_added','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$responsable','$asignacion','$id_rango')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
