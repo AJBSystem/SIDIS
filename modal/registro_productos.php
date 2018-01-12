@@ -68,7 +68,6 @@
 				</div>
 			  </div>
 			
-
 			<div class="form-group">
 				<label for="area" class="col-sm-3 control-label">Área</label>
 				<div class="col-sm-8">
@@ -94,6 +93,25 @@
 					<textarea class="form-control" id="numero" name="numero" placeholder="Número de bien del producto" required maxlength="100" ></textarea>				  
 				</div>
 			  </div> 
+
+			<div class="form-group">
+				<label for="motivo" class="col-sm-3 control-label">Motivo</label>
+				<div class="col-sm-8">
+					<select class='form-control' name='motivo' id='motivo' required>
+						<option value="">Motivo del Inventario</option>
+							<?php 
+							$query_motivo=mysqli_query($con,"select * from motivo order by nombre_motivo");
+							while($rw=mysqli_fetch_array($query_motivo))	{
+								?>
+							<option value="<?php echo $rw['id_motivo'];?>"><?php echo $rw['nombre_motivo'];?></option>			
+								<?php
+							}
+
+
+							?>
+					</select>			  
+				</div>
+			  </div>
 
 			 <div class="form-group">
 				<label for="condicion" class="col-sm-3 control-label">Condición</label>

@@ -90,6 +90,24 @@
 				</div>
 			  </div>
 
+			  <div class="form-group">
+				<label for="mod_motivo" class="col-sm-3 control-label">Motivo</label>
+				<div class="col-sm-8">
+					<select class='form-control' name='mod_motivo' id='mod_motivo' required>
+						<option value="">Motivo del Inventario</option>
+							<?php 
+							$query_motivo=mysqli_query($con,"select * from motivo order by nombre_motivo");
+							while($rw=mysqli_fetch_array($query_motivo))	{
+								?>
+							<option value="<?php echo $rw['id_motivo'];?>"><?php echo $rw['nombre_motivo'];?></option>			
+								<?php
+							}
+							?>
+					</select>			  
+				</div>
+			  </div>			 
+
+
 			   <div class="form-group">
 				<label for="mod_condicion" class="col-sm-3 control-label">Condición</label>
 				<div class="col-sm-8">
