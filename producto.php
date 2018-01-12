@@ -103,9 +103,6 @@
                       <span class="item-number"><?php echo $row['serial_producto'];?></span>
                     </div>                   
 
-					 <div class="col-sm-12">
-                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
-                    </div>
 
                     <div class="col-sm-12">
                       <span class="item-title"> <?php echo $row['marca_producto'];?></span>
