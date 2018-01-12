@@ -20,7 +20,14 @@
 				  <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Codigo del producto" required>
 				</div>
 			  </div>
-			  
+
+			  <div class="form-group">
+				<label for="serial" class="col-sm-3 control-label">Serial</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="serial" name="serial" placeholder="Serial del producto" required maxlength="255" ></textarea>				  
+				</div>
+			  </div>
+
 			  <div class="form-group">
 				<label for="nombre" class="col-sm-3 control-label">Nombre</label>
 				<div class="col-sm-8">
