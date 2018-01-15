@@ -61,8 +61,6 @@
 							<option value="<?php echo $rw['id_categoria'];?>"><?php echo $rw['nombre_categoria'];?></option>			
 								<?php
 							}
-
-
 							?>
 					</select>			  
 				</div>
@@ -80,8 +78,6 @@
 							<option value="<?php echo $rw['id_area'];?>"><?php echo $rw['nombre_area'];?></option>			
 								<?php
 							}
-
-
 							?>
 					</select>			  
 				</div>
@@ -106,8 +102,6 @@
 							<option value="<?php echo $rw['id_motivo'];?>"><?php echo $rw['nombre_motivo'];?></option>			
 								<?php
 							}
-
-
 							?>
 					</select>			  
 				</div>
@@ -146,8 +140,6 @@
 							<option value="<?php echo $rw['id_rango'];?>"><?php echo $rw['nombre_rango'];?></option>			
 								<?php
 							}
-
-
 							?>
 					</select>			  
 				</div>

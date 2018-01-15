@@ -99,6 +99,7 @@
 						<tr>
 							<th class='text-center' colspan=10 >DESCRIPCION DEL PRODUCTO</th></tr>
 
+					<tr><td><span class="current-stock">Fecha</td><td><?php echo $row['fecha'];?></td></tr>
 
 					<tr><td><span class="current-stock">Nombre</td><td><?php echo $row['nombre_producto'];?></td></tr>
 

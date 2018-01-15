@@ -63,9 +63,9 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
 		$id_rango=intval($_POST['rango']);
 		$precio_venta=floatval($_POST['precio']);
-		$date_added=date("Y-m-d H:i:s");
+		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO products (codigo_producto, id_serial, nombre_producto, marca_producto, modelo_producto, numero_bien, date_added, precio_producto, stock, id_categoria, id_area, condicion_producto, motivo_inventario, responsable_entrega, asignacion_producto, concepto_inventario, id_rango ) VALUES ('$codigo','$serial','$nombre','$marca','$modelo','$numero','$date_added','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$motivo','$responsable','$asignacion','$concepto','$id_rango')";
+		$sql="INSERT INTO products (codigo_producto, id_serial, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha, precio_producto, stock, id_categoria, id_area, condicion_producto, motivo_inventario, responsable_entrega, asignacion_producto, concepto_inventario, id_rango ) VALUES ('$codigo','$serial','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$motivo','$responsable','$asignacion','$concepto','$id_rango')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
@@ -73,7 +73,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				$user_id=$_SESSION['user_id'];
 				$firstname=$_SESSION['firstname'];
 				$nota="$firstname agregó $stock producto(s) al inventario";
-				echo guardar_historial($id_producto,$user_id,$date_added,$nota,$codigo,$stock);
+				echo guardar_historial($id_producto,$user_id,$fecha,$nota,$codigo,$stock);
 				
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
@@ -110,5 +110,4 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				</div>
 				<?php
 			}
-
 ?>
