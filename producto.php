@@ -125,20 +125,20 @@
              		<tr><td><span class="current-stock"> Precio venta</span></td><td>BsF.<?php echo number_format($row['precio_producto']);?></td></tr>
 
  </tr>
-       
-      
-						<?php
-							$query=mysqli_query($con,"select * from descripcion where id_producto='$id_producto'");
-							while ($row=mysqli_fetch_array($query)){
-								?>
-		
-								<?php
-							}
-						?>
+
 
 </table>
 
-                   
+                   <div class="col-sm-12 margin-btm-10">
+					</div>
+                    <div class="col-sm-6 col-xs-6 col-md-4 ">
+                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                    </div>
+                    <div class="col-sm-6 col-xs-6 col-md-4">
+                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                    </div>
                    
                                     </div>
               </div>
@@ -163,12 +163,21 @@
 						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						  <strong>Error!</strong> No se pudo procesar los datos.
 						</div>	
-							<?php
-						}
-					?>	
+
 
                   </div>
                                     
+      							<?php
+						}
+					?>	
+						<?php
+							$query=mysqli_query($con,"select * from descripcion where id_producto='$id_producto'");
+							while ($row=mysqli_fetch_array($query)){
+								?>
+		
+								<?php
+							}
+						?>       
                                     
 				</div>
             </div>
