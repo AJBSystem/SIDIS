@@ -144,7 +144,14 @@
 							?>
 					</select>			  
 				</div>
-			  </div>			 
+			  </div>		
+
+			  <div class="form-group">
+				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_concepto" name="mod_concepto" placeholder="Concepto del Inventario" required></textarea>
+				</div>
+			  </div>	 
 
 			 <div class="form-group">
 				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>

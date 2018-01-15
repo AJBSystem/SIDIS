@@ -153,6 +153,12 @@
 				</div>
 			  </div>
 
+			  <div class="form-group">
+				<label for="concepto" class="col-sm-3 control-label">Concepto</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="concepto" name="concepto" placeholder="Concepto del Inventario" required maxlength="255" ></textarea>				  
+				</div>
+			  </div>
 
 			<div class="form-group">
 				<label for="stock" class="col-sm-3 control-label">Stock</label>

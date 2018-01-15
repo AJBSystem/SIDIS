@@ -26,7 +26,9 @@
 		} else if (empty($_POST['mod_responsable'])){
 			$errors[] = "Responsable del producto vacío";
 		} else if (empty($_POST['mod_asignacion'])){
-			$errors[] = "Asignación del producto vacío";			
+			$errors[] = "Asignación del producto vacío";
+		} else if (empty($_POST['mod_concepto'])){
+			$errors[] = "Asignación del producto vacío";				
 		} else if ($_POST['mod_rango']==""){
 			$errors[] = "Seleccione el rango";
 		} else if (empty($_POST['mod_precio'])){
@@ -45,6 +47,7 @@
 			$_POST['mod_motivo']!="" &&
 			!empty($_POST['mod_responsable']) &&
 			!empty($_POST['mod_asignacion']) &&
+			!empty($_POST['mod_concepto']) &&
 			$_POST['mod_rango']!="" &&
 			!empty($_POST['mod_precio'])
 		){
@@ -64,11 +67,12 @@
 		$motivo=intval($_POST['mod_motivo']);
 		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["mod_responsable"],ENT_QUOTES)));
 		$asignacion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_asignacion"],ENT_QUOTES)));
+		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_concepto"],ENT_QUOTES)));
 		$rango=intval($_POST['mod_rango']);				
 		$stock=intval($_POST['mod_stock']);
 		$precio_venta=floatval($_POST['mod_precio']);
 		$id_producto=$_POST['mod_id'];
-		$sql="UPDATE products SET codigo_producto='".$codigo."', id_serial='".$serial."', nombre_producto='".$nombre."',marca_producto='".$marca."', modelo_producto='".$modelo."',id_area='".$area."', numero_bien='".$numero."', condicion_producto='".$condicion."', motivo_inventario='".$motivo."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
+		$sql="UPDATE products SET codigo_producto='".$codigo."', id_serial='".$serial."', nombre_producto='".$nombre."',marca_producto='".$marca."', modelo_producto='".$modelo."',id_area='".$area."', numero_bien='".$numero."', condicion_producto='".$condicion."', motivo_inventario='".$motivo."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Producto ha sido actualizado satisfactoriamente.";
