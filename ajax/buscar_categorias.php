@@ -95,14 +95,14 @@
 						$id_categoria=$row['id_categoria'];
 						$nombre_categoria=$row['nombre_categoria'];
 						$descripcion_categoria=$row['descripcion_categoria'];
-						$date_added= date('d/m/Y', strtotime($row['date_added']));
+						$fecha= date('d/m/Y', strtotime($row['fecha']));
 						
 					?>
 					<tr>
 						
 						<td><?php echo $nombre_categoria; ?></td>
 						<td ><?php echo $descripcion_categoria; ?></td>
-						<td><?php echo $date_added;?></td>
+						<td><?php echo $fecha;?></td>
 						
 					<td class='text-right'>
 						<a href="#" class='btn btn-default' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 

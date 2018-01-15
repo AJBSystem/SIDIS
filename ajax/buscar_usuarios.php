@@ -98,7 +98,7 @@
 						$fullname=$row['firstname']." ".$row["lastname"];
 						$user_name=$row['user_name'];
 						$user_email=$row['user_email'];
-						$date_added= date('d/m/Y', strtotime($row['date_added']));
+						$fecha= date('d/m/Y', strtotime($row[fecha']));
 						
 					?>
 					
@@ -112,7 +112,7 @@
 						<td><?php echo $fullname; ?></td>
 						<td ><?php echo $user_name; ?></td>
 						<td ><?php echo $user_email; ?></td>
-						<td><?php echo $date_added;?></td>
+						<td><?php echo $fecha;?></td>
 						
 					<td ><span class="pull-right">
 					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
