@@ -85,7 +85,72 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
+
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <!DOCTYPE HTML>
+<html>
+ <head>
+     <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script>
+     $(function(){   
+       $("#file").on("change", function(){
+           /* Limpiar vista previa */
+           $("#vista-previa").html('');
+           var archivos = document.getElementById('file').files;
+           var navegador = window.URL || window.webkitURL;
+           /* Recorrer los archivos */
+           for(x=0; x<archivos.length; x++)
+           {
+               /* Validar tamaño y tipo de archivo */
+               var size = archivos[x].size;
+               var type = archivos[x].type;
+               var name = archivos[x].name;
+               if (size > 1024*1024)
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" supera el máximo permitido 1MB</p>");
+               }
+               else if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png' && type != 'image/gif')
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" no es del tipo de imagen permitida.</p>");
+               }
+               else
+               {
+                 var objeto_url = navegador.createObjectURL(archivos[x]);
+                 $("#vista-previa").append("<img src="+objeto_url+" width='250' height='250'>");
+               }
+           }
+       });
+       
+       $("#btn").on("click", function(){
+            var formData = new FormData($("#formulario")[0]);
+            var ruta = "multiple-ajax.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+           });
+       
+     });
+    </script>
+ </head>
+ <body>
+ <form method="post" id="formulario" enctype="multipart/form-data">
+    Subir imagen: <input type="file" id="file" name="file[]" multiple>
+    <button type="button" id="btn">Subir imágenes</button>
+ </form>
+  <div id="vista-previa"></div>
+  <div id="respuesta"></div>
+ </body>
+</html>
+
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-serial='<?php echo $row['id_serial'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>'data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['motivo_inventario']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
