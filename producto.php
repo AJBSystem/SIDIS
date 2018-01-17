@@ -89,7 +89,7 @@
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 
 
-
+ <img src="uploaded/imagenes/'.$figura.'.jpg/>" alt="">
 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 

@@ -12,7 +12,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Inventario División de Sistemas</a>
+      <a class="navbar-brand" href="stock.php">Inventario División de Sistemas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
