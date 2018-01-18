@@ -177,7 +177,7 @@
 						}
 					?>	
 						<?php
-							$query=mysqli_query($con,"select * from descripcion where id_producto='$id_producto'");
+							$query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
 							while ($row=mysqli_fetch_array($query)){
 								?>
 		

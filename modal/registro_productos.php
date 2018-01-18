@@ -147,7 +147,7 @@
 			  <div class="form-group">
 				<label for="cargo" class="col-sm-3 control-label">Cargo</label>
 				<div class="col-sm-8">
-					<select class='form-control' name='cargo' id='cargo' required>
+					<select class='form-control'  name='cargo' id='cargo' >
 						<option value="">Selecciona un cargo</option>
 							<?php 
 							$query_cargo=mysqli_query($con,"select * from cargo order by nombre_cargo");
