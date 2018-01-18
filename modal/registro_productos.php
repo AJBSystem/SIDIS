@@ -15,6 +15,8 @@
 			<div id="resultados_ajax_productos"></div>
 			  <div class="form-group">
 
+			  <!--Se elimino el campo codigo -->
+
 				<label for="codigo" class="col-sm-3 control-label">Código</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Codigo del producto" required>

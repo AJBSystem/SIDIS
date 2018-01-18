@@ -111,3 +111,5 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				<?php
 			}
 ?>
+
+
