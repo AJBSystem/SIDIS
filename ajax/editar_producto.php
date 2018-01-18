@@ -3,10 +3,10 @@
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['mod_id'])) {
            $errors[] = "ID vacío";
-        }else if (empty($_POST['mod_codigo'])) {
-           $errors[] = "Código vacío";
         }else if (empty($_POST['mod_serial'])) {
-           $errors[] = "Serial vacío";          
+           $errors[] = "Serial vacío";
+        }else if (empty($_POST['mod_codigo'])) {
+           $errors[] = "Código vacío";          
         } else if (empty($_POST['mod_nombre'])){
 			$errors[] = "Nombre del producto vacío";
         } else if (empty($_POST['mod_marca'])){
@@ -31,12 +31,14 @@
 			$errors[] = "Asignación del producto vacío";				
 		} else if ($_POST['mod_rango']==""){
 			$errors[] = "Seleccione el rango";
+		} else if ($_POST['mod_cargo']==""){
+			$errors[] = "Seleccione el cargo";			
 		} else if (empty($_POST['mod_precio'])){
 			$errors[] = "Precio de venta vacío";
 		} else if (
 			!empty($_POST['mod_id']) &&
-			!empty($_POST['mod_codigo']) &&
 			!empty($_POST['mod_serial']) &&
+			!empty($_POST['mod_codigo']) &&
 			!empty($_POST['mod_nombre']) &&
 			!empty($_POST['mod_marca']) &&
 			!empty($_POST['mod_modelo']) &&
@@ -49,14 +51,15 @@
 			!empty($_POST['mod_asignacion']) &&
 			!empty($_POST['mod_concepto']) &&
 			$_POST['mod_rango']!="" &&
+			$_POST['mod_cargo']!="" &&
 			!empty($_POST['mod_precio'])
 		){
 		/* Connect To Database*/
 		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
 		$serial=mysqli_real_escape_string($con,(strip_tags($_POST["mod_serial"],ENT_QUOTES)));
+		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
 		$marca=mysqli_real_escape_string($con,(strip_tags($_POST["mod_marca"],ENT_QUOTES)));
 		$modelo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_modelo"],ENT_QUOTES)));
@@ -68,11 +71,12 @@
 		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["mod_responsable"],ENT_QUOTES)));
 		$asignacion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_asignacion"],ENT_QUOTES)));
 		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_concepto"],ENT_QUOTES)));
-		$rango=intval($_POST['mod_rango']);				
+		$rango=intval($_POST['mod_rango']);		
+		$cargo=intval($_POST['mod_cargo']);		
 		$stock=intval($_POST['mod_stock']);
 		$precio_venta=floatval($_POST['mod_precio']);
 		$id_producto=$_POST['mod_id'];
-		$sql="UPDATE products SET codigo_producto='".$codigo."', id_serial='".$serial."', nombre_producto='".$nombre."',marca_producto='".$marca."', modelo_producto='".$modelo."',id_area='".$area."', numero_bien='".$numero."', condicion_producto='".$condicion."', id_motivo='".$motivo."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
+		$sql="UPDATE products SET  id_serial='".$serial."', codigo_producto='".$codigo."', nombre_producto='".$nombre."',marca_producto='".$marca."', modelo_producto='".$modelo."',id_area='".$area."', numero_bien='".$numero."', condicion_producto='".$condicion."', id_motivo='".$motivo."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', id_cargo='".$cargo."',id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Producto ha sido actualizado satisfactoriamente.";
