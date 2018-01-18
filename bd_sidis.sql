@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-01-2018 a las 17:09:52
+-- Tiempo de generación: 18-01-2018 a las 22:06:42
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `area` (
   `descripcion_area` char(200) NOT NULL,
   `fecha` datetime NOT NULL,
   PRIMARY KEY (`id_area`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `area`
@@ -42,7 +42,35 @@ INSERT INTO `area` (`id_area`, `nombre_area`, `descripcion_area`, `fecha`) VALUE
 (1, 'Direccion de Tecnologia', 'Direccion', '2018-01-11 00:00:00'),
 (2, 'Division Sistema', 'Division', '2018-01-11 00:00:00'),
 (3, 'Division Proyectos Especiales', 'Division', '2018-01-11 00:00:00'),
-(4, 'Division Telematica', 'Division', '2018-01-11 00:00:00');
+(4, 'Division Telematica', 'Division', '2018-01-11 00:00:00'),
+(5, 'Division Base de Datos', 'Division', '2018-01-12 00:00:00'),
+(6, 'Division Administracion de Operaciones', 'Division', '2018-01-10 00:00:00'),
+(7, 'Afis', 'Afis', '2018-01-12 00:00:00'),
+(8, 'Soporte Operativo', 'Soporte', '2018-01-12 00:00:00'),
+(9, 'Seguridad de Datos', 'Seguridad', '2018-01-12 00:00:00'),
+(10, 'Grupo de Guarida', 'Guardia', '2018-01-12 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cargo`
+--
+
+CREATE TABLE IF NOT EXISTS `cargo` (
+  `id_cargo` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_cargo` char(200) NOT NULL,
+  `descripcion_cargo` char(200) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_cargo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`id_cargo`, `nombre_cargo`, `descripcion_cargo`, `fecha`) VALUES
+(1, 'Jefe de Division', 'Jefe', '2018-01-18 00:00:00'),
+(2, 'Ninguno de los anteriores', 'Ninguno', '2018-01-18 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -52,28 +80,103 @@ INSERT INTO `area` (`id_area`, `nombre_area`, `descripcion_area`, `fecha`) VALUE
 
 CREATE TABLE IF NOT EXISTS `categorias` (
   `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_categoria` varchar(255) NOT NULL,
-  `descripcion_categoria` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL,
+  `nombre_categoria` char(200) NOT NULL,
+  `descripcion_categoria` char(200) NOT NULL,
+  `fecha` datetime NOT NULL,
   PRIMARY KEY (`id_categoria`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=127 ;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `date_added`) VALUES
-(1, 'Repuestos', 'Equipos para el hogar', '2016-12-19 00:00:00'),
-(2, 'Equipos', 'Equipos stihl', '2016-12-19 21:06:37'),
-(3, 'Accesorios', 'Accesorios stihl', '2016-12-19 21:06:39'),
-(4, 'Equipos de Computacion', 'Todo lo que tenga que ver con equipos de computaciÃ³n.', '2017-08-08 22:14:01'),
-(5, 'Escritorio', 'Mesas', '2018-01-11 00:00:00'),
-(10, 'Archivador', 'Archivador', '2018-01-11 00:00:00'),
-(6, 'Teclado', 'Teclado', '2018-01-11 00:00:00'),
-(11, 'Biblioteca', 'Biblioteca', '2018-01-11 00:00:00'),
-(7, 'Monitor', 'Monitor', '2018-01-11 00:00:00'),
-(8, 'Mouse', 'Mouse', '2018-01-11 00:00:00'),
-(9, 'Impresora', 'Impresora', '2018-01-11 00:00:00');
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `fecha`) VALUES
+(1, 'Acondicionadores', 'Aires', '2018-01-12 00:00:00'),
+(2, 'Archivador', 'Archivadores', '2018-01-12 00:00:00'),
+(3, 'Aspiradoras', 'Limpieza', '2018-01-12 00:00:00'),
+(4, 'Balanzas', 'Balanzas', '2018-01-12 00:00:00'),
+(5, 'Bancos', 'Asientos', '2018-01-12 00:00:00'),
+(27, 'Bibliotecas', 'Bibliotecas\r\n', '2018-01-12 19:29:55'),
+(26, 'Banderas Nacionales', 'Banderas', '2018-01-12 19:28:36'),
+(29, 'Butacas', 'Butacas\r\n', '2018-01-12 19:30:39'),
+(30, 'Cafeteras', 'Cafeteras', '2018-01-12 19:30:52'),
+(31, 'Cajas Fuertes', 'Cajas', '2018-01-12 19:31:03'),
+(32, 'Calculadoras', 'Calculadoras', '2018-01-12 19:31:18'),
+(33, 'Camas', 'Camas', '2018-01-12 19:31:25'),
+(34, 'Camaras', 'Camaras', '2018-01-12 19:31:38'),
+(35, 'Carretillas', 'Carretillas', '2018-01-12 19:31:48'),
+(36, 'Carteleras', 'Carteleras', '2018-01-12 19:31:56'),
+(37, 'Centrales', 'Centrales', '2018-01-12 19:32:05'),
+(39, 'Cintas', 'Cintas', '2018-01-12 19:32:30'),
+(40, 'Cocinas', 'Cocinas', '2018-01-12 19:32:38'),
+(41, 'Congeladoras', 'Congeladoras', '2018-01-12 19:32:50'),
+(42, 'Conservadoras', 'Conservadoras', '2018-01-12 19:32:59'),
+(43, 'Copiadoras Fotograficas', 'Copiadoras Fotograficas', '2018-01-12 19:33:13'),
+(44, 'Cornetas', 'Multimedia', '2018-01-12 19:33:27'),
+(45, 'C.P.U', 'Unidad Central De Procesos', '2018-01-12 19:33:46'),
+(46, 'Cuadros', 'Cuadros', '2018-01-12 19:33:57'),
+(47, 'Discos', 'Discos', '2018-01-12 19:34:07'),
+(48, 'Diskette', 'Diskette', '2018-01-12 19:34:15'),
+(49, 'Divanes', 'Divanes', '2018-01-12 19:34:23'),
+(50, 'Editoras Para PelÃ­culas Fotograficas', 'Editoras', '2018-01-12 19:34:45'),
+(51, 'Escritorios', 'Escritorios', '2018-01-12 19:34:52'),
+(52, 'Estantes', 'Estantes', '2018-01-12 19:35:01'),
+(53, 'Escaleras PortÃ¡tiles', 'Escaleras', '2018-01-12 19:35:12'),
+(54, 'Escaparates', 'Escaparates', '2018-01-12 19:35:22'),
+(55, 'Escudos Nacionales', 'Escudos', '2018-01-12 19:35:34'),
+(56, 'Enfriadores De Agua', 'Enfriadores', '2018-01-12 19:35:46'),
+(57, 'Escopetas', 'Escopetas', '2018-01-12 19:36:50'),
+(58, 'Equipos', 'Equipos', '2018-01-12 19:36:58'),
+(59, 'Equipos De ComunicaciÃ³n Interna', 'Equipos De ComunicaciÃ³n Interna', '2018-01-12 19:37:06'),
+(60, 'Equipos De Deporte', 'Equipos De Deporte', '2018-01-12 19:37:13'),
+(61, 'Equipos Instructivos', 'Equipos Instructivos', '2018-01-12 19:37:22'),
+(62, 'Equipos Para Gimnasia Y Parques Recreativos', 'Equipos Para Gimnasia Y Parques Recreativos', '2018-01-12 19:37:35'),
+(63, 'Extintores De Incendio', 'Extintores De Incendio', '2018-01-12 19:37:49'),
+(64, 'Filtros De Agua', 'Filtros', '2018-01-12 19:37:58'),
+(65, 'Filmadoras', 'Filmadoras', '2018-01-12 19:38:05'),
+(66, 'Flash FotogrÃ¡fico', 'Flash FotogrÃ¡fico', '2018-01-12 19:38:11'),
+(67, 'Fotocopiadoras', 'Fotocopiadoras', '2018-01-12 19:38:19'),
+(68, 'Fusiles', 'Fusiles', '2018-01-12 19:38:26'),
+(69, 'Grabadores De Sonido', 'Grabadores De Sonido', '2018-01-12 19:38:35'),
+(70, 'Guillotinas Para Papel', 'Guillotinas', '2018-01-12 19:38:48'),
+(71, 'Impresora', 'Impresora', '2018-01-12 19:38:58'),
+(72, 'Licuadoras', 'Licuadoras', '2018-01-12 19:39:08'),
+(73, 'LitografÃ­as Montadas En Marcos', 'LitografÃ­as', '2018-01-12 19:39:21'),
+(74, 'Marmitas', 'Marmitas', '2018-01-12 19:39:29'),
+(75, 'MegÃ¡fonos', 'MegÃ¡fonos', '2018-01-12 19:39:35'),
+(76, 'Mesas', 'Mesas', '2018-01-12 19:39:41'),
+(77, 'MicrÃ³fono', 'MicrÃ³fono', '2018-01-12 19:39:52'),
+(78, 'Microondas', 'Microondas', '2018-01-12 19:40:00'),
+(79, 'Monitor', 'Monitor', '2018-01-12 19:40:09'),
+(80, 'Mouse', 'Mouse', '2018-01-12 19:40:17'),
+(81, 'Neveras', 'Neveras', '2018-01-12 19:40:26'),
+(82, 'Pantallas', 'Pantallas', '2018-01-12 19:40:36'),
+(83, 'Pistolas', 'Armas\r\n', '2018-01-12 19:40:44'),
+(84, 'Pizarrones', 'Pizarrones', '2018-01-12 19:40:51'),
+(85, 'Plantas', 'Plantas', '2018-01-12 19:40:58'),
+(86, 'Poltronas', 'Poltronas', '2018-01-12 19:41:06'),
+(87, 'Protectores', 'Protectores', '2018-01-12 19:41:18'),
+(88, 'Pulidoras', 'Pulidoras', '2018-01-12 19:41:27'),
+(89, 'Receptores Radio ElÃ©ctricos', 'Receptores Radio ElÃ©ctricos', '2018-01-12 19:41:35'),
+(90, 'Rectificadores De Corriente', 'Rectificadores', '2018-01-12 19:41:46'),
+(91, 'Router', 'Router', '2018-01-12 19:41:54'),
+(92, 'Repuesto', 'Repuesto', '2018-01-12 19:42:00'),
+(94, 'Relojes', 'Relojes', '2018-01-12 19:42:10'),
+(95, 'Revolver', 'Revolver', '2018-01-12 19:42:16'),
+(96, 'Saca-Puntas', 'Saca-Puntas', '2018-01-12 19:42:24'),
+(97, 'Servidor', 'Servidor', '2018-01-12 19:42:33'),
+(98, 'Sillas', 'Sillas', '2018-01-12 19:43:50'),
+(99, 'Sofas', 'Sofas', '2018-01-12 19:44:10'),
+(100, 'Sub-Ametralladoras', 'Sub-Ametralladoras', '2018-01-12 19:44:32'),
+(126, 'Ametralladoras', 'Armas', '2018-01-17 20:22:39'),
+(102, 'Taburetes', 'Taburetes', '2018-01-12 19:44:46'),
+(103, 'Teclado', 'Teclado', '2018-01-12 19:44:53'),
+(104, 'TelÃ©fonos', 'TelÃ©fonos', '2018-01-12 19:45:00'),
+(105, 'Televisores', 'Televisores', '2018-01-12 19:45:08'),
+(106, 'TensiÃ³metros', 'TensiÃ³metros', '2018-01-12 19:45:17'),
+(107, 'Ventiladores', 'Ventiladores', '2018-01-12 19:45:29'),
+(108, 'Vitrinas', 'Vitrinas', '2018-01-12 19:45:35'),
+(109, 'Video Grabadores', 'Video Grabadores', '2018-01-12 19:45:42');
 
 -- --------------------------------------------------------
 
@@ -89,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `historial` (
   `nota` varchar(255) NOT NULL,
   `referencia` varchar(100) NOT NULL,
   `cantidad` int(11) NOT NULL,
-  `serial` char(40) NOT NULL,
+  `id_serial` char(40) NOT NULL,
   `codigo_producto` char(20) NOT NULL,
   `nombre_producto` char(255) NOT NULL,
   `precio_producto` double NOT NULL,
@@ -103,18 +206,52 @@ CREATE TABLE IF NOT EXISTS `historial` (
   `asignacion_producto` char(50) NOT NULL,
   PRIMARY KEY (`id_historial`),
   KEY `id_producto` (`id_producto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
 
 --
 -- Volcado de datos para la tabla `historial`
 --
 
-INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `nota`, `referencia`, `cantidad`, `serial`, `codigo_producto`, `nombre_producto`, `precio_producto`, `stock`, `id_categoria`, `numero_de_bien`, `area`, `responsable_entrega`, `concepto_producto`, `condicion_producto`, `asignacion_producto`) VALUES
-(1, 9, 254, '2018-01-08 00:00:00', 'Ingreso', 'Tramite', 25, 'cncc', '', '', 0, 0, 0, '', '', '', '', '', ''),
-(2, 18, 1, '2018-01-11 16:38:00', 'Arnaldo agregÃ³ 2 producto(s) al inventario', '101', 2, '', '', '', 0, 0, 0, '', '', '', '', '', ''),
-(3, 19, 1, '2018-01-11 16:47:45', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '14', 1, '', '', '', 0, 0, 0, '', '', '', '', '', ''),
-(4, 20, 1, '2018-01-11 16:55:40', 'Arnaldo agregÃ³ 28 producto(s) al inventario', '172', 28, '', '', '', 0, 0, 0, '', '', '', '', '', ''),
-(5, 21, 1, '2018-01-11 16:59:42', 'Arnaldo agregÃ³ 14 producto(s) al inventario', '1025', 14, '', '', '', 0, 0, 0, '', '', '', '', '', '');
+INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `nota`, `referencia`, `cantidad`, `id_serial`, `codigo_producto`, `nombre_producto`, `precio_producto`, `stock`, `id_categoria`, `numero_de_bien`, `area`, `responsable_entrega`, `concepto_producto`, `condicion_producto`, `asignacion_producto`) VALUES
+(39, 41, 1, '2018-01-12 21:25:33', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '24894', 1, '', 'nmg', '', 0, 0, 0, '', '', '', '', '', ''),
+(52, 58, 1, '2018-01-18 19:44:43', 'Arnaldo agregÃ³ 9 producto(s) al inventario', '256', 9, '', '', '', 0, 0, 0, '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenes`
+--
+
+CREATE TABLE IF NOT EXISTS `imagenes` (
+  `id_imagenes` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion_imagenes` char(100) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_imagenes`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `motivo`
+--
+
+CREATE TABLE IF NOT EXISTS `motivo` (
+  `id_motivo` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_motivo` char(200) NOT NULL,
+  `descripcion_motivo` char(200) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_motivo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `motivo`
+--
+
+INSERT INTO `motivo` (`id_motivo`, `nombre_motivo`, `descripcion_motivo`, `fecha`) VALUES
+(1, 'Peticion', 'Peticion', '2018-01-12 00:00:00'),
+(2, 'Asignacion', 'Asignacion', '2018-01-12 00:00:00'),
+(3, 'Inactivos', 'Desintegrados', '2018-01-12 00:00:00'),
+(4, 'Activos', 'Activos', '2018-01-12 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -124,41 +261,37 @@ INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `not
 
 CREATE TABLE IF NOT EXISTS `products` (
   `id_producto` int(11) NOT NULL AUTO_INCREMENT,
-  `codigo_producto` char(20) NOT NULL,
-  `nombre_producto` char(255) NOT NULL,
-  `date_added` datetime NOT NULL,
+  `codigo_producto` char(200) NOT NULL,
+  `nombre_producto` char(200) NOT NULL,
+  `fecha` datetime NOT NULL,
   `precio_producto` double NOT NULL,
   `stock` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `descripcion_producto` char(200) NOT NULL,
-  `serial` char(40) NOT NULL,
-  `numero_de_bien` varchar(30) NOT NULL,
-  `area` char(50) NOT NULL,
-  `responsable_entrega` char(50) NOT NULL,
-  `concepto_producto` char(50) NOT NULL,
+  `id_serial` varchar(50) NOT NULL,
+  `numero_bien` varchar(30) NOT NULL,
+  `id_area` char(200) NOT NULL,
+  `responsable_entrega` char(200) NOT NULL,
+  `id_motivo` char(200) NOT NULL,
   `condicion_producto` char(50) NOT NULL,
+  `asignacion_producto` char(200) NOT NULL,
+  `id_rango` char(200) NOT NULL,
+  `marca_producto` char(200) NOT NULL,
+  `modelo_producto` char(200) NOT NULL,
+  `concepto_inventario` char(200) NOT NULL,
+  `id_cargo` int(11) NOT NULL,
   PRIMARY KEY (`id_producto`),
-  UNIQUE KEY `codigo_producto` (`codigo_producto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+  UNIQUE KEY `id_serial` (`id_serial`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `date_added`, `precio_producto`, `stock`, `id_categoria`, `descripcion_producto`, `serial`, `numero_de_bien`, `area`, `responsable_entrega`, `concepto_producto`, `condicion_producto`) VALUES
-(7, '100', 'Impresoras', '2017-12-05 20:38:34', 110, 12, 10, 'Impresora HP', 'CNCC76F03M', '78', 'Division de sistema', 'Darly martinez', 'Sustitucion', 'Regular estado de uso'),
-(8, '200', 'Computadores', '2017-12-05 20:40:09', 115, 400, 10, '', '', '', '', '', '', ''),
-(9, '300', 'Modem', '2017-12-05 20:40:32', 95, 100, 10, '', '', '', '', '', '', ''),
-(10, '400', 'Router', '2017-12-05 20:40:49', 76, 27, 10, '', '', '', '', '', '', ''),
-(11, '600', 'Monitor Pantalla Plana', '2017-12-05 20:42:23', 250, 300, 10, '', '', '', '', '', '', ''),
-(12, '700', 'Computador All in one', '2017-12-05 20:42:46', 300, 250, 10, '', '', '', '', '', '', ''),
-(13, '800', 'Servidores', '2017-12-06 20:30:45', 100, 2, 10, '', '', '', '', '', '', ''),
-(14, '1000', 'Escritorio Aereo', '2017-12-06 21:20:21', 50, 1485, 11, '', '', '', '', '', '', ''),
-(17, '20021', 'Teclado', '2018-01-05 20:08:09', 100, 38, 5, '', '', '', '', '', '', ''),
-(18, '101', 'fgew', '2018-01-11 16:38:00', 58, 2, 3, '', '', '', '', '', '', ''),
-(19, '145', 'Estante', '2018-01-11 16:47:45', 175, 1, 3, '', '', '', '', '', '', ''),
-(20, '172', 'Modelos', '2018-01-11 16:55:40', 88, 28, 3, '', '', '', '', '', '', ''),
-(21, '1025', 'Teclado', '2018-01-11 16:59:42', 852, 14, 6, '', '', '', '', '', '', '');
+INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fecha`, `precio_producto`, `stock`, `id_categoria`, `descripcion_producto`, `id_serial`, `numero_bien`, `id_area`, `responsable_entrega`, `id_motivo`, `condicion_producto`, `asignacion_producto`, `id_rango`, `marca_producto`, `modelo_producto`, `concepto_inventario`, `id_cargo`) VALUES
+(7, '100', 'Impresoras', '2017-12-05 20:38:34', 110, 12, 71, 'Impresora HP', 'CNCC76F03M', '78', '2', 'Darly martinez', '2', 'Regular estado de uso', 'Dauli', '19', 'Hp', 'Multifuncional', '', 0),
+(41, '24894', 'Teclado', '2018-01-12 21:25:33', 35, 1, 1, '', '25cn', '78', '3', 'arnaldo', '2', 'nuevo', 'darly', '19', 'Hp', '200 Caracter', 't', 0),
+(58, '256', 'Mesa', '2018-01-18 19:44:43', 9, 9, 33, '', '25', 'gs', '6', 'sg', '2', 'gsg', 'gs', '12', 'gsg', 'gs', 'sg', 2);
 
 -- --------------------------------------------------------
 
@@ -172,7 +305,7 @@ CREATE TABLE IF NOT EXISTS `rango` (
   `descripcion_rango` char(150) NOT NULL,
   `fecha` datetime NOT NULL,
   PRIMARY KEY (`id_rango`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `rango`
@@ -216,7 +349,9 @@ INSERT INTO `rango` (`id_rango`, `nombre_rango`, `descripcion_rango`, `fecha`) V
 (35, 'Inspector Agregado', 'Inspector', '2018-01-10 00:00:00'),
 (36, 'Inspector General', 'Inspector', '2018-01-10 00:00:00'),
 (37, 'Inspector Jefe', 'Inspector', '2018-01-10 00:00:00'),
-(38, 'Sub-Director', 'Sub', '2018-01-10 00:00:00');
+(38, 'Sub-Director', 'Sub', '2018-01-10 00:00:00'),
+(39, 'Pasantes', 'Pasante', '2018-01-17 00:00:00'),
+(40, 'Aprendices', 'Aprendices', '2018-01-17 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -231,17 +366,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
   `user_password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s password in salted and hashed format',
   `user_email` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
-  `date_added` datetime NOT NULL,
+  `fecha` datetime NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_name` (`user_name`),
   UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`) VALUES
+INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `fecha`) VALUES
 (1, 'Arnaldo', 'Bonillo', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'admin@admin.com', '2016-12-19 15:06:00'),
 (2, 'Arnaldo Jose', 'Bonillo Berrios', 'abonillo', '$2y$10$4NQnYuZoUm3FRqoufH1In.h2zupHBKvu6knymLgzJ7J3EV8Hl46Ke', 'abonillo@cicpc.gob.ve', '2017-07-26 21:42:12');
 
