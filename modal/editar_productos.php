@@ -14,17 +14,17 @@
 			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto">
 			<div id="resultados_ajax2"></div>
 			  <div class="form-group">
-				<label for="mod_serial" class="col-sm-3 control-label">Serial</label>
+				<label for="mod_codigo" class="col-sm-3 control-label">Código</label>
 				<div class="col-sm-8">
-				  <input type="text" class="form-control" id="mod_serial" name="mod_serial" placeholder="Serial del producto" required>
+				  <input type="text" class="form-control" id="mod_codigo" name="mod_codigo" placeholder="Código del producto" required>
 					<input type="hidden" name="mod_id" id="mod_id">
 				</div>
 			  </div>
 
 			   <div class="form-group">
-				<label for="mod_codigo" class="col-sm-3 control-label">Código</label>
+				<label for="mod_serial" class="col-sm-3 control-label">Serial</label>
 				<div class="col-sm-8">
-				  <textarea class="form-control" id="mod_codigo" name="mod_codigo" placeholder="Código del producto" required></textarea>
+				  <textarea class="form-control" id="mod_serial" name="mod_serial" placeholder="Serial del producto" required></textarea>
 				</div>
 			  </div>
 
@@ -145,23 +145,6 @@
 					</select>			  
 				</div>
 			  </div>		
-
-			  <div class="form-group">
-				<label for="mod_cargo" class="col-sm-3 control-label">Cargo</label>
-				<div class="col-sm-8">
-					<select class='form-control' name='mod_cargo' id='mod_cargo' required>
-						<option value="">Seleccione un Cargo</option>
-							<?php 
-							$query_cargo=mysqli_query($con,"select * from cargo order by nombre_cargo");
-							while($rw=mysqli_fetch_array($query_cargo))	{
-								?>
-							<option value="<?php echo $rw['id_cargo'];?>"><?php echo $rw['nombre_cargo'];?></option>			
-								<?php
-							}
-							?>
-					</select>			  
-				</div>
-			  </div>	
 
 			  <div class="form-group">
 				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>

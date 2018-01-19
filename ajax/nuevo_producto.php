@@ -2,10 +2,10 @@
 include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 		
 	/*Inicia validacion del lado del servidor*/
-	if (empty($_POST['serial'])) {
-           $errors[] = "Serial vacío";   
-        } else if (empty($_POST['codigo'])){
-			$errors[] = "Codigo del producto vacío";                 
+	if (empty($_POST['codigo'])) {
+           $errors[] = "Código vacío";
+        } else if (empty($_POST['serial'])){
+			$errors[] = "Serial del producto vacío";          
         } else if (empty($_POST['nombre'])){
 			$errors[] = "Nombre del producto vacío";
         } else if (empty($_POST['marca'])){
@@ -29,8 +29,8 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		} else if (empty($_POST['precio'])){
 			$errors[] = "Precio de venta vacío";
 		} else if (
-			!empty($_POST['serial']) &&
 			!empty($_POST['codigo']) &&
+			!empty($_POST['serial']) &&
 			!empty($_POST['nombre']) &&
 			!empty($_POST['marca']) &&
 			!empty($_POST['modelo']) &&
@@ -47,9 +47,8 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		include("../funciones.php");
 		// escaping, additionally removing everything that could be (html/javascript-) code
-
-		$serial=mysqli_real_escape_string($con,(strip_tags($_POST["serial"],ENT_QUOTES)));
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
+		$serial=mysqli_real_escape_string($con,(strip_tags($_POST["serial"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
 		$marca=mysqli_real_escape_string($con,(strip_tags($_POST["marca"],ENT_QUOTES)));
 		$modelo=mysqli_real_escape_string($con,(strip_tags($_POST["modelo"],ENT_QUOTES)));
@@ -63,15 +62,14 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$asignacion=mysqli_real_escape_string($con,(strip_tags($_POST["asignacion"],ENT_QUOTES)));
 		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
 		$id_rango=intval($_POST['rango']);
-		$id_cargo=intval($_POST['cargo']);
 		$precio_venta=floatval($_POST['precio']);
 		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO products ( id_serial, codigo_producto, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha, precio_producto, stock, id_categoria, id_area, condicion_producto, id_motivo, responsable_entrega, asignacion_producto, concepto_inventario, id_rango, id_cargo ) VALUES ('$serial','$codigo','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$motivo','$responsable','$asignacion','$concepto','$id_rango','$cargo')";
+		$sql="INSERT INTO products (codigo_producto, id_serial, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha, precio_producto, stock, id_categoria, id_area, condicion_producto, motivo_inventario, responsable_entrega, asignacion_producto, concepto_inventario, id_rango ) VALUES ('$codigo','$serial','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$id_area','$condicion','$motivo','$responsable','$asignacion','$concepto','$id_rango')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
-				$id_producto=get_row('products','id_producto', 'id_serial', $serial);
+				$id_producto=get_row('products','id_producto', 'codigo_producto', $codigo);
 				$user_id=$_SESSION['user_id'];
 				$firstname=$_SESSION['firstname'];
 				$nota="$firstname agregó $stock producto(s) al inventario";
@@ -113,5 +111,3 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				<?php
 			}
 ?>
-
-

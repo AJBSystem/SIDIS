@@ -78,23 +78,82 @@
 	?>
 	
 	<div class="container">
-	  
+
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
-        <form>
-            <input name="foto" type="file" id="foto" value=""/>
-            <input name="guardar" type="submit" id="guardar" value="Guardar" />
-        </form>
 
+				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <!DOCTYPE HTML>
+<html>
+ <head>
+     <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script>
+     $(function(){   
+       $("#file").on("change", function(){
+           /* Limpiar vista previa */
+           $("#vista-previa").html('');
+           var archivos = document.getElementById('file').files;
+           var navegador = window.URL || window.webkitURL;
+           /* Recorrer los archivos */
+           for(x=0; x<archivos.length; x++)
+           {
+               /* Validar tamaño y tipo de archivo */
+               var size = archivos[x].size;
+               var type = archivos[x].type;
+               var name = archivos[x].name;
+               if (size > 1024*1024)
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" supera el máximo permitido 1MB</p>");
+               }
+               else if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png' && type != 'image/gif')
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" no es del tipo de imagen permitida.</p>");
+               }
+               else
+               {
+                 var objeto_url = navegador.createObjectURL(archivos[x]);
+                 $("#vista-previa").append("<img src="+objeto_url+" width='250' height='250'>");
+               }
+           }
+       });
+       
+       $("#btn").on("click", function(){
+            var formData = new FormData($("#formulario")[0]);
+            var ruta = "multiple-ajax.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+           });
+       
+     });
+    </script>
+ </head>
+ <body>
+ <form method="post" id="formulario" enctype="multipart/form-data">
+    Subir imagen: <input type="file" id="file" name="file[]" multiple>
+    <button type="button" id="btn">Subir imágenes</button>
+ </form>
+  <div id="vista-previa"></div>
+  <div id="respuesta"></div>
+ </body>
+</html>
 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal"  data-serial='<?php echo $row['id_serial'];?>' data-codigo='<?php echo $row['codigo_producto'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>'data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-cargo='<?php echo $row['id_cargo']?>'data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-serial='<?php echo $row['id_serial'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>'data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['motivo_inventario']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
@@ -136,18 +195,17 @@
 
 </table>
 
-					<!-- Se desactivaron los botones de agregar y eliminar stock para futuras adaptaciones del sistema -->
                    <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target=""><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target=""><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
-                   <!-- Fin de Agregar y eliminar stock -->
+                   
                                     </div>
               </div>
             </div>
@@ -179,7 +237,7 @@
 						}
 					?>	
 						<?php
-							$query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
+							$query=mysqli_query($con,"select * from descripcion where id_producto='$id_producto'");
 							while ($row=mysqli_fetch_array($query)){
 								?>
 		
@@ -193,6 +251,8 @@
         </div>
     </div>
 </div>
+
+
 
 </div>
 
@@ -229,8 +289,8 @@ $( "#editar_producto" ).submit(function( event ) {
 })
 	$('#myModal2').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
-		var serial = button.data('serial') // Extract info from data-* attributes		
-		var codigo = button.data('codigo')
+		var codigo = button.data('codigo') // Extract info from data-* attributes
+		var serial = button.data('serial')
 		var nombre = button.data('nombre')
 		var marca = button.data('marca')
 		var modelo = button.data('modelo')
@@ -244,13 +304,12 @@ $( "#editar_producto" ).submit(function( event ) {
 		var motivo = button.data('motivo')
 		var area = button.data('area')
 		var rango = button.data('rango')
-		var cargo = button.data('cargo')
 		var precio = button.data('precio')
 		var stock = button.data('stock')
 		var id = button.data('id')
-		var modal = $(this)		
-		modal.find('.modal-body #mod_serial').val(serial)
+		var modal = $(this)
 		modal.find('.modal-body #mod_codigo').val(codigo)
+		modal.find('.modal-body #mod_serial').val(serial)
 		modal.find('.modal-body #mod_nombre').val(nombre)
 		modal.find('.modal-body #mod_marca').val(marca)
 		modal.find('.modal-body #mod_modelo').val(modelo)
@@ -264,7 +323,6 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_motivo').val(motivo)
 		modal.find('.modal-body #mod_area').val(area)
 		modal.find('.modal-body #mod_rango').val(rango)
-		modal.find('.modal-body #mod_cargo').val(cargo)
 		modal.find('.modal-body #mod_precio').val(precio)
 		modal.find('.modal-body #mod_stock').val(stock)
 		modal.find('.modal-body #mod_id').val(id)

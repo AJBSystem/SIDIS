@@ -1,4 +1,4 @@
-<?php
+	<?php
 		if (isset($con))
 		{
 	?>
@@ -30,7 +30,10 @@
 				</div>
 			  </div>
 			  
-			 			 			 
+			 
+			 
+			 
+			 
 			
 		  </div>
 		  <div class="modal-footer">
