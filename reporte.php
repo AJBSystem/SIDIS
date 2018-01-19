@@ -22,31 +22,33 @@
   <?php
   include("navbar.php");
   ?>
-  
-    <div class="container">
+ 
+    <div class="container"  class="row">
   <div class="panel panel-primary">
     <div class="panel-heading">
 
-      <h4><i class='glyphicon glyphicon-search'></i> Buscar Reporte</h4>
+      <h4><i class='glyphicon glyphicon-search'></i> Buscar Reportes</h4>
     </div>
     <div class="panel-body">
     
+  
      <div class="form-group">
-      <label for="mod_serial" class="btn btn-success btn-lg" data-toggle="modal" data-target="">Reporte por Serial</label>
-      <div class="col-sm-3">
+      <label for="mod_serial" class="btn btn-success btn-lg" data-toggle="modal" data-target="" >Reporte por Serial</label> 
+      <div class="col-sm-3"><a href="/SIDIS/pdf/reporteserial.php">
          <input type="text" class="form-control" id="mod_serial" name="mod_serial" placeholder="Ingrese el serial del producto" required>
           <input type="hidden" name="mod_id" id="mod_id">
         </div>
         </div>
 
 
-       <p><div class="btn-group pull-justify">
-        <button href="../SIDIS/pdf/index.php" type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="">Reporte General</button>
-      </div></p>
-        <p><div class="btn-group pull-justify">
-        <button href="#" type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="">Reporte de Área</button>
+
+       <p><div class="btn-group pull-justify"> <a href="/SIDIS/pdf/reportegeneral.php">
+        <button  type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="">Reporte General</button>
       </div></p>
 
+        <p><div class="btn-group pull-justify"><a href="/SIDIS/pdf/reportearea.php">
+        <button href="#" type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="">Reporte de Área</button>
+      </div></p>
 
 
       </div>

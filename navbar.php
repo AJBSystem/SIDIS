@@ -1,4 +1,4 @@
-<?php
+  <?php
     if (isset($title))
     {
   ?>
@@ -11,33 +11,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Sistema de Inventario División de Sistemas</a>
+      <a class="navbar-brand" href="stock.php">Inventario División de Sistemas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-
       <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
-
-
         <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario</a></li>
+          <li class="<?php if (isset($active_plantilla)){echo $active_plantilla;}?>"><a href="reporte.php"><i class='glyphicon glyphicon-list'></i> Reporte</a></li>
+            <li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
 
-          <ul class="nav navbar-nav">
-          <li class="<?php if (isset($active_plantilla)){echo $active_plantilla;}?>"><a href="../SIDIS/pdf/index.php"><i class='glyphicon glyphicon-list-alt'></i> Reporte</a> 
-          <ul class="nav navbar-nav">
-          <li class="<?php if (isset($active_plantilla)){echo $active_plantilla;}?>"><a href="../SIDIS/pdf/index.php"><i class='glyphicon glyphicon-list-alt'></i> Reporte</a>
-         
-
-         
-          
-
-
-         
-
-
-    <li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
        </ul>
       <ul class="nav navbar-nav navbar-right">
        <!-- <li><a href="http://obedalvarado.pw/contacto/" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>-->
