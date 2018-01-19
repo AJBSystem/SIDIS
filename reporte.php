@@ -40,7 +40,6 @@
 			  </div>
 
 
-
 		   <p><div class="btn-group pull-justify">
 				<button href="" type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="">Reporte General</button>
 			</div></p>
