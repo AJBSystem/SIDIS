@@ -16,12 +16,14 @@
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
 		$descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_descripcion"],ENT_QUOTES)));
 		
-		
-		$id_categoria=intval($_POST['mod_id']);
-		$sql="UPDATE categorias SET nombre_categoria='".$nombre."', descripcion_categoria='".$descripcion."' WHERE id_categoria='".$id_categoria."'";
+		$id_categoria=$_POST['mod_id'];
+		$sql="UPDATE categorias SET  nombre_categoria='".$nombre."', descripcion_categoria='".$descripcion."'  WHERE id_categoria='".$id_categoria."'";
 		$query_update = mysqli_query($con,$sql);
+
+
+
 			if ($query_update){
-				$messages[] = "Categoría ha sido actualizada satisfactoriamente.";
+				$messages[] = "Categoria ha sido actualizado satisfactoriamente.";
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
 			}
@@ -57,5 +59,4 @@
 				</div>
 				<?php
 			}
-
 ?>
