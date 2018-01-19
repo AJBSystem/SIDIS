@@ -78,15 +78,19 @@
 	?>
 	
 	<div class="container">
-
+	  
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+        <form>
+            <input name="foto" type="file" id="foto" value=""/>
+            <input name="guardar" type="submit" id="guardar" value="Guardar" />
+        </form>
+
 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
