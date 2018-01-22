@@ -83,7 +83,7 @@
 			?>
 			<div class="table-responsive">
 			  <table class="table">
-				<tr  class="success">
+				<tr class="success" style="background:#00b3b3">
 					<th>Nombre</th>
 					<th>Descripción</th>
 					<th>Agregado</th>
@@ -105,8 +105,8 @@
 						<td><?php echo $fecha;?></td>
 						
 					<td class='text-right'>
-						<a href="#" class='btn btn-default' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-						<a href="#" class='btn btn-default' title='Borrar categoría' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
+						<a href="#" style="background:#00b3b3" class='btn btn-info' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
+						<a href="#" class='btn btn-danger' title='Borrar categoría' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
 					</td>
 						
 					</tr>
@@ -114,7 +114,7 @@
 				}
 				?>
 				<tr>
-					<td colspan=4><span class="pull-right">
+					<td colspan=4><span  class="pull-right">
 					<?php
 					 echo paginate($reload, $page, $total_pages, $adjacents);
 					?></span></td>

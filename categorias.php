@@ -27,7 +27,7 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Categoría</button>
+				<button style="background:#00b3b3" type='button' class="btn " data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Categoría</button>
 			</div>
 			<h4><i class='glyphicon glyphicon-search'></i> Buscar Categorías</h4>
 		</div>
