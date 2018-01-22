@@ -55,7 +55,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" onclick = "location='usuarios.php'" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
+			<button type="submit" style="background:#00b3b3" onclick = "location='usuarios.php'" class="btn btn-primary" id="guardar_datos">Guardar Datos</button>
 		  </div>
 		  </form>
 		</div>

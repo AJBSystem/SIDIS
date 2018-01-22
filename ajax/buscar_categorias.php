@@ -81,13 +81,13 @@
 		if ($numrows>0){
 			
 			?>
-			<div class="table-responsive" >
+			<div  class="table-responsive" >
 			  <table class="table">
-				<tr class="success" >
-					<th>Nombre</th>
-					<th>Descripción</th>
-					<th>Agregado</th>
-					<th class='text-right'>Acciones</th>
+				<tr  class="success" >
+					<th style="background:#bbbbbb">Nombre</th>
+					<th style="background:#bbbbbb">Descripción</th>
+					<th style="background:#bbbbbb">Agregado</th>
+					<th style="background:#bbbbbb"class='text-right'>Acciones</th>
 					
 				</tr>
 				<?php

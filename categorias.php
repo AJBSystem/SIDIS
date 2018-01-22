@@ -27,14 +27,12 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button style="background:#00b3b3" type='button' class="btn " data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Categoría</button>
+				<button style="background:#00b3b3" type='button' class="btn" data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Categoría</button>
 			</div>
 			<h4><i class='glyphicon glyphicon-search'></i> Buscar Categorías</h4>
 		</div>
 		<div class="panel-body">
-		
-			
-			
+								
 			<?php
 				include("modal/registro_categorias.php");
 				include("modal/editar_categorias.php");
@@ -47,7 +45,7 @@
 								<input type="text" class="form-control" id="q" placeholder="Nombre de la categoría" onkeyup='load(1);'>
 							</div>
 							<div class="col-md-3">
-								<button type="button" class="btn btn-default" onclick='load(1);'>
+								<button type="button" style="background:#00b3b3" class="btn" onclick='load(1);'>
 									<span class="glyphicon glyphicon-search" ></span> Buscar</button>
 								<span id="loader"></span>
 							</div>
