@@ -5,7 +5,6 @@
         header("location: login.php");
 		exit;
         }
-
 	/* Connect To Database*/
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
@@ -95,7 +94,6 @@ $( "#guardar_usuario" ).submit(function( event ) {
 	});
   event.preventDefault();
 })
-
 $( "#editar_usuario" ).submit(function( event ) {
   $('#actualizar_datos2').attr("disabled", true);
   
@@ -115,7 +113,6 @@ $( "#editar_usuario" ).submit(function( event ) {
 	});
   event.preventDefault();
 })
-
 $( "#editar_password" ).submit(function( event ) {
   $('#actualizar_datos3').attr("disabled", true);
   
@@ -138,7 +135,6 @@ $( "#editar_password" ).submit(function( event ) {
 	function get_user_id(id){
 		$("#user_id_mod").val(id);
 	}
-
 	function obtener_datos(id){
 			var nombres = $("#nombres"+id).val();
 			var apellidos = $("#apellidos"+id).val();

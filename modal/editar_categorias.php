@@ -29,16 +29,13 @@
 				  <textarea class="form-control" id="mod_descripcion" name="mod_descripcion" ></textarea>
 				</div>
 			  </div>
-			  
-			 
-			 
-			 
+
 			 
 			
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-primary" id="actualizar_datos">Actualizar datos</button>
+			<button type="submit" onclick = "location='categorias.php'" class="btn btn-primary" id="actualizar_datos">Actualizar datos</button>
 		  </div>
 		  </form>
 		</div>

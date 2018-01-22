@@ -49,10 +49,7 @@
 				  <input type="password" class="form-control" id="user_password_repeat" name="user_password_repeat" placeholder="Repite contraseña" pattern=".{6,}" required>
 				</div>
 			  </div>
-			 
-			  
 
-			 
 			 
 			
 		  </div>
