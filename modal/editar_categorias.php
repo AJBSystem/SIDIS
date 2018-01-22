@@ -35,7 +35,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" onclick = "location='categorias.php'" class="btn btn-primary" id="actualizar_datos">Actualizar datos</button>
+			<button style="background:#00b3b3" type="submit" onclick = "location='categorias.php'" class="btn btn-primary" id="actualizar_datos">Actualizar Datos</button>
 		  </div>
 		  </form>
 		</div>

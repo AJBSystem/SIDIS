@@ -82,7 +82,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-body">
+          <div  class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
 
@@ -237,7 +237,7 @@
 						}
 					?>	
 						<?php
-							$query=mysqli_query($con,"select * from descripcion where id_producto='$id_producto'");
+							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
 							while ($row=mysqli_fetch_array($query)){
 								?>
 		

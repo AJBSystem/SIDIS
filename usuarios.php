@@ -22,7 +22,7 @@
 	?> 
     <div  class="container">
 		<div  class="panel panel-primary">
-		<div  class="panel-heading">
+		<div  style="background:#0079a3" class="panel-heading">
 		    <div class="btn-group pull-right">
 		    
 				<button style="background:#00b3b3" type='button' class="btn" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" ></span> Nuevo Usuario</button>

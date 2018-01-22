@@ -24,11 +24,11 @@
 	
     <div class="container">
 	<div class="panel panel-primary">
-		<div class="panel-heading">
+		<div style="background:#0079a3" class="panel-heading">
 		    <div class="btn-group pull-right">
 				<button type='button' style="background:#00b3b3" class="btn" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Nuevo Producto</button>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Consultar Inventario</h4>
 		</div>
 		<div class="panel-body">
 		

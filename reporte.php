@@ -25,7 +25,7 @@
  
     <div class="container"  class="row">
   <div class="panel panel-primary">
-    <div class="panel-heading">
+    <div style="background:#0079a3" class="panel-heading">
 
       <h4><i class='glyphicon glyphicon-search'></i> Buscar Reportes</h4>
     </div>

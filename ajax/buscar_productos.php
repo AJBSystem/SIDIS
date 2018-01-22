@@ -54,7 +54,7 @@
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
-		$per_page = 18; //how much records you want to show
+		$per_page = 20; //how much records you want to show
 		$adjacents  = 4; //gap between pages after number of adjacents
 		$offset = ($page - 1) * $per_page;
 		//Count the total number of row in your table*/
@@ -82,7 +82,7 @@
 					
 					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 thumb text-center ng-scope" ng-repeat="item in records">
 						  <a class="thumbnail" href="producto.php?id=<?php echo $id_producto;?>">
-							  <span title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock,2); ?></span>
+							  <span style="background:#00b3b3" title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock); ?></span>
 							  <span title="Low stock" class="low-stock-alert ng-hide" ng-show="item.current_quantity <= item.low_stock_threshold"><i class="fa fa-exclamation-triangle"></i></span>
 							  <img class="img-responsive" src="img/stock.png" alt="<?php echo $nombre_producto;?>">
 						  </a>
