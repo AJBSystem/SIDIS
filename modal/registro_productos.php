@@ -53,7 +53,7 @@
 				<label for="categoria" class="col-sm-3 control-label">Categoría</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='categoria' id='categoria' required>
-						<option value="">Selecciona una categoría</option>
+						<option value="">Seleccione una categoría</option>
 							<?php 
 							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
 							while($rw=mysqli_fetch_array($query_categoria))	{
@@ -70,7 +70,7 @@
 				<label for="area" class="col-sm-3 control-label">Área</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='area' id='area' required>
-						<option value="">Selecciona un área</option>
+						<option value="">Seleccione un área</option>
 							<?php 
 							$query_area=mysqli_query($con,"select * from area order by nombre_area");
 							while($rw=mysqli_fetch_array($query_area))	{
@@ -132,7 +132,7 @@
 				<label for="rango" class="col-sm-3 control-label">Rango</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='rango' id='rango' required>
-						<option value="">Selecciona un rango</option>
+						<option value="">Seleccione un rango</option>
 							<?php 
 							$query_rango=mysqli_query($con,"select * from rango order by nombre_rango");
 							while($rw=mysqli_fetch_array($query_rango))	{
@@ -144,6 +144,24 @@
 					</select>			  
 				</div>
 			  </div>
+
+			<div class="form-group">
+				<label for="cargo" class="col-sm-3 control-label">Cargo</label>
+				<div class="col-sm-8">
+					<select class='form-control' name='cargo' id='cargo' required>
+						<option value="">Seleccione un cargo</option>
+							<?php 
+							$query_cargo=mysqli_query($con,"select * from cargo order by nombre_cargo");
+							while($rw=mysqli_fetch_array($query_cargo))	{
+								?>
+							<option value="<?php echo $rw['id_cargo'];?>"><?php echo $rw['nombre_cargo'];?></option>			
+								<?php
+							}
+							?>
+					</select>			  
+				</div>
+			  </div>
+
 
 			  <div class="form-group">
 				<label for="concepto" class="col-sm-3 control-label">Concepto</label>

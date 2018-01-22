@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-01-2018 a las 15:30:55
+-- Tiempo de generación: 22-01-2018 a las 17:45:01
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `cargo` (
   `descripcion_cargo` char(200) NOT NULL,
   `fecha` datetime NOT NULL,
   PRIMARY KEY (`id_cargo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Volcado de datos para la tabla `cargo`
@@ -98,7 +98,8 @@ INSERT INTO `cargo` (`id_cargo`, `nombre_cargo`, `descripcion_cargo`, `fecha`) V
 (27, 'Miembro Principal Consejo Disciplinario', 'Miembro', '2018-01-18 00:00:00'),
 (28, 'Supervisor De Region', 'Supervisor', '2018-01-18 00:00:00'),
 (29, 'Secretario Principal Consejo Disciplinario', 'Secretario', '2018-01-18 00:00:00'),
-(30, 'Miembro Principal  Comision Permanente Evaluacion Y Seguim', 'Miembro', '2018-01-18 00:00:00');
+(30, 'Miembro Principal  Comision Permanente Evaluacion Y Seguim', 'Miembro', '2018-01-18 00:00:00'),
+(31, 'No Aplica', 'No Aplica', '2018-01-22 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -325,9 +326,9 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fecha`, `precio_producto`, `stock`, `id_categoria`, `descripcion_producto`, `id_serial`, `numero_bien`, `id_area`, `responsable_entrega`, `id_motivo`, `condicion_producto`, `asignacion_producto`, `id_rango`, `marca_producto`, `modelo_producto`, `concepto_inventario`, `id_cargo`) VALUES
-(7, '100', 'Impresoras', '2017-12-05 20:38:34', 110, 12, 71, 'Impresora HP', 'CNCC76F03M', '78', '2', 'Darly martinez', '2', 'Regular estado de uso', 'Dauli', '19', 'Hp', 'Multifuncional', '', 0),
-(41, '24894', 'Teclado', '2018-01-12 21:25:33', 35, 1, 1, '', '25cn', '78', '3', 'arnaldo', '2', 'nuevo', 'darly', '19', 'Hp', '200 Caracter', 't', 0),
-(58, '256', 'Mesa', '2018-01-18 19:44:43', 9, 9, 33, '', '25', 'gs', '6', 'sg', '2', 'gsg', 'gs', '12', 'Nae', 'gs', 'sg', 2);
+(7, '100', 'Impresoras', '2017-12-05 20:38:34', 110, 12, 71, 'Impresora HP', 'CNCC76F03M', '78', '2', 'Darly martinez', '2', 'Regular estado de uso', 'Dauli', '19', 'Hp', 'Multifuncional', 'c', 20),
+(41, '24894', 'Teclado', '2018-01-12 21:25:33', 35, 1, 1, '', '25cn', '78', '3', 'arnaldo', '2', 'nuevo', 'darly', '19', 'Hp', '200 Caracter', 't', 24),
+(58, '256', 'Mesa', '2018-01-18 19:44:43', 9, 9, 33, '', '25', 'gs', '6', 'sg', '2', 'gsg', 'gs', '12', 'Nae', 'gs', 'sg', 31);
 
 -- --------------------------------------------------------
 
@@ -341,7 +342,7 @@ CREATE TABLE IF NOT EXISTS `rango` (
   `descripcion_rango` char(150) NOT NULL,
   `fecha` datetime NOT NULL,
   PRIMARY KEY (`id_rango`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Volcado de datos para la tabla `rango`
@@ -406,7 +407,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_name` (`user_name`),
   UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `users`

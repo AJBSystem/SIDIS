@@ -147,6 +147,23 @@
 			  </div>		
 
 			  <div class="form-group">
+				<label for="mod_cargo" class="col-sm-3 control-label">Cargo</label>
+				<div class="col-sm-8">
+					<select class='form-control' name='mod_cargo' id='mod_cargo' required>
+						<option value="">Seleccione un Cargo</option>
+							<?php 
+							$query_cargo=mysqli_query($con,"select * from cargo order by nombre_cargo");
+							while($rw=mysqli_fetch_array($query_cargo))	{
+								?>
+							<option value="<?php echo $rw['id_cargo'];?>"><?php echo $rw['nombre_cargo'];?></option>			
+								<?php
+							}
+							?>
+					</select>			  
+				</div>
+			  </div>
+
+			  <div class="form-group">
 				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
 				  <textarea class="form-control" id="mod_concepto" name="mod_concepto" placeholder="Concepto del Inventario" required></textarea>
