@@ -81,9 +81,9 @@
 		if ($numrows>0){
 			
 			?>
-			<div class="table-responsive">
+			<div class="table-responsive" >
 			  <table class="table">
-				<tr class="success" style="background:#00b3b3">
+				<tr class="success" >
 					<th>Nombre</th>
 					<th>Descripción</th>
 					<th>Agregado</th>
