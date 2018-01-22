@@ -35,7 +35,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 $id_categoria =intval($_REQUEST['id_categoria']);
-		 $aColumns = array('id_serial', 'nombre_producto');//Columnas de busqueda
+		 $aColumns = array('serial', 'nombre_producto');//Columnas de busqueda
 		 $sTable = "products";
 		 $sWhere = "";
 		
@@ -75,7 +75,7 @@
 				$nums=1;
 				while ($row=mysqli_fetch_array($query)){
 						$id_producto=$row['id_producto'];
-						$id_serial=$row['id_serial'];
+						$serial=$row['serial'];
 						$nombre_producto=$row['nombre_producto'];
 						$stock=$row['stock'];
 					?>
@@ -87,7 +87,7 @@
 							  <img class="img-responsive" src="img/stock.png" alt="<?php echo $nombre_producto;?>">
 						  </a>
 						  <span class="thumb-name"><strong><?php echo $nombre_producto;?></strong></span>
-						  <span class="thumb-code ng-binding"><?php echo $id_serial;?></span>
+						  <span class="thumb-code ng-binding"><?php echo $serial;?></span>
 					</div>
 					<?php
 					if ($nums%6==0){
