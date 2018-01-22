@@ -13,6 +13,7 @@
   $active_reporte="active";
   $title="Reportes | ";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,12 +27,10 @@
     <div class="container"  class="row">
   <div class="panel panel-primary">
     <div style="background:#0079a3" class="panel-heading">
-
       <h4><i class='glyphicon glyphicon-search'></i> Buscar Reportes</h4>
-    </div>
+        </div>
+
     <div class="panel-body">
-    
-  
      <div class="form-group">
       <label style="background:#00b3b3" for="mod_serial" class="btn btn-info btn-lg" data-toggle="modal" data-target=""><i class='glyphicon glyphicon-filter'></i>Reporte por Serial</label> 
       <div class="col-sm-3"><a href="/SIDIS/pdf/reporteserial.php">
@@ -49,8 +48,7 @@
       </div></p>
 
 
-
-      </div>
+</div>
           
         </div>
         </div>
