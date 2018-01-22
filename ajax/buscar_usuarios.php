@@ -1,5 +1,4 @@
 <?php
-
 	/*-------------------------
 	Autor: Obed Alvarado
 	Web: obedalvarado.pw
@@ -98,7 +97,7 @@
 						$fullname=$row['firstname']." ".$row["lastname"];
 						$user_name=$row['user_name'];
 						$user_email=$row['user_email'];
-						$fecha= date('d/m/Y', strtotime($row[fecha']));
+						$fecha= date('d/m/Y', strtotime($row['fecha']));
 						
 					?>
 					
