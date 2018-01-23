@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2018 a las 14:50:38
+-- Tiempo de generación: 23-01-2018 a las 15:28:09
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -331,14 +331,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   `numero_bien` varchar(30) NOT NULL,
   `id_area` char(200) NOT NULL,
   `responsable_entrega` char(200) NOT NULL,
-  `nombre_motivo` char(200) NOT NULL,
+  `id_motivo` char(200) NOT NULL,
   `condicion_producto` char(50) NOT NULL,
   `asignacion_producto` char(200) NOT NULL,
-  `nombre_rango` char(200) NOT NULL,
+  `id_rango` char(200) NOT NULL,
   `marca_producto` char(200) NOT NULL,
   `modelo_producto` char(200) NOT NULL,
   `concepto_inventario` char(200) NOT NULL,
-  `nombre_cargo` int(11) NOT NULL,
+  `id_cargo` int(11) NOT NULL,
   PRIMARY KEY (`id_producto`),
   UNIQUE KEY `id_serial` (`serial`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
@@ -347,11 +347,11 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fecha`, `precio_producto`, `stock`, `id_categoria`, `serial`, `numero_bien`, `id_area`, `responsable_entrega`, `nombre_motivo`, `condicion_producto`, `asignacion_producto`, `nombre_rango`, `marca_producto`, `modelo_producto`, `concepto_inventario`, `nombre_cargo`) VALUES
+INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fecha`, `precio_producto`, `stock`, `id_categoria`, `serial`, `numero_bien`, `id_area`, `responsable_entrega`, `id_motivo`, `condicion_producto`, `asignacion_producto`, `id_rango`, `marca_producto`, `modelo_producto`, `concepto_inventario`, `id_cargo`) VALUES
 (7, '20020', 'Impresoras', '2017-12-05 20:38:34', 110, 12, 71, 'CNCC76', '78', '2', 'Darly martinez', '2', 'Regular estado de uso de conservacion', 'Dauli', '19', 'Hp', 'Multifuncional', 'c', 20),
 (41, '20020', 'Teclado', '2018-01-12 21:25:33', 35, 1, 1, '25cn', '78', '3', 'arnaldo', '2', 'nuevo', 'darly', '19', 'Hp', '200 Caracter', 't', 24),
 (58, '20020', 'Mesa', '2018-01-18 19:44:43', 9, 9, 33, '25', '75', '6', 'sg', '4', 'gsg', 'gs', '18', 'Nae', 'gs', 'sg', 15),
-(59, '245', 'monitor', '2018-01-23 14:17:08', 9, 9, 31, 'ddw48', '79', '6', 'sa', '4', 'sas', 'sa', '15', 'hp', '255', 'asa', 19);
+(59, '245', 'monitor', '2018-01-23 14:17:08', 9, 9, 31, 'ddw48', '79', '6', 'sa', '2', 'sas', 'sa', '40', 'hp', '255', 'asa', 22);
 
 -- --------------------------------------------------------
 
