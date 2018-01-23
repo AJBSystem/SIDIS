@@ -142,12 +142,11 @@
     </script>
  </head>
  <body>
- <form method="post" id="formulario" enctype="multipart/form-data">
-    Subir imagen: <input type="file" id="file" name="file[]" multiple>
-    <button type="button" id="btn">Subir imágenes</button>
- </form>
-  <div id="vista-previa"></div>
-  <div id="respuesta"></div>
+         <form action="" method="post" enctype="multipart/form-data">
+            <input name="foto" type="file" id="foto" value="" /><br>
+            <input name="guardar" type="submit" id="guardar" value="Guardar" />
+        </form>
+
  </body>
 </html>
 

@@ -35,7 +35,7 @@
 	while ( $row = $resultado->fetch_assoc() )
 	{
 	$pdf->Cell(20,6,utf8_decode($row['stock']),1,0,'C',0);
-	$pdf->Cell(30,6,utf8_decode($row['id_serial']),1,0,'C',0);
+	$pdf->Cell(30,6,utf8_decode($row['serial']),1,0,'C',0);
 	$pdf->Cell(25,6,utf8_decode($row['codigo_producto']),1,0,'C',0);
 	$pdf->Cell(70,6,utf8_decode($row['nombre_producto']),1,0,'C',0);
 	$pdf->Cell(30,6,utf8_decode($row['modelo_producto']),1,0,'C',0);
