@@ -87,13 +87,8 @@
               <div class="col-sm-4 col-sm-offset-2 text-center">
 
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
-				
-<form>
-            <input name="foto" type="file" id="foto" value="" /><br>
-            <input name="guardar" type="submit" id="guardar" value="Guardar" />
-        </form>
-  <div id="vista-previa"></div>
-  <div id="respuesta"></div>
+
+
  </body>
 </html>
 

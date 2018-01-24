@@ -4,7 +4,6 @@
         header("location: login.php");
 		exit;
         }
-
 	/* Connect To Database*/
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
@@ -24,11 +23,11 @@
 	
     <div class="container">
 	<div class="panel panel-primary">
-		<div style="background:#0079a3" class="panel-heading">
+		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' style="background:#00b3b3" class="btn" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Nuevo Producto</button>
+				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Consultar Inventario</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
 		</div>
 		<div class="panel-body">
 		
@@ -43,8 +42,8 @@
 						
 				<div class="row">
 					<div class='col-md-4'>
-						<label>Filtrar por serial o nombre</label>
-						<input type="text" class="form-control" id="q" placeholder="Serial o nombre del producto" onkeyup='load(1);'>
+						<label>Filtrar por código o nombre</label>
+						<input type="text" class="form-control" id="q" placeholder="Código o nombre del producto" onkeyup='load(1);'>
 					</div>
 					
 					<div class='col-md-4'>
@@ -135,5 +134,4 @@ $( "#guardar_producto" ).submit(function( event ) {
 	});
   event.preventDefault();
 })
-
 </script>
