@@ -2,6 +2,7 @@
     if (isset($title))
     {
   ?>
+ 
 <nav class="navbar navbar-default ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,12 +22,21 @@
       <ul class="nav navbar-nav">
       <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
         <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario</a></li>
-          <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>"><a href="reporte.php"><i class='glyphicon glyphicon-list'></i> Reporte</a></li>
+
+          <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>">
+      <a data-toggle="dropdown"><i class='glyphicon glyphicon-list'></i> Reportes</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="reporte.php">Reporte General</a></li>
+                            <li><a href="#">Reporte por área</a></li>
+                            <li><a href="#">Reporte por serial</a></li>
+                        </ul>
+        </li>
+
             <li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
 
        </ul>
       <ul class="nav navbar-nav navbar-right">
-       <!-- <li><a href="http://obedalvarado.pw/contacto/" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>-->
+
     <li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

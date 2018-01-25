@@ -183,7 +183,7 @@
 				  <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio de venta del producto" required pattern="^[0-9]{1,5}(\.[0-9]{0,2})?$" title="Ingresa sólo números con 0 ó 2 decimales" maxlength="8">
 				</div>
 			</div>
-			
+
 			
 		  </div>
 		  <div class="modal-footer">
