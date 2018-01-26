@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.1.6
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2018 a las 16:36:43
--- Versión del servidor: 10.1.28-MariaDB
--- Versión de PHP: 5.6.32
+-- Tiempo de generación: 26-01-2018 a las 19:35:01
+-- Versión del servidor: 5.6.16
+-- Versión de PHP: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `bd_sidis`
@@ -28,12 +26,13 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `area`
 --
 
-CREATE TABLE `area` (
-  `id_area` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `area` (
+  `id_area` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_area` char(200) NOT NULL,
   `descripcion_area` char(200) NOT NULL,
-  `fecha` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_area`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `area`
@@ -57,12 +56,13 @@ INSERT INTO `area` (`id_area`, `nombre_area`, `descripcion_area`, `fecha`) VALUE
 -- Estructura de tabla para la tabla `cargo`
 --
 
-CREATE TABLE `cargo` (
-  `id_cargo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cargo` (
+  `id_cargo` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_cargo` char(200) NOT NULL,
   `descripcion_cargo` char(200) NOT NULL,
-  `fecha` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_cargo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Volcado de datos para la tabla `cargo`
@@ -107,19 +107,20 @@ INSERT INTO `cargo` (`id_cargo`, `nombre_cargo`, `descripcion_cargo`, `fecha`) V
 -- Estructura de tabla para la tabla `categorias`
 --
 
-CREATE TABLE `categorias` (
-  `id_categoria` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `categorias` (
+  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_categoria` char(200) NOT NULL,
   `descripcion_categoria` char(200) NOT NULL,
-  `fecha` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=152 ;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `fecha`) VALUES
-(1, 'Acondicionadores', 'Aires', '2018-01-12 00:00:00'),
+(151, 'Acondicionadores', 'Aires', '2018-01-26 19:27:39'),
 (2, 'Archivador', 'Archivadores', '2018-01-12 00:00:00'),
 (3, 'Aspiradoras', 'Limpieza', '2018-01-12 00:00:00'),
 (4, 'Balanzas', 'Balanzas', '2018-01-12 00:00:00'),
@@ -206,7 +207,7 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categ
 (107, 'Ventiladores', 'Ventiladores', '2018-01-12 19:45:29'),
 (108, 'Vitrinas', 'Vitrinas', '2018-01-12 19:45:35'),
 (109, 'Video Grabadores', 'Video Grabadores', '2018-01-12 19:45:42'),
-(131, 'Pendrive\'s', 'Pendrive\'s', '2018-01-22 20:32:19'),
+(131, 'Pendrive''s', 'Pendrive''s', '2018-01-22 20:32:19'),
 (133, 'Switch', 'Switch', '2018-01-22 20:35:04'),
 (134, 'Firewell', 'Firewell', '2018-01-22 20:35:40'),
 (135, 'Adaptador', 'Adaptador', '2018-01-22 20:35:57'),
@@ -226,11 +227,51 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categ
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `disponible`
+--
+
+CREATE TABLE IF NOT EXISTS `disponible` (
+  `nombre_producto` char(200) NOT NULL,
+  `id_categoria` int(11) NOT NULL,
+  `precio_producto` double NOT NULL,
+  `stock` int(11) NOT NULL,
+  `id_producto` char(200) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `codigo_producto` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`codigo_producto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=200001 ;
+
+--
+-- Volcado de datos para la tabla `disponible`
+--
+
+INSERT INTO `disponible` (`nombre_producto`, `id_categoria`, `precio_producto`, `stock`, `id_producto`, `fecha`, `codigo_producto`) VALUES
+('p', 1, 100, 1, '', '2018-01-26 19:25:51', 1),
+('h', 135, 1, 1, '', '2018-01-26 19:24:39', 10),
+('Ã±', 1, 1, 1, '', '2018-01-26 19:25:38', 14),
+('jk', 135, 1, 1, '', '2018-01-26 19:31:41', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `foto`
+--
+
+CREATE TABLE IF NOT EXISTS `foto` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `foto` varchar(30) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `historial`
 --
 
-CREATE TABLE `historial` (
-  `id_historial` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `historial` (
+  `id_historial` int(11) NOT NULL AUTO_INCREMENT,
   `id_producto` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
@@ -254,36 +295,26 @@ CREATE TABLE `historial` (
   `id_rango` char(200) NOT NULL,
   `marca_producto` char(200) NOT NULL,
   `modelo_producto` char(200) NOT NULL,
-  `id_cargo` char(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_cargo` char(100) NOT NULL,
+  PRIMARY KEY (`id_historial`),
+  KEY `id_producto` (`id_producto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
 
 --
 -- Volcado de datos para la tabla `historial`
 --
 
 INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `nota`, `referencia`, `cantidad`, `id_serial`, `codigo_producto`, `nombre_producto`, `precio_producto`, `stock`, `id_categoria`, `numero_bien`, `id_area`, `responsable_entrega`, `concepto_producto`, `condicion_producto`, `asignacion_producto`, `descripcion_producto`, `id_motivo`, `id_rango`, `marca_producto`, `modelo_producto`, `id_cargo`) VALUES
-(39, 41, 1, '2018-01-12 21:25:33', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '24894', 1, '', 'nmg', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
-(52, 58, 1, '2018-01-18 19:44:43', 'Arnaldo agregÃ³ 9 producto(s) al inventario', '256', 9, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
-(53, 59, 1, '2018-01-23 15:11:57', 'Arnaldo agregÃ³ 2 producto(s) al inventario', '3001', 2, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `imagenes`
---
-
-CREATE TABLE `imagenes` (
-  `id_imagen` int(11) NOT NULL,
-  `titulo` varchar(250) NOT NULL,
-  `imagen` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `imagenes`
---
-
-INSERT INTO `imagenes` (`id_imagen`, `titulo`, `imagen`) VALUES
-(1, 'hola', '006.jpg');
+(58, 65, 1, '2018-01-25 19:32:33', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '20020', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(59, 65, 1, '2018-01-25 19:42:41', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '20020', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(60, 65, 1, '2018-01-25 19:44:19', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '20020', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(61, 65, 1, '2018-01-25 19:45:59', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '20020', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(62, 65, 1, '2018-01-25 19:48:16', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '20020', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(63, 65, 1, '2018-01-25 19:51:08', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '20020', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(65, 69, 1, '2018-01-25 21:10:12', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '1', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(66, 69, 1, '2018-01-25 21:10:17', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '1', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(67, 69, 1, '2018-01-25 21:10:43', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '1', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
+(68, 69, 1, '2018-01-25 21:10:47', 'Arnaldo agregÃ³ 1 producto(s) al inventario', '1', 1, '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -291,12 +322,13 @@ INSERT INTO `imagenes` (`id_imagen`, `titulo`, `imagen`) VALUES
 -- Estructura de tabla para la tabla `motivo`
 --
 
-CREATE TABLE `motivo` (
-  `id_motivo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `motivo` (
+  `id_motivo` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_motivo` char(200) NOT NULL,
   `descripcion_motivo` char(200) NOT NULL,
-  `fecha` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_motivo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `motivo`
@@ -314,15 +346,14 @@ INSERT INTO `motivo` (`id_motivo`, `nombre_motivo`, `descripcion_motivo`, `fecha
 -- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE `products` (
-  `id_producto` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `products` (
+  `id_producto` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_producto` char(200) NOT NULL,
   `nombre_producto` char(200) NOT NULL,
   `fecha` datetime NOT NULL,
   `precio_producto` double NOT NULL,
   `stock` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
-  `descripcion_producto` char(200) NOT NULL,
   `serial` varchar(50) NOT NULL,
   `numero_bien` varchar(30) NOT NULL,
   `id_area` char(200) NOT NULL,
@@ -334,18 +365,21 @@ CREATE TABLE `products` (
   `marca_producto` char(200) NOT NULL,
   `modelo_producto` char(200) NOT NULL,
   `concepto_inventario` char(200) NOT NULL,
-  `id_cargo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_cargo` int(11) NOT NULL,
+  PRIMARY KEY (`id_producto`),
+  UNIQUE KEY `serial` (`serial`) USING BTREE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=71 ;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fecha`, `precio_producto`, `stock`, `id_categoria`, `descripcion_producto`, `serial`, `numero_bien`, `id_area`, `responsable_entrega`, `id_motivo`, `condicion_producto`, `asignacion_producto`, `id_rango`, `marca_producto`, `modelo_producto`, `concepto_inventario`, `id_cargo`) VALUES
-(7, '20020', 'Impresoras', '2017-12-05 20:38:34', 110, 12, 71, 'Impresora HP', 'CNCC76', '78', '2', 'Darly martinez', 2, 'Regular estado de uso de conservacion', 'Dauli', 19, 'Hp', 'Multifuncional', 'c', 20),
-(41, '20020', 'Teclado', '2018-01-12 21:25:33', 35, 1, 1, '', '25cn', '78', '3', 'arnaldo', 2, 'nuevo', 'darly', 19, 'Hp', '200 Caracter', 't', 24),
-(58, '20020', 'Mesa', '2018-01-18 19:44:43', 9, 9, 33, '', '25', 'gs', '6', 'sg', 2, 'gsg', 'gs', 18, 'Nae', 'gs', 'sg', 24),
-(59, '3001', 'plata-fundida', '2018-01-23 15:11:57', 1500, 2, 3, '', '200', '2170', '2', 'Pedro Perez', 4, 'Buen estado', 'quien lo tiene en el momento', 23, 'pacifico', 'p601', 'inventario aÃ±o 2018', 15);
+INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fecha`, `precio_producto`, `stock`, `id_categoria`, `serial`, `numero_bien`, `id_area`, `responsable_entrega`, `id_motivo`, `condicion_producto`, `asignacion_producto`, `id_rango`, `marca_producto`, `modelo_producto`, `concepto_inventario`, `id_cargo`) VALUES
+(65, '20020', 'Monitor', '2018-01-25 19:32:33', 100, 1, 79, 'FSEE8HA022449', 'Desconocido', '2', 'Geraldine Torrealba', 4, 'Regular estado de uso y conservacion', 'Arnaldo Bonillo', 41, 'VIT', 'TFT20W90PSI', 'Inventario Inicial', 31),
+(66, '20020', 'Monitor', '2018-01-25 19:42:41', 100, 1, 79, '4A4E', '160', '2', 'Geraldine Torrealba', 4, 'Regular estado de uso y conservaciÃ³n\r\n', 'Arnaldo Bonillo', 41, 'Lenovo', 'C20 All-in-One', 'Inventario Inicial', 31),
+(67, '20020', 'CPU', '2018-01-25 19:44:19', 100, 1, 45, 'A000902481', 'Desconocido', '2', 'Geraldine Torrealba', 4, 'Regular estado de uso y conservaciÃ³n\r\n', 'Arnaldo Bonillo', 41, 'Vit', 'E 1210-01', 'Inventario Inicial', 31),
+(68, '20020', 'Teclado', '2018-01-25 19:45:59', 100, 1, 103, 'KBE901K14483A', 'Desconocido', '2', 'Geraldine Torrealba', 4, 'Regular estado de uso y conservaciÃ³n\r\n', 'Arnaldo Bonillo', 41, 'Vit', 'DOK-K5313', 'Inventario Inicial', 31),
+(69, '20020', 'Teclado', '2018-01-25 19:48:16', 100, 5, 103, 'MSE915K13358A', 'Desconocido', '2', 'Geraldine Torrealba', 4, 'Regular estado de uso y conservaciÃ³n\r\n', 'Arnaldo Bonillo', 41, 'Vit', 'DOK-K5313', 'Inventario Inicial', 31);
 
 -- --------------------------------------------------------
 
@@ -353,12 +387,13 @@ INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `fe
 -- Estructura de tabla para la tabla `rango`
 --
 
-CREATE TABLE `rango` (
-  `id_rango` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `rango` (
+  `id_rango` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_rango` char(150) NOT NULL,
   `descripcion_rango` char(150) NOT NULL,
-  `fecha` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id_rango`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Volcado de datos para la tabla `rango`
@@ -404,7 +439,8 @@ INSERT INTO `rango` (`id_rango`, `nombre_rango`, `descripcion_rango`, `fecha`) V
 (37, 'Inspector Jefe', 'Inspector', '2018-01-10 00:00:00'),
 (38, 'Sub-Director', 'Sub', '2018-01-10 00:00:00'),
 (39, 'Pasantes', 'Pasante', '2018-01-17 00:00:00'),
-(40, 'Aprendices', 'Aprendices', '2018-01-17 00:00:00');
+(40, 'Aprendices', 'Aprendices', '2018-01-17 00:00:00'),
+(41, 'No Aplica', 'No Aplica', '2018-01-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -412,15 +448,18 @@ INSERT INTO `rango` (`id_rango`, `nombre_rango`, `descripcion_rango`, `fecha`) V
 -- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL COMMENT 'auto incrementing user_id of each user, unique index',
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index',
   `firstname` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `lastname` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
   `user_password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s password in salted and hashed format',
   `user_email` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
-  `fecha` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data';
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_name` (`user_name`),
+  UNIQUE KEY `user_email` (`user_email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `users`
@@ -431,126 +470,6 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_pass
 (2, 'Arnaldo Jose', 'Bonillo Berrios', 'abonillo', '$2y$10$4NQnYuZoUm3FRqoufH1In.h2zupHBKvu6knymLgzJ7J3EV8Hl46Ke', 'abonillo@cicpc.gob.ve', '2017-07-26 21:42:12');
 
 --
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `area`
---
-ALTER TABLE `area`
-  ADD PRIMARY KEY (`id_area`);
-
---
--- Indices de la tabla `cargo`
---
-ALTER TABLE `cargo`
-  ADD PRIMARY KEY (`id_cargo`);
-
---
--- Indices de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
--- Indices de la tabla `historial`
---
-ALTER TABLE `historial`
-  ADD PRIMARY KEY (`id_historial`),
-  ADD KEY `id_producto` (`id_producto`);
-
---
--- Indices de la tabla `imagenes`
---
-ALTER TABLE `imagenes`
-  ADD PRIMARY KEY (`id_imagen`);
-
---
--- Indices de la tabla `motivo`
---
-ALTER TABLE `motivo`
-  ADD PRIMARY KEY (`id_motivo`);
-
---
--- Indices de la tabla `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id_producto`),
-  ADD UNIQUE KEY `serial` (`serial`) USING BTREE;
-
---
--- Indices de la tabla `rango`
---
-ALTER TABLE `rango`
-  ADD PRIMARY KEY (`id_rango`);
-
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `user_name` (`user_name`),
-  ADD UNIQUE KEY `user_email` (`user_email`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `area`
---
-ALTER TABLE `area`
-  MODIFY `id_area` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `cargo`
---
-ALTER TABLE `cargo`
-  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
---
--- AUTO_INCREMENT de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
-
---
--- AUTO_INCREMENT de la tabla `historial`
---
-ALTER TABLE `historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
---
--- AUTO_INCREMENT de la tabla `imagenes`
---
-ALTER TABLE `imagenes`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `motivo`
---
-ALTER TABLE `motivo`
-  MODIFY `id_motivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `products`
---
-ALTER TABLE `products`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
-
---
--- AUTO_INCREMENT de la tabla `rango`
---
-ALTER TABLE `rango`
-  MODIFY `id_rango` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
-
---
--- AUTO_INCREMENT de la tabla `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=3;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -559,7 +478,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `historial`
   ADD CONSTRAINT `fk_id_producto` FOREIGN KEY (`id_producto`) REFERENCES `products` (`id_producto`) ON DELETE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

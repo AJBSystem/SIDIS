@@ -4,11 +4,12 @@
         header("location: login.php");
 		exit;
         }
+
 	/* Connect To Database*/
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
-	$active_activos="active";
+	$active_disponible="active";
 	$title="Inventario | División de Sistemas";
 ?>
 <!DOCTYPE html>
@@ -23,27 +24,27 @@
 	
     <div class="container">
 	<div class="panel panel-primary">
-		<div style="background:#0079a3" class="panel-heading">
+		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' style="background:#00b3b3" class="btn" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Nuevo Producto</button>
+				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProductodisponible"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Consultar Inventario</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
 		</div>
 		<div class="panel-body">
 		
 			
 			
 			<?php
-			include("modal/registro_productos.php");
+			include("modal/registro_productosdisponible.php");
 			include("modal/editar_productos.php");
 			?>
-			<form class="form-horizontal" role="form" id="datos">
+			<form class="form-horizontal" role="form" id="datosdisponible">
 				
 						
 				<div class="row">
 					<div class='col-md-4'>
-						<label>Filtrar por serial o nombre</label>
-						<input type="text" class="form-control" id="q" placeholder="Serial o nombre del producto" onkeyup='load(1);'>
+						<label>Filtrar por código o nombre</label>
+						<input type="text" class="form-control" id="q" placeholder="Código o nombre del producto" onkeyup='load(1);'>
 					</div>
 					
 					<div class='col-md-4'>
@@ -66,7 +67,7 @@
 				</div>
 				<hr>
 				<div class='row-fluid'>
-					<div id="resultados"></div><!-- Carga los datos ajax -->
+					<div id="resultadosdisponibles"></div><!-- Carga los datos ajax -->
 				</div>	
 				<div class='row'>
 					<div class='outer_div'></div><!-- Carga los datos ajax -->
@@ -82,7 +83,7 @@
 	<?php
 	include("footer.php");
 	?>
-	<script type="text/javascript" src="js/productos.js"></script>
+	<script type="text/javascript" src="js/productod.js"></script>
   </body>
 </html>
 <script>
@@ -91,13 +92,13 @@ function eliminar (id){
 		var id_categoria= $("#id_categoria").val();
 		$.ajax({
 			type: "GET",
-			url: "./ajax/buscar_productos.php",
+			url: "./ajax/buscar_producto.php",
 			data: "id="+id,"q":q+"id_categoria="+id_categoria,
 			 beforeSend: function(objeto){
-				$("#resultados").html("Mensaje: Cargando...");
+				$("#resultadosdisponibles").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
-			$("#resultados").html(datos);
+			$("#resultadosdisponibles").html(datosdisponible);
 			load(1);
 			}
 		});
@@ -121,17 +122,18 @@ $( "#guardar_producto" ).submit(function( event ) {
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/nuevo_producto.php",
+			url: "ajax/nuevo_productodisponible.php",
 			data: parametros,
 			 beforeSend: function(objeto){
-				$("#resultados_ajax_productos").html("Mensaje: Cargando...");
+				$("#resultados_ajax_disponible").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
-			$("#resultados_ajax_productos").html(datos);
+			$("#resultados_ajax_producto").html(datosdisponible);
 			$('#guardar_datos').attr("disabled", false);
 			load(1);
 		  }
 	});
   event.preventDefault();
 })
+
 </script>
