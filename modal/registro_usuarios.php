@@ -49,16 +49,12 @@
 				  <input type="password" class="form-control" id="user_password_repeat" name="user_password_repeat" placeholder="Repite contraseña" pattern=".{6,}" required>
 				</div>
 			  </div>
-			 
-			  
 
-			 
-			 
 			
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
+			<button type="submit" style="background:#00b3b3" onclick = "location='usuarios.php'" class="btn btn-primary" id="guardar_datos">Guardar Datos</button>
 		  </div>
 		  </form>
 		</div>

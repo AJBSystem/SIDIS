@@ -1,5 +1,4 @@
 <?php
-
 	/*-------------------------
 	Autor: Obed Alvarado
 	Web: obedalvarado.pw
@@ -84,12 +83,12 @@
 			<div class="table-responsive">
 			  <table class="table">
 				<tr  class="success">
-					<th>ID</th>
-					<th>Nombres</th>
-					<th>Usuario</th>
-					<th>Email</th>
-					<th>Agregado</th>
-					<th><span class="pull-right">Acciones</span></th>
+					<th style="background:#bbbbbb">ID</th>
+					<th style="background:#bbbbbb">Nombres</th>
+					<th style="background:#bbbbbb">Usuario</th>
+					<th style="background:#bbbbbb">Email</th>
+					<th style="background:#bbbbbb">Agregado</th>
+					<th style="background:#bbbbbb"><span class="pull-right">Acciones</span></th>
 					
 				</tr>
 				<?php
@@ -98,7 +97,7 @@
 						$fullname=$row['firstname']." ".$row["lastname"];
 						$user_name=$row['user_name'];
 						$user_email=$row['user_email'];
-						$date_added= date('d/m/Y', strtotime($row['date_added']));
+						$fecha= date('d/m/Y', strtotime($row['fecha']));
 						
 					?>
 					
@@ -112,12 +111,13 @@
 						<td><?php echo $fullname; ?></td>
 						<td ><?php echo $user_name; ?></td>
 						<td ><?php echo $user_email; ?></td>
-						<td><?php echo $date_added;?></td>
+						<td><?php echo $fecha;?></td>
 						
 					<td ><span class="pull-right">
-					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_user_id('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal3"><i class="glyphicon glyphicon-cog"></i></a>
-					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+					<a href="#" style="background:#00b3b3" class='btn btn-info'  title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
+					<a href="#" style="background:#12928e"class='btn btn-info' title='Cambiar contraseña' onclick="get_user_id('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal3"><i class="glyphicon glyphicon-cog"></i></a>
+					<a href="#" class='btn btn-danger' title='Borrar usuario' onclick="eliminar('<?php echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+	
 						
 					</tr>
 					<?php

@@ -1,7 +1,8 @@
-	<?php
-		if (isset($title))
-		{
-	?>
+  <?php
+    if (isset($title))
+    {
+  ?>
+ 
 <nav class="navbar navbar-default ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -11,32 +12,45 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Inventario División de Sistemas</a>
+      <a class="navbar-brand" href="stock.php">Inventario División de Sistemas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
+<<<<<<< HEAD
         <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario</a></li>
 
     <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Reportes</a></li> 
+=======
+>>>>>>> origin/Darly
 
+        <li class="<?php if (isset($active_activos)){echo $active_activos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario Activo</a></li>
 
-    <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Estatus</a></li> 
+        <li class="<?php if (isset($active_disponible)){echo $active_disponible;}?>"><a href="disponible.php"><i class='glyphicon glyphicon-barcode'></i> Inventario Disponible</a></li>
 
+          <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>">
+      <a data-toggle="dropdown"><i class='glyphicon glyphicon-list'></i> Reportes</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="reporte.php">Reporte General</a></li>
+                            <li><a href="#">Reporte por área</a></li>
+                            <li><a href="#">Reporte por serial</a></li>
+                        </ul>
+        </li>
 
+            <li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
 
-		<li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
        </ul>
       <ul class="nav navbar-nav navbar-right">
-       <!-- <li><a href="http://obedalvarado.pw/contacto/" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>-->
-		<li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+
+    <li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-	<?php
-		}
-	?>
+  <?php
+    }
+  ?>

@@ -65,7 +65,7 @@
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
-		$per_page = 10; //how much records you want to show
+		$per_page = 20; //how much records you want to show
 		$adjacents  = 4; //gap between pages after number of adjacents
 		$offset = ($page - 1) * $per_page;
 		//Count the total number of row in your table*/
@@ -81,13 +81,13 @@
 		if ($numrows>0){
 			
 			?>
-			<div class="table-responsive">
+			<div  class="table-responsive" >
 			  <table class="table">
-				<tr  class="success">
-					<th>Nombre</th>
-					<th>Descripción</th>
-					<th>Agregado</th>
-					<th class='text-right'>Acciones</th>
+				<tr  class="success" >
+					<th style="background:#bbbbbb">Nombre</th>
+					<th style="background:#bbbbbb">Descripción</th>
+					<th style="background:#bbbbbb">Agregado</th>
+					<th style="background:#bbbbbb"class='text-right'>Acciones</th>
 					
 				</tr>
 				<?php
@@ -95,18 +95,18 @@
 						$id_categoria=$row['id_categoria'];
 						$nombre_categoria=$row['nombre_categoria'];
 						$descripcion_categoria=$row['descripcion_categoria'];
-						$date_added= date('d/m/Y', strtotime($row['date_added']));
+						$fecha= date('d/m/Y', strtotime($row['fecha']));
 						
 					?>
 					<tr>
 						
 						<td><?php echo $nombre_categoria; ?></td>
 						<td ><?php echo $descripcion_categoria; ?></td>
-						<td><?php echo $date_added;?></td>
+						<td><?php echo $fecha;?></td>
 						
 					<td class='text-right'>
-						<a href="#" class='btn btn-default' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-						<a href="#" class='btn btn-default' title='Borrar categoría' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
+						<a href="#" style="background:#00b3b3" class='btn btn-info' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
+						<a href="#" class='btn btn-danger' title='Borrar categoría' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
 					</td>
 						
 					</tr>
@@ -114,7 +114,7 @@
 				}
 				?>
 				<tr>
-					<td colspan=4><span class="pull-right">
+					<td colspan=4><span  class="pull-right">
 					<?php
 					 echo paginate($reload, $page, $total_pages, $adjacents);
 					?></span></td>
