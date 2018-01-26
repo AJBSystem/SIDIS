@@ -21,7 +21,7 @@
       <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
         <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario</a></li>
 
-    <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Pedidos</a></li> 
+    <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Reportes</a></li> 
 
 
     <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Estatus</a></li> 
