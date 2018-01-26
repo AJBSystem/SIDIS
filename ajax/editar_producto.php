@@ -73,10 +73,9 @@
 		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_concepto"],ENT_QUOTES)));
 		$rango=intval($_POST['mod_rango']);
 		$cargo=intval($_POST['mod_cargo']);					
-		$stock=intval($_POST['mod_stock']);
 		$precio_venta=floatval($_POST['mod_precio']);
 		$id_producto=$_POST['mod_id'];
-		$sql="UPDATE products SET codigo_producto='".$codigo."', serial='".$serial."', nombre_producto='".$nombre."',marca_producto='".$marca."', modelo_producto='".$modelo."',id_area='".$area."', numero_bien='".$numero."', condicion_producto='".$condicion."', id_motivo='".$motivo."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', id_cargo='".$cargo."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
+		$sql="UPDATE products SET codigo_producto='".$codigo."', serial='".$serial."', nombre_producto='".$nombre."',marca_producto='".$marca."', modelo_producto='".$modelo."',id_area='".$area."', numero_bien='".$numero."', condicion_producto='".$condicion."', id_motivo='".$motivo."', responsable_entrega='".$responsable."', asignacion_producto='".$asignacion."', id_rango='".$rango."', id_cargo='".$cargo."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."' WHERE id_producto='".$id_producto."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Producto ha sido actualizado satisfactoriamente.";

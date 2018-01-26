@@ -170,13 +170,6 @@
 				</div>
 			  </div>	 
 
-			 <div class="form-group">
-				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>
-				<div class="col-sm-8">
-				  <input type="number" min="0" class="form-control" id="mod_stock" name="mod_stock" placeholder="Inventario inicial" required  maxlength="8" readonly>
-				</div>
-			</div>
-
 			  <div class="form-group">
 				<label for="mod_precio" class="col-sm-3 control-label">Precio</label>
 				<div class="col-sm-8">

@@ -104,7 +104,7 @@
 						<tr>
 							<th class='text-center' colspan=10 >DESCRIPCION DEL PRODUCTO</th></tr>
 
-					<tr><td><span class="current-stock">Fecha</td><td><?php echo $row['fecha'];?></td></tr>
+					<tr><td><span class="current-stock">Fecha de Registro</td><td><?php echo $row['fecha'];?></td></tr>
 
 					<tr><td><span class="current-stock">Nombre</td><td><?php echo $row['nombre_producto'];?></td></tr>
 
@@ -126,7 +126,7 @@
 
                     <tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?> </td></tr>
 					
-					<tr><td><span class="current-stock">Stock Disponible</span></td><td><?php echo number_format($row['stock']);?></td></tr>
+
 					
              		<tr><td><span class="current-stock"> Precio venta</span></td><td>BsF.<?php echo number_format($row['precio_producto']);?></td></tr>
 
@@ -135,16 +135,7 @@
 
 </table>
 
-                    <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
-                    </div>
-                    <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                    </div>                 
-                                    
-              </div>
+   
             </div>
             <br>
             <div class="row">
