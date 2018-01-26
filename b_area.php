@@ -98,9 +98,9 @@
 								</tr>	
 							</table>
 
-				<!-- <div class='row'> -->
-					 <!-- <div class='outer_div'></div> --> <!-- Carga los datos ajax -->
-				<!-- </div> -->
+				<!--  <div class='row'>  -->
+					  <div class='outer_div'></div> <!-- Carga los datos ajax -->
+				 <!-- </div> --> 
 
 
 
