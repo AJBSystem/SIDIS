@@ -24,11 +24,11 @@
 			</div>
 			<?php
 		}
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 			
 		
->>>>>>> origin/Darly
+// >>>>>>> origin/Darly
 	}
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
