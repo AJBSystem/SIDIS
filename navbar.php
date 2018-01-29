@@ -36,7 +36,7 @@
           <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>">
       <a data-toggle="dropdown"><i class='glyphicon glyphicon-list'></i> Reportes</a>
                         <ul class="dropdown-menu">
-                            <li><a href="reporte.php">Reporte General</a></li>
+                            <li><a href="listado_rep.php">Reporte General</a></li>
                             <li><a href="#">Reporte por área</a></li>
                             <li><a href="#">Reporte por serial</a></li>
                         </ul>
