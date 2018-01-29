@@ -9,7 +9,6 @@
         header("location: login.php");
 		exit;
         }
-
 	/* Connect To Database*/
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
@@ -74,7 +73,7 @@
 	include("navbar.php");
 	include("modal/agregar_stock.php");
 	include("modal/eliminar_stock.php");
-	include("modal/editar_productos.php");
+	include("modal/editar_productosdisponible.php");
 	
 	?>
 	
@@ -83,38 +82,46 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-body">
+          <div  class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				<img class="item-img img-responsive" src="img/stock.png" alt=""> 
+
+
+ </body>
+</html>
+
+
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>'  data-nombre='<?php echo $row['nombre_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-precio='<?php echo $row['precio_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-stock='<?php echo $row['stock'];?>'data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
               <div class="col-sm-4 text-left">
-                <div class="row margin-btm-20">
-                    <div class="col-sm-12">
-                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                    </div>
-                    <div class="col-sm-12">
-                      <span class="current-stock">Stock disponible</span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
-                    </div>
-					<div class="col-sm-12">
-                      <span class="current-stock"> Precio venta  </span>
-                    </div>
-					<div class="col-sm-12">
-                      <span class="item-price">$ <?php echo number_format($row['precio_producto']);?></span>
-                    </div>
+               
+<table>
+					 <table class='table table-bordered'>
+						<tr>
+							<th class='text-center' colspan=10 >DESCRIPCION DEL PRODUCTO</th></tr>
+
+					<tr><td><span class="current-stock">Fecha de Registro</td><td><?php echo $row['fecha'];?></td></tr>
+
+					<tr><td><span class="current-stock">Nombre</td><td><?php echo $row['nombre_producto'];?></td></tr>
+
+					<tr><td><span class="current-stock">Código</td><td><?php echo $row['codigo_producto'];?></td></tr>
+
+					<tr><td><span class="current-stock">Categoria</td><td><?php echo $row['id_categoria'];?></td></tr>
+
+					<tr><td><span class="current-stock">Responsable</td><td><?php echo $row['responsable_entrega'];?> </td></tr>	
+
+					<tr><td><span class="current-stock">Precio</td><td>Bs. <?php echo $row['precio_producto'];?> </td></tr>
+
+					<tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?> </td></tr>						
+
+					<tr><td><span class="current-stock">Stock</td><td><?php echo $row['stock'];?> </td></tr>
+</table>
+          
 					
                     <div class="col-sm-12 margin-btm-10">
 					</div>
@@ -126,6 +133,7 @@
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
+                    
                     
                    
                                     </div>
@@ -154,11 +162,13 @@
 							<?php
 						}
 					?>	
-					 <table class='table table-bordered'>
+                                    
+                 <table class='table table-bordered'>
 						<tr>
 							<th class='text-center' colspan=5 >HISTORIAL DE INVENTARIO</th>
 						</tr>
 						<tr>
+
 							<td>Fecha</td>
 							<td>Hora</td>
 							<td>Descripción</td>
@@ -179,10 +189,8 @@
 								<?php
 							}
 						?>
-					 </table>
-                  </div>
-                                    
-                                    
+					 </table>    
+
 				</div>
             </div>
           </div>
@@ -191,35 +199,35 @@
 </div>
 
 
-
 </div>
 
 	
 	<?php
 	include("footer.php");
 	?>
-	<script type="text/javascript" src="js/producto.js"></script>
+	<script type="text/javascript" src="js/productod.js"></script>
   </body>
 </html>
+
 <script>
-$( "#editar_producto" ).submit(function( event ) {
+$( "#editar_productosdisponibles" ).submit(function( event ) {
   $('#actualizar_datos').attr("disabled", true);
   
  var parametros = $(this).serialize();
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_producto.php",
+			url: "ajax/editar_productosdisponible.php",
 			data: parametros,
 			 beforeSend: function(objeto){
-				$("#resultados_ajax2").html("Mensaje: Cargando...");
+				$("#resultadosd_ajax2").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
-			$("#resultados_ajax2").html(datos);
+			$("#resultadosd_ajax2").html(datos);
 			$('#actualizar_datos').attr("disabled", false);
 			window.setTimeout(function() {
 				$(".alert").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove();});
-				location.replace('stock.php');
+				location.replace('disponible.php');
 			}, 4000);
 		  }
 	});
@@ -232,6 +240,8 @@ $( "#editar_producto" ).submit(function( event ) {
 		var nombre = button.data('nombre')
 		var categoria = button.data('categoria')
 		var precio = button.data('precio')
+		var responsable = button.data('responsable')
+		var concepto = button.data('concepto')
 		var stock = button.data('stock')
 		var id = button.data('id')
 		var modal = $(this)
@@ -239,6 +249,8 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_nombre').val(nombre)
 		modal.find('.modal-body #mod_categoria').val(categoria)
 		modal.find('.modal-body #mod_precio').val(precio)
+		modal.find('.modal-body #mod_responsable').val(responsable)
+		modal.find('.modal-body #mod_concepto').val(concepto)
 		modal.find('.modal-body #mod_stock').val(stock)
 		modal.find('.modal-body #mod_id').val(id)
 	})
@@ -246,7 +258,7 @@ $( "#editar_producto" ).submit(function( event ) {
 	function eliminar (id){
 		var q= $("#q").val();
 		if (confirm("Realmente deseas eliminar el producto")){	
-			location.replace('stock.php?delete='+id);
+			location.replace('disponible.php?delete='+id);
 		}
 	}
 </script>

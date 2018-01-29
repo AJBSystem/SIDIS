@@ -24,9 +24,10 @@ function agregar_stock($id_producto,$quantity){
 	}	
 		
 }
+
 function eliminar_stock($id_producto,$quantity){
 	global $con;
-	$update=mysqli_query($con,"update products set stock=stock-'$quantity' where id_producto='$id_producto'");
+	$update=mysqli_query($con,"update disponible set stock=stock-'$quantity' where id_producto='$id_producto'");
 	if ($update){
 			return 1;
 	} else {
