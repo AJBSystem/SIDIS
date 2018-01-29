@@ -60,12 +60,12 @@
 				</div>
 			  </div>
 			 
-			   <div class="form-group">
+<!-- 			   <div class="form-group">
 				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
 				  <textarea class="form-control" id="mod_concepto" name="mod_concepto" placeholder="Concepto del producto" required></textarea>
 				</div>
-			  </div>
+			  </div> -->
 
 			 <div class="form-group">
 				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>
@@ -78,7 +78,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-primary" id="actualizar_datos">Actualizar datos</button>
+			<button type="submit" class="btn btn-primary" id="actualizar_datosdisponible">Actualizar datos</button>
 		  </div>
 		  </form>
 		</div>

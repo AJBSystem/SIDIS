@@ -18,9 +18,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="reference" class="col-sm-2 control-label">Referencia</label>
+            <label for="reference" class="col-sm-2 control-label">Còdigo</label>
             <div class="col-sm-6">
-              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Referencia">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Codigo">
             </div>
           </div>
           

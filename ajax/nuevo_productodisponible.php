@@ -27,15 +27,15 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		include("../funciones.php");
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));		
 		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["responsable"],ENT_QUOTES)));
+		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
 		$stock=intval($_POST['stock']);
 		$id_categoria=intval($_POST['categoria']);
 		$precio_venta=floatval($_POST['precio']);
 		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO disponible (codigo_producto,  concepto_inventario, nombre_producto, responsable_entrega, fecha, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$concepto','$responsable','$fecha','$precio_venta', '$stock','$id_categoria')";
+		$sql="INSERT INTO disponible (codigo_producto,   nombre_producto, responsable_entrega, fecha, precio_producto, concepto_inventario, stock, id_categoria) VALUES ('$codigo','$nombre','$concepto','$responsable','$fecha','$precio_venta', '$stock','$id_categoria')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
