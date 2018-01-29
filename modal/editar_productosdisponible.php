@@ -28,6 +28,13 @@
 				  <textarea class="form-control" id="mod_nombre" name="mod_nombre" placeholder="Nombre del producto" required></textarea>
 				</div>
 			  </div>
+
+			   <div class="form-group">
+				<label for="mod_numero" class="col-sm-3 control-label">Número de Bien</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_numero" name="mod_numero" placeholder="Numero de bien del producto" required></textarea>
+				</div>
+			  </div>
 			  
 			  <div class="form-group">
 				<label for="mod_categoria" class="col-sm-3 control-label">Categoría</label>
@@ -60,12 +67,19 @@
 				</div>
 			  </div>
 			 
-<!-- 			   <div class="form-group">
+			   <div class="form-group">
 				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
 				  <textarea class="form-control" id="mod_concepto" name="mod_concepto" placeholder="Concepto del producto" required></textarea>
 				</div>
-			  </div> -->
+			  </div>
+
+			   <div class="form-group">
+				<label for="mod_condicion" class="col-sm-3 control-label">Condición</label>
+				<div class="col-sm-8">
+				  <textarea class="form-control" id="mod_condicion" name="mod_condicion" placeholder="Condicion del producto" required></textarea>
+				</div>
+			  </div>			  
 
 			 <div class="form-group">
 				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>

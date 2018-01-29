@@ -94,7 +94,7 @@
 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>'  data-nombre='<?php echo $row['nombre_producto'];?>'  data-categoria='<?php echo $row['id_categoria'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-condicion='<?php echo $row['condicion_producto'];?>' data-precio='<?php echo $row['precio_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-condicion='<?php echo $row['condicion_producto'];?>'data-stock='<?php echo $row['stock'];?>'data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>'  data-nombre='<?php echo $row['nombre_producto'];?>'  data-numero='<?php echo $row['numero_bien'];?>' data-categoria='<?php echo $row['id_categoria'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-condicion='<?php echo $row['condicion_producto'];?>' data-precio='<?php echo $row['precio_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-condicion='<?php echo $row['condicion_producto'];?>'data-stock='<?php echo $row['stock'];?>'data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  

@@ -7,21 +7,27 @@
            $errors[] = "Código vacío";
         } else if (empty($_POST['mod_nombre'])){
 			$errors[] = "Nombre del producto vacío";
+        } else if (empty($_POST['mod_numero'])){
+			$errors[] = "Numero del producto vacío";						
 		} else if ($_POST['mod_categoria']==""){
 			$errors[] = "Selecciona la categoría del producto";
         } else if (empty($_POST['mod_responsable'])){
 			$errors[] = "Responsable del producto vacío";
 		} else if (empty($_POST['mod_concepto'])){
-			$errors[] = "Concepto del producto vacío";							
+			$errors[] = "Concepto del producto vacío";
+        } else if (empty($_POST['mod_condicion'])){
+			$errors[] = "Condicion del producto vacío";										
 		} else if (empty($_POST['mod_precio'])){
 			$errors[] = "Precio de venta vacío";
 		} else if (
 			!empty($_POST['mod_id']) &&
 			!empty($_POST['mod_codigo']) &&
 			!empty($_POST['mod_nombre']) &&
+			!empty($_POST['mod_numero']) &&
 			!empty($_POST['mod_concepto']) &&
 			$_POST['mod_categoria']!="" &&
 			!empty($_POST['mod_responsable']) &&
+			!empty($_POST['mod_condicion']) &&
 			!empty($_POST['mod_precio'])
 		){
 		/* Connect To Database*/
@@ -30,13 +36,15 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
+		$numero=mysqli_real_escape_string($con,(strip_tags($_POST["mod_numero"],ENT_QUOTES)));
 		$categoria=intval($_POST['mod_categoria']);
 		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["mod_responsable"],ENT_QUOTES)));
 		$stock=intval($_POST['mod_stock']);
 		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_concepto"],ENT_QUOTES)));
+		$condicion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_condicion"],ENT_QUOTES)));
 		$precio_venta=floatval($_POST['mod_precio']);
 		$id_producto=$_POST['mod_id'];
-		$sql="UPDATE products SET codigo_producto='".$codigo."', nombre_producto='".$nombre."', responsable_entrega='".$responsable."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."', stock='".$stock."' WHERE id_producto='".$id_producto."'";
+		$sql="UPDATE products SET codigo_producto='".$codigo."', nombre_producto='".$nombre."', numero_bien='".$numero."', responsable_entrega='".$responsable."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', concepto_inventario='".$concepto."', condcion_producto='".$condicion."',  stock='".$stock."' WHERE id_producto='".$id_producto."'";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Producto ha sido actualizado satisfactoriamente.";
