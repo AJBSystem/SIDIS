@@ -97,7 +97,7 @@
 					
               </div>
 			  
-              <div class="col-sm-4 text-left">
+              <div class="col-sm-5 text-left">
                
 <table>
 					 <table class='table table-bordered'>
@@ -106,15 +106,19 @@
 
 					<tr><td><span class="current-stock">Fecha de Registro</td><td><?php echo $row['fecha'];?></td></tr>
 
+					<tr><td><span class="current-stock">Código</td><td><?php echo $row['codigo_producto'];?> </td></tr>
+
+					<tr><td><span class="current-stock">Serial</td><td><?php echo $row['serial'];?> </td></tr>
+
 					<tr><td><span class="current-stock">Nombre</td><td><?php echo $row['nombre_producto'];?></td></tr>
 
 					<tr><td><span class="current-stock">Marca</td><td><?php echo $row['marca_producto'];?></td></tr>
 
-					<tr><td><span class="current-stock"> Modelo</td><td><?php echo $row['modelo_producto'];?></td></tr>
+					<tr><td><span class="current-stock">Modelo</td><td><?php echo $row['modelo_producto'];?></td></tr>
 
-					<tr><td><span class="current-stock">Serial</td><td><?php echo $row['serial'];?> </td></tr>
+					<tr><td><span class="current-stock">Categorías</td><td><?php echo $row['id_categoria'];?></td></tr>
 
-					<tr><td><span class="current-stock">Código</td><td><?php echo $row['codigo_producto'];?> </td></tr>
+					<tr><td><span class="current-stock">Área</td><td><?php echo $row['id_area'];?></td></tr>
 
 					<tr><td><span class="current-stock">Número de Bien</td><td><?php echo $row['numero_bien'];?> </td></tr>
 
@@ -123,6 +127,10 @@
 					<tr><td><span class="current-stock">Responsable</td><td><?php echo $row['responsable_entrega'];?> </td></tr>
                     
                     <tr><td><span class="current-stock">Asignación</td><td><?php echo $row['asignacion_producto'];?> </td></tr>
+
+                    <tr><td><span class="current-stock">Rango</td><td><?php echo $row['id_rango'];?></td></tr>
+
+                    <tr><td><span class="current-stock">Cargo</td><td><?php echo $row['id_cargo'];?></td></tr>
 
                     <tr><td><span class="current-stock">Código del Inventario</td><td><?php echo $row['codigo_inventario'];?> </td></tr>
 					
