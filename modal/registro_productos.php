@@ -162,10 +162,10 @@
 				</div>
 			  </div>
 
-			  <div class="form-group">
-				<label for="codigoi" class="col-sm-3 control-label">Código del Inventario</label>
+			 <div class="form-group">
+				<label for="codigoinventario" class="col-sm-3 control-label">Código del inventario</label>
 				<div class="col-sm-8">
-				  <input type="text" class="form-control" id="codigoi" name="codigoi" placeholder="Codigo del inventario" required>
+					<textarea class="form-control" id="codigoinventario" name="codigoinventario" placeholder="Codigo del inventario" required maxlength="100" ></textarea>		  
 				</div>
 			  </div>
 

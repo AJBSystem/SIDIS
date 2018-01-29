@@ -12,7 +12,7 @@
 		  </div>
 		  <div class="modal-body">
 			<form class="form-horizontal" method="post" id="editar_productodisponible" name="editar_productodisponible">
-			<div id="resultados_ajax2"></div>
+			<div id="resultadosd_ajax2"></div>
 
 			  <div class="form-group">
 				<label for="mod_codigo" class="col-sm-3 control-label">Código</label>
@@ -92,7 +92,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-primary" id="actualizar_datosdisponible">Actualizar datos</button>
+			<button type="submit" class="btn btn-primary" id="actualizar_datos">Actualizar datos</button>
 		  </div>
 		  </form>
 		</div>

@@ -165,9 +165,9 @@
 
 
 			   <div class="form-group">
-				<label for="mod_codigo_inventario" class="col-sm-3 control-label">Código del inventario</label>
+				<label for="mod_codigoinventario" class="col-sm-3 control-label">Código del inventario</label>
 				<div class="col-sm-8">
-				  <textarea class="form-control" id="mod_codigo_inventario" name="mod_codigo_inventario" placeholder="Codigo del inventario" required></textarea>
+				  <textarea class="form-control" id="mod_codigoinventario" name="mod_codigoinventario" placeholder="Codigo del inventario" required></textarea>
 				</div>
 			  </div>
 
