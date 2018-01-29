@@ -27,7 +27,15 @@
 				  
 				</div>
 			  </div>
-			  
+
+			  <div class="form-group">
+				<label for="numero" class="col-sm-3 control-label">Número de Bien</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="numero" name="numero" placeholder="Numero de bien del producto" required maxlength="255" ></textarea>
+				  
+				</div>
+			  </div>
+
 			  <div class="form-group">
 				<label for="categoria" class="col-sm-3 control-label">Categoría</label>
 				<div class="col-sm-8">

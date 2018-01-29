@@ -109,12 +109,13 @@
 
 					<tr><td><span class="current-stock">Nombre</td><td><?php echo $row['nombre_producto'];?></td></tr>
 
+					<tr><td><span class="current-stock">Número de Bien</td><td><?php echo $row['numero_bien'];?> </td></tr>
+
 					<tr><td><span class="current-stock">Código</td><td><?php echo $row['codigo_producto'];?></td></tr>
 
 					<tr><td><span class="current-stock">Categoria</td><td><?php echo $row['id_categoria'];?></td></tr>
 
 					<tr><td><span class="current-stock">Responsable</td><td><?php echo $row['responsable_entrega'];?> </td></tr>	
-
 					<tr><td><span class="current-stock">Precio</td><td>Bs. <?php echo $row['precio_producto'];?> </td></tr>
 
 					<tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?> </td></tr>						
@@ -238,6 +239,7 @@ $( "#editar_productosdisponibles" ).submit(function( event ) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var codigo = button.data('codigo') // Extract info from data-* attributes
 		var nombre = button.data('nombre')
+		var numero = button.data('numero')
 		var categoria = button.data('categoria')
 		var precio = button.data('precio')
 		var responsable = button.data('responsable')
@@ -247,6 +249,7 @@ $( "#editar_productosdisponibles" ).submit(function( event ) {
 		var modal = $(this)
 		modal.find('.modal-body #mod_codigo').val(codigo)
 		modal.find('.modal-body #mod_nombre').val(nombre)
+		modal.find('.modal-body #mod_numero').val(numero)
 		modal.find('.modal-body #mod_categoria').val(categoria)
 		modal.find('.modal-body #mod_precio').val(precio)
 		modal.find('.modal-body #mod_responsable').val(responsable)
