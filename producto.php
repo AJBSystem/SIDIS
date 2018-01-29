@@ -55,7 +55,15 @@
 	
 	if (isset($_GET['id'])){
 		$id_producto=intval($_GET['id']);
-		$query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
+		$query=mysqli_query($con," SELECT 
+															stock, serial, codigo_producto,nombre_producto, modelo_producto, numero_bien, responsable_entrega, asignacion_producto, concepto_inventario, marca_producto, precio_producto, codigo_inventario, condicion_producto, nombre_categoria, nombre_area, nombre_motivo, nombre_cargo, nombre_rango 
+													FROM products
+													INNER JOIN cargo on products.id_cargo = cargo.id_cargo
+													INNER JOIN rango on products.id_rango = rango.id_rango
+													INNER JOIN categorias on products.id_categoria = categorias.id_categoria
+													INNER JOIN area on products.id_area = area.id_area
+													INNER JOIN motivo on products.id_motivo = motivo.id_motivo
+     												WHERE id_producto='$id_producto'");
 		$row=mysqli_fetch_array($query);
 		
 	} else {
@@ -97,21 +105,9 @@
 					
               </div>
 			  
-              <div class="col-sm-5 text-left">
+              <div class="col-sm-6 text-left">
                
 <table>
-
-
-<!-- SELECT
-stock, serial, codigo_producto, nombre_producto, modelo_producto, numero_bien, responsable_entrega, asignacion_producto, concepto_inventario, marca_producto, condicion_producto, nombre_categoria, nombre_area, nombre_motivo, nombre_cargo, nombre_rango
-FROM products
-INNER JOIN cargo on products.id_cargo = cargo.id_cargo
-INNER JOIN rango on products.id_rango = rango.id_rango
-INNER JOIN categorias on products.id_categoria = categorias.id_categoria
-INNER JOIN area on products.id_area = area.id_area
-INNER JOIN motivo on products.id_motivo = motivo.id_motivo -->
-
-
 					 <table class='table table-bordered'>
 						<tr>
 							<th class='text-center' colspan=10 >DESCRIPCION DEL PRODUCTO</th></tr>
@@ -128,9 +124,9 @@ INNER JOIN motivo on products.id_motivo = motivo.id_motivo -->
 
 					<tr><td><span class="current-stock">Modelo</td><td><?php echo $row['modelo_producto'];?></td></tr>
 
-					<tr><td><span class="current-stock">Categorías</td><td><?php echo $row['id_categoria'];?></td></tr>
+					<tr><td><span class="current-stock">Categorías</td><td><?php echo $row['nombre_categoria'];?></td></tr>
 
-					<tr><td><span class="current-stock">Área</td><td><?php echo $row['id_area'];?></td></tr>
+					<tr><td><span class="current-stock">Área</td><td><?php echo $row['nombre_area'];?></td></tr>
 
 					<tr><td><span class="current-stock">Número de Bien</td><td><?php echo $row['numero_bien'];?> </td></tr>
 
@@ -140,9 +136,9 @@ INNER JOIN motivo on products.id_motivo = motivo.id_motivo -->
                     
                     <tr><td><span class="current-stock">Asignación</td><td><?php echo $row['asignacion_producto'];?> </td></tr>
 
-                    <tr><td><span class="current-stock">Rango</td><td><?php echo $row['id_rango'];?></td></tr>
+                    <tr><td><span class="current-stock">Rango</td><td><?php echo $row['nombre_rango'];?></td></tr>
 
-                    <tr><td><span class="current-stock">Cargo</td><td><?php echo $row['id_cargo'];?></td></tr>
+                    <tr><td><span class="current-stock">Cargo</td><td><?php echo $row['nombre_cargo'];?></td></tr>
 
                     <tr><td><span class="current-stock">Código del Inventario</td><td><?php echo $row['codigo_inventario'];?> </td></tr>
 					
