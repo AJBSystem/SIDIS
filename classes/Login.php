@@ -73,7 +73,8 @@ class Login
                 $result_of_login_check = $this->db_connection->query($sql);
 
                 // if this user exists
-                if ($result_of_login_check->num_rows == 1) {
+                if ($result_of_login_check->num_rows == 1) { 
+
 
                     // get result row (as an object)
                     $result_row = $result_of_login_check->fetch_object();

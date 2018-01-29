@@ -23,10 +23,12 @@
 			  <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
 			</div>
 			<?php
-			
 		}
+// <<<<<<< HEAD
+// =======
 			
 		
+// >>>>>>> origin/Darly
 	}
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
