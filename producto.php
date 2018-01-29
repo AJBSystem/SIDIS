@@ -97,7 +97,7 @@
 					
               </div>
 			  
-              <div class="col-sm-4 text-left">
+              <div class="col-sm-5 text-left">
                
 <table>
 					 <table class='table table-bordered'>
