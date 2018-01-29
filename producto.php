@@ -100,6 +100,18 @@
               <div class="col-sm-5 text-left">
                
 <table>
+
+
+<!-- SELECT
+stock, serial, codigo_producto, nombre_producto, modelo_producto, numero_bien, responsable_entrega, asignacion_producto, concepto_inventario, marca_producto, condicion_producto, nombre_categoria, nombre_area, nombre_motivo, nombre_cargo, nombre_rango
+FROM products
+INNER JOIN cargo on products.id_cargo = cargo.id_cargo
+INNER JOIN rango on products.id_rango = rango.id_rango
+INNER JOIN categorias on products.id_categoria = categorias.id_categoria
+INNER JOIN area on products.id_area = area.id_area
+INNER JOIN motivo on products.id_motivo = motivo.id_motivo -->
+
+
 					 <table class='table table-bordered'>
 						<tr>
 							<th class='text-center' colspan=10 >DESCRIPCION DEL PRODUCTO</th></tr>

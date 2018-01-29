@@ -178,7 +178,7 @@
 							<td class='text-center'>Total Bs/F</td>
 						</tr>
 						<?php
-							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
+							$query=mysqli_query($con,"SELECT * FROM historial WHERE id_producto='$id_producto'");
 							while ($row=mysqli_fetch_array($query)){
 								?>
 						<tr>
