@@ -213,7 +213,7 @@
 
 <script>
 $( "#editar_productosdisponibles" ).submit(function( event ) {
-  $('#actualizar_datos').attr("disabled", true);
+  $('#actualizar_datosdisponible').attr("disabled", true);
   
  var parametros = $(this).serialize();
 	 $.ajax({
@@ -225,7 +225,7 @@ $( "#editar_productosdisponibles" ).submit(function( event ) {
 			  },
 			success: function(datos){
 			$("#resultadosd_ajax2").html(datos);
-			$('#actualizar_datos').attr("disabled", false);
+			$('#actualizar_datosdisponible').attr("disabled", false);
 			window.setTimeout(function() {
 				$(".alert").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove();});

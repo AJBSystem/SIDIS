@@ -48,7 +48,7 @@
 	// $pdf->Cell(30,6,utf8_decode($row['modelo_producto']),1,0,'C',0);
 	// $pdf->Cell(30,6,utf8_decode($row['marca_producto']),1,0,'C',0);
 	// $pdf->Cell(40,6,utf8_decode($row['id_categoria']),1,0,'C',0);
-	$pdf->Cell(25,6,utf8_decode($row['codigo_producto']),1,0,'C',0); 
+	$pdf->Cell(25,6,utf8_decode($row['codigo_inventario']),1,0,'C',0); 
 	$pdf->Cell(70,6,utf8_decode($row['concepto_inventario']),1,0,'C',0);
 	// $pdf->Cell(70,6,utf8_decode($row['id_area']),1,0,'C',0);
 	

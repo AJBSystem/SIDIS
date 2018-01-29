@@ -59,7 +59,7 @@
 							<td>'.$row['codigo_producto'].'</td>
 							<td>'.$row['numero_bien'].'</td>
 							<td>'.$row['nombre_producto'].'</td>
-							<td>'.$row['codigo_producto'].'</td>
+							<td>'.$row['codigo_inventario'].'</td>
 							<td>'.$row['concepto_inventario'].'</td>
 							<td>'.$row['precio_producto'].'</td>
 							<td>'.$row['condicion_producto'].'</td>
