@@ -162,6 +162,13 @@
 				</div>
 			  </div>
 
+			  <div class="form-group">
+				<label for="codigoi" class="col-sm-3 control-label">Código del Inventario</label>
+				<div class="col-sm-8">
+				  <input type="text" class="form-control" id="codigoi" name="codigoi" placeholder="Codigo del inventario" required>
+				</div>
+			  </div>
+
 
 			  <div class="form-group">
 				<label for="concepto" class="col-sm-3 control-label">Concepto</label>

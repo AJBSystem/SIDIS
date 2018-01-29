@@ -80,8 +80,10 @@ class PDF extends FPDF
 				$this->Cell(75,10,'NOMBRE Y APELLIDO',1,0,'C');
 				$this->Cell(550,10,utf8_decode('KATIRIA ELENA PÉREZ SÁNCHEZ'),1,0,'C');
 				$this->Cell(220,10,'C.I. 15.573.151',1,0,'C');
-				$this->Cell(100,10,utf8_decode('CARGO: JEFA DE LA DIVISION'),1,0,'C');
-		$this->Ln(15);
+				$this->Cell(100,10,utf8_decode('CARGO: JEFA DE LA DIVISION'),1,1,'C');
+				$this->SetX(468);
+				$this->Cell(95,10,'INVENTARIO',1,0,'C');
+		$this->Ln(10);
 
 
 	}

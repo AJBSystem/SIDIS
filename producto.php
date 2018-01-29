@@ -93,7 +93,7 @@
 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a style="background:#00b3b3" href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-serial='<?php echo $row['serial'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-cargo='<?php echo $row['id_cargo']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a style="background:#00b3b3" href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-serial='<?php echo $row['serial'];?>'data-condicion='<?php echo $row['condicion_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-codigo_inventario='<?php echo $row['codigo_inventario'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-asignacion='<?php echo $row['asignacion_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo']?>' data-categoria='<?php echo $row['id_categoria']?>' data-area='<?php echo $row['id_area']?>' data-rango='<?php echo $row['id_rango']?>' data-cargo='<?php echo $row['id_cargo']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
@@ -124,8 +124,9 @@
                     
                     <tr><td><span class="current-stock">Asignación</td><td><?php echo $row['asignacion_producto'];?> </td></tr>
 
-                    <tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?> </td></tr>
+                    <tr><td><span class="current-stock">Código del Inventario</td><td><?php echo $row['codigo_inventario'];?> </td></tr>
 					
+					<tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?> </td></tr>
 
 					
              		<tr><td><span class="current-stock"> Precio venta</span></td><td>BsF.<?php echo number_format($row['precio_producto']);?></td></tr>
@@ -228,6 +229,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		var responsable = button.data ('responsable')
 		var asignacion = button.data ('asignacion')
 		var categoria = button.data('categoria')
+		var codigo_inventario = button.data ('codigo_inventario')
 		var concepto = button.data ('concepto')
 		var motivo = button.data('motivo')
 		var area = button.data('area')
@@ -247,6 +249,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_inventario').val(inventario)
 		modal.find('.modal-body #mod_responsable').val(responsable)
 		modal.find('.modal-body #mod_asignacion').val(asignacion)
+		modal.find('.modal-body #mod_codigo_inventario').val(codigo_inventario)
 		modal.find('.modal-body #mod_concepto').val(concepto)
 		modal.find('.modal-body #mod_categoria').val(categoria)
 		modal.find('.modal-body #mod_motivo').val(motivo)
