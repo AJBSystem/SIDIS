@@ -14,7 +14,7 @@
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	include("funciones.php");
 	
-	$active_productos="active";
+	$active_disponible="active";
 	$active_clientes="";
 	$active_usuarios="";	
 	$title="Producto | Simple Stock";
