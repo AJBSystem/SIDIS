@@ -126,10 +126,10 @@
                     <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/Signo_suma.png"></a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/Signo_resta.png"></a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
