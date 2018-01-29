@@ -70,7 +70,6 @@
 				</div>
 			</div>
 
-
 			  <div class="form-group">
 				<label for="concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
@@ -78,6 +77,13 @@
 				</div>
 			  </div>			
 			
+			  <div class="form-group">
+				<label for="condicion" class="col-sm-3 control-label">Condición</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="condicion" name="condicion" placeholder="Condición del Inventario" required maxlength="255" ></textarea>				  
+				</div>
+			  </div>
+
 			<div class="form-group">
 				<label for="stock" class="col-sm-3 control-label">Stock</label>
 				<div class="col-sm-8">

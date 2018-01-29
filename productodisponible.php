@@ -94,7 +94,7 @@
 
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>'  data-nombre='<?php echo $row['nombre_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-precio='<?php echo $row['precio_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-stock='<?php echo $row['stock'];?>'data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>'  data-nombre='<?php echo $row['nombre_producto'];?>'  data-categoria='<?php echo $row['id_categoria'];?>' data-responsable='<?php echo $row['responsable_entrega'];?>' data-condicion='<?php echo $row['condicion_producto'];?>' data-precio='<?php echo $row['precio_producto'];?>' data-concepto='<?php echo $row['concepto_inventario'];?>' data-condicion='<?php echo $row['condicion_producto'];?>'data-stock='<?php echo $row['stock'];?>'data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>
 			  
@@ -119,6 +119,7 @@
 					<tr><td><span class="current-stock">Precio</td><td>Bs. <?php echo $row['precio_producto'];?> </td></tr>
 
 					<tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?> </td></tr>						
+					<tr><td><span class="current-stock">Condición</td><td><?php echo $row['condicion_producto'];?> </td></tr>
 
 					<tr><td><span class="current-stock">Stock</td><td><?php echo $row['stock'];?> </td></tr>
 </table>
@@ -244,6 +245,7 @@ $( "#editar_productosdisponibles" ).submit(function( event ) {
 		var precio = button.data('precio')
 		var responsable = button.data('responsable')
 		var concepto = button.data('concepto')
+		var condicion = button.data('condicion')
 		var stock = button.data('stock')
 		var id = button.data('id')
 		var modal = $(this)
@@ -254,6 +256,7 @@ $( "#editar_productosdisponibles" ).submit(function( event ) {
 		modal.find('.modal-body #mod_precio').val(precio)
 		modal.find('.modal-body #mod_responsable').val(responsable)
 		modal.find('.modal-body #mod_concepto').val(concepto)
+		modal.find('.modal-body #mod_condicion').val(condicion)
 		modal.find('.modal-body #mod_stock').val(stock)
 		modal.find('.modal-body #mod_id').val(id)
 	})

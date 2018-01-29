@@ -13,7 +13,9 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
         } else if (empty($_POST['responsable'])){
 			$errors[] = "Responsable del producto vacío";
 		} else if (empty($_POST['concepto'])){
-			$errors[] = "Concepto del inventario vacío";			
+			$errors[] = "Concepto del inventario vacío";	
+		} else if (empty($_POST['condicion'])){
+			$errors[] = "Condición del inventario vacío";					
 		} else if (empty($_POST['precio'])){
 			$errors[] = "Precio de venta vacío";
 		} else if (
@@ -22,6 +24,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 			!empty($_POST['numero']) &&
 			!empty($_POST['responsable']) &&
 			!empty($_POST['concepto']) &&
+			!empty($_POST['condicion']) &&
 			!empty($_POST['precio'])
 		){
 		/* Connect To Database*/
@@ -34,12 +37,13 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$numero=mysqli_real_escape_string($con,(strip_tags($_POST["numero"],ENT_QUOTES)));	
 		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["responsable"],ENT_QUOTES)));
 		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
+		$condicion=mysqli_real_escape_string($con,(strip_tags($_POST["condicion"],ENT_QUOTES)));
 		$stock=intval($_POST['stock']);
 		$id_categoria=intval($_POST['categoria']);
 		$precio_venta=floatval($_POST['precio']);
 		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO disponible (codigo_producto, nombre_producto, numero_bien, responsable_entrega,  fecha, precio_producto, stock, id_categoria, concepto_inventario ) VALUES ('$codigo','$nombre','$numero','$responsable','$fecha','$precio_venta', '$stock','$id_categoria','$concepto')";
+		$sql="INSERT INTO disponible (codigo_producto, nombre_producto, numero_bien, responsable_entrega,  fecha, precio_producto, stock, id_categoria, concepto_inventario, condicion_producto ) VALUES ('$codigo','$nombre','$numero','$responsable','$fecha','$precio_venta', '$stock','$id_categoria','$concepto','$condicion')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
