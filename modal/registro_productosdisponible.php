@@ -46,6 +46,14 @@
 					</select>			  
 				</div>
 			  </div>
+
+			   <div class="form-group">
+				<label for="responsable" class="col-sm-3 control-label">Responsable</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="responsable" name="responsable" placeholder="Responsable del producto" required maxlength="255" ></textarea>
+				  
+				</div>
+			  </div>
 			  
 			<div class="form-group">
 				<label for="precio" class="col-sm-3 control-label">Precio</label>
@@ -53,6 +61,14 @@
 				  <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio de venta del producto" required pattern="^[0-9]{1,5}(\.[0-9]{0,2})?$" title="Ingresa sólo números con 0 ó 2 decimales" maxlength="8">
 				</div>
 			</div>
+
+
+			  <div class="form-group">
+				<label for="concepto" class="col-sm-3 control-label">Concepto</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" id="concepto" name="concepto" placeholder="Concepto del Inventario" required maxlength="255" ></textarea>				  
+				</div>
+			  </div>			
 			
 			<div class="form-group">
 				<label for="stock" class="col-sm-3 control-label">Stock</label>
@@ -61,13 +77,6 @@
 				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="stock" class="col-sm-3 control-label">Responsable</label>
-				<div class="col-sm-8">
-				  <input type="number" min="0" class="form-control" id="stock" name="stock" placeholder="Personal Responsable" required  maxlength="8">
-				</div>
-			</div>
-			 
 			 
 			
 		  </div>

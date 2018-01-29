@@ -95,10 +95,10 @@ function eliminar (id){
 			url: "./ajax/buscar_producto.php",
 			data: "id="+id,"q":q+"id_categoria="+id_categoria,
 			 beforeSend: function(objeto){
-				$("#resultadosdisponibles").html("Mensaje: Cargando...");
+				$("#resultadosd").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
-			$("#resultadosdisponibles").html(datosdisponible);
+			$("#resultadosd").html(datos);
 			load(1);
 			}
 		});
@@ -128,7 +128,7 @@ $( "#guardar_producto" ).submit(function( event ) {
 				$("#resultados_ajax_disponible").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
-			$("#resultados_ajax_producto").html(datosdisponible);
+			$("#resultados_ajax_productodisponible").html(datos);
 			$('#guardar_datos').attr("disabled", false);
 			load(1);
 		  }

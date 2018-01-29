@@ -8,12 +8,17 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 			$errors[] = "Nombre del producto vacío";
 		} else if ($_POST['stock']==""){
 			$errors[] = "Stock del producto vacío";
+        } else if (empty($_POST['responsable'])){
+			$errors[] = "Responsable del producto vacío";
+		} else if (empty($_POST['concepto'])){
+			$errors[] = "Concepto del inventario vacío";			
 		} else if (empty($_POST['precio'])){
 			$errors[] = "Precio de venta vacío";
 		} else if (
 			!empty($_POST['codigo']) &&
 			!empty($_POST['nombre']) &&
-			$_POST['stock']!="" &&
+			!empty($_POST['responsable']) &&
+			!empty($_POST['concepto']) &&
 			!empty($_POST['precio'])
 		){
 		/* Connect To Database*/
@@ -23,12 +28,14 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		// escaping, additionally removing everything that could be (html/javascript-) code
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
+		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["responsable"],ENT_QUOTES)));
 		$stock=intval($_POST['stock']);
 		$id_categoria=intval($_POST['categoria']);
 		$precio_venta=floatval($_POST['precio']);
 		$fecha=date("Y-m-d H:i:s");
 		
-		$sql="INSERT INTO disponible (codigo_producto, nombre_producto, fecha, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$fecha','$precio_venta', '$stock','$id_categoria')";
+		$sql="INSERT INTO disponible (codigo_producto,  concepto_inventario, nombre_producto, responsable_entrega, fecha, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$concepto','$responsable','$fecha','$precio_venta', '$stock','$id_categoria')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";
@@ -56,7 +63,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 								echo $error;
 							}
 						?>
-			</div>
+			</div>s
 			<?php
 			}
 			if (isset($messages)){
