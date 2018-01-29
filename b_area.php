@@ -26,7 +26,7 @@
 	<div class="panel panel-primary">
 		<div style="background:#0079a3" class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' style="background:#00b3b3" class="btn" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-print" ></span> Imprimir</button>
+				<button type='button' style="background:#00b3b3" class="btn" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-print" ></span><a href="pdf/reportearea.php"> Imprimir</a> </button>
 				
 			</div>
 			
@@ -47,7 +47,7 @@
 						<input type="text" class="form-control" id="q" placeholder="Serial del producto" onkeyup='load(1);'>
 					</div>
 
-<!---SELECT DINAMICO PARA LAS AREAS-->
+<!---///////////////////////////////////SELECT DINAMICO PARA LAS AREAS/////////////////////////////////////////////////-->
 					<div class='col-md-4'>
 						<label>Filtrar por Área</label>
 						<select class='form-control' name='id_categoria' id='id_categoria' onchange="load(1);">
