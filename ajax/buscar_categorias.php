@@ -95,7 +95,7 @@
 						$id_categoria=$row['id_categoria'];
 						$nombre_categoria=$row['nombre_categoria'];
 						$descripcion_categoria=$row['descripcion_categoria'];
-						$fecha= date('d/m/Y', strtotime($row['fecha']));
+						$fecha= date('d/m/Y', strtotime($row['fecha_categoria']));
 						
 					?>
 					<tr>

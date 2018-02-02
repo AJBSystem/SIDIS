@@ -6,11 +6,14 @@
 	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 	//Archivo de funciones PHP
 	include("../funciones.php");
+
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if (isset($_GET['id'])){
 		$id_producto=intval($_GET['id']);
 		if ($delete1=mysqli_query($con,"DELETE FROM products WHERE id_producto='".$id_producto."'")){
 		?>
+
+
 			<div class="alert alert-primary alert-dismissible" role="alert">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Aviso!</strong> Datos eliminados exitosamente.
@@ -35,7 +38,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 $id_categoria =intval($_REQUEST['id_categoria']);
-		 $aColumns = array('id_serial', 'nombre_producto');//Columnas de busqueda
+		 $aColumns = array('serial', 'nombre_producto');//Columnas de busqueda
 		 $sTable = "products";
 		 $sWhere = "";
 		
@@ -75,7 +78,7 @@
 				$nums=1;
 				while ($row=mysqli_fetch_array($query)){
 						$id_producto=$row['id_producto'];
-						$id_serial=$row['id_serial'];
+						$id_serial=$row['serial'];
 						$nombre_producto=$row['nombre_producto'];
 						$stock=$row['stock'];
 					?>

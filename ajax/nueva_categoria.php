@@ -11,7 +11,7 @@
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
 		$descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"],ENT_QUOTES)));
 		$fecha=date("Y-m-d H:i:s");
-		$sql="INSERT INTO categorias (nombre_categoria, descripcion_categoria,fecha) VALUES ('$nombre','$descripcion','$fecha')";
+		$sql="INSERT INTO categorias (nombre_categoria, descripcion_categoria,fecha_categoria) VALUES ('$nombre','$descripcion','$fecha')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Categoría ha sido ingresada satisfactoriamente.";

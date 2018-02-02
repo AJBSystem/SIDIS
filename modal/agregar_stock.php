@@ -18,12 +18,13 @@
             </div>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="reference" class="col-sm-2 control-label">Serial</label>
             <div class="col-sm-6">
               <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Serial del producto">
             </div>
           </div>
+
           <div class="form-group">
             <label for="reference" class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-6">
@@ -51,6 +52,7 @@
               <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Número de bien del producto">
             </div>
           </div> 
+          
            <div class="form-group">
             <label for="reference" class="col-sm-2 control-label">Condición</label>
             <div class="col-sm-6">
@@ -70,7 +72,7 @@
             <div class="col-sm-6">
               <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Asignación del producto">
             </div>
-          </div>         
+          </div>  -->        
 
           <div class="form-group">
             <label for="reference" class="col-sm-2 control-label">Referencia</label>
