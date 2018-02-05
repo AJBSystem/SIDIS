@@ -23,7 +23,7 @@
 			   <div class="form-group">
 				<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
 				<div class="col-sm-8">
-				  <textarea class="form-control" id="mod_nombre" name="mod_nombre" placeholder="Nombre del producto" required></textarea>
+				  <input class="form-control" id="mod_nombre" name="mod_nombre" placeholder="Nombre del producto" required></input>
 				</div>
 			  </div>
 			  
