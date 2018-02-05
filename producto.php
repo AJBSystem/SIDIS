@@ -18,7 +18,7 @@
 	$active_productos="active";
 	$active_clientes="";
 	$active_usuarios="";	
-	$title="Producto | Simple Stock";
+	$title="Productos | SIDIS";
 	
 	if (isset($_POST['reference']) and isset($_POST['quantity'])){
 		$quantity=intval($_POST['quantity']);
@@ -93,102 +93,70 @@
 					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
               </div>
 			  
-              <div class="col-sm-4 text-left">
+              <div class="col-sm-4 col-md-4 col-xs-6 text-left">
                 <div class="row margin-btm-20">
 
 
+<table class='table table-bordered'>
+						<tr><th class='text-center' colspan=10 >DATOS DEL PRODUCTO</th></tr>
 
- 					<table class='table table-bordered'>
-						<tr>
-							<th class='text-center' colspan=5 >HISTORIAL DE INVENTARIO</th>
-						</tr>
-						<tr>
-							<td>Fecha</td>
-							<td>Hora</td>
-							<td>Descripción</td>
-							<td>Código</td>
-							<td class='text-center'>Total Bs/F</td>
-						</tr>
-						<?php
-							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
-							while ($row=mysqli_fetch_array($query)){
-								?>
-						<tr>
-							<td><?php echo date('d/m/Y', strtotime($row['fecha']));?></td>
-							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
-							<td><?php echo $row['nota'];?></td>
-							<td><?php echo $row['referencia'];?></td>
-							<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
-						</tr>		
-								<?php
-							}
-						?>
-					 </table>
+					<tr><td><span class="current-stock">Fecha de Registro</td><td><?php echo $row['fecha_products'];?></span></td></tr>
 
+					<tr><td><span class="current-stock">Código</td><td><?php echo $row['codigo_producto'];?></span> </td></tr>
 
+					<tr><td><span class="current-stock">Serial</td><td><?php echo $row['serial'];?></span> </td></tr>
 
+					<tr><td><span class="current-stock">Descripción</td><td><?php echo $row['nombre_producto'];?></span></td></tr>
 
-                    <!-- <div class="col-sm-12">
-                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
-                    </div>
+					<tr><td><span class="current-stock">Marca</td><td><?php echo $row['marca_producto'];?></span></td></tr>
 
-                    <div class="col-sm-12 margin-btm-10">
-                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
-                    </div>
+					<tr><td><span class="current-stock">Modelo</td><td><?php echo $row['modelo_producto'];?></span></td></tr>
 
-                    <div class="col-sm-12 margin-btm-10"></div>
-                    <div class="col-sm-12">
-                      <span class="current-stock">Stock disponible</span>
-                    </div>
+					<tr><td><span class="current-stock">Categoría</td><td><?php echo $row['id_categoria'];?></span></td></tr>
 
+					<!-- <tr><td><span class="current-stock">Área</td><td><?php echo $row['id_area'];?></span></td></tr> -->
 
-                    <div class="col-sm-12 margin-btm-10">
-                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
-                    </div>
+					<tr><td><span class="current-stock">N° de Bien</td><td><?php echo $row['numero_bien'];?></span> </td></tr>
 
+					<tr><td><span class="current-stock">Condición</td><td><?php echo $row['condicion_producto'];?></span> </td></tr>
 
+					<tr><td><span class="current-stock">Recibido por</td><td><?php echo $row['responsable_entrega'];?></span> </td></tr>
+                    
+                    <tr><td><span class="current-stock">Asignado a</td><td><?php echo $row['asignacion_producto'];?></span> </td></tr>
 
-					<div class="col-sm-12">
-                      <span class="current-stock"> Precio venta  </span>
-                    </div>
-
-
-					<div class="col-sm-12">
-                      <span class="item-price">$ <?php echo number_format($row['precio_producto']);?></span>
-                    </div> -->
+                    <tr><td><span class="current-stock">Cod. Inventario</td><td><?php echo $row['codigo_inventario'];?></span> </td></tr>
 					
+					<tr><td><span class="current-stock">Concepto</td><td><?php echo $row['concepto_inventario'];?></span> </td></tr>
+					
+             		<tr><td><span class="current-stock"> Precio venta</span></td><td>BsF.<?php echo number_format($row['precio_producto']);?></span></td></tr>
+
+             		<tr><td><span class="current-stock"> Disponible</span></td><td><?php echo number_format($row['stock']);?></span> disponibles </td></tr>
+
+
+
+</table>
+</div>
+</div>
                     <div class="col-sm-12 margin-btm-10"></div>
 
-                    <div class="col-sm-6 col-xs-6 col-md-4 ">
+                    <div class="col-sm-6 col-xs-6 col-md-2 col-sm-offset-6" style="margin-bottom: 20px;">
                       <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
                     </div>
 
 
-                    <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                    <div class="col-sm-6 col-xs-6 col-md-2">
+                      <a href="" data-toggle="modal" data-target="#remove-stock" style="margin-bottom: 20px;"><img width="100px"  src="img/stock-out.png"></a>
                     </div>
+
+
+
+
 
 
                     <div class="col-sm-12 margin-btm-10"></div>
                     
-                   
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="row">
 
-
-
-
-
-
-
-
-
-
-
-            <div class="col-sm-8 col-sm-offset-2 text-left">
+<div class="col-sm-8 col-sm-offset-2 text-left">
                   <div class="row">
                     <?php
 						if (isset($message)){
@@ -215,9 +183,9 @@
 						<tr>
 							<td>Fecha</td>
 							<td>Hora</td>
-							<td>Descripción</td>
-							<td>Código</td>
-							<td class='text-center'>Total Bs/F</td>
+							<td>Acción de Usuario</td>
+							<td>Código Afectado</td>
+							<td class='text-center'>Total</td>
 						</tr>
 						<?php
 							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
@@ -238,6 +206,69 @@
                                     
                                     
 				</div>
+
+
+
+
+
+                   
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+
+
+            <!-- <div class="col-sm-8 col-sm-offset-2 text-left">
+                  <div class="row">
+                    <?php
+						if (isset($message)){
+							?>
+						<div class="alert alert-success alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>Aviso!</strong> Datos procesados exitosamente.
+						</div>	
+							<?php
+						}
+						if (isset($error)){
+							?>
+						<div class="alert alert-danger alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>Error!</strong> No se pudo procesar los datos.
+						</div>	
+							<?php
+						}
+					?>	
+					 <table class='table table-bordered'>
+						<tr>
+							<th class='text-center' colspan=5 >HISTORIAL DE INVENTARIO</th>
+						</tr>
+						<tr>
+							<td>Fecha</td>
+							<td>Hora</td>
+							<td>Acción de Usuario</td>
+							<td>Código Afectado</td>
+							<td class='text-center'>Total</td>
+						</tr>
+						<?php
+							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
+							while ($row=mysqli_fetch_array($query)){
+								?>
+						<tr>
+							<td><?php echo date('d/m/Y', strtotime($row['fecha']));?></td>
+							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
+							<td><?php echo $row['nota'];?></td>
+							<td><?php echo $row['referencia'];?></td>
+							<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
+						</tr>		
+								<?php
+							}
+						?>
+					 </table>
+                  </div>
+                                    
+                                    
+				</div> -->
             </div>
           </div>
         </div>
