@@ -13,6 +13,8 @@
 		  <div class="modal-body">
 			<form class="form-horizontal" method="post" id="guardar_producto" name="guardar_producto">
 			<div id="resultados_ajax_productos"></div>
+
+
 			  <div class="form-group">
 				<label for="serial" class="col-sm-3 control-label">Serial</label>
 				<div class="col-sm-8">
@@ -22,7 +24,7 @@
 
 
 			  <div class="form-group">
-				<label for="codigo" class="col-sm-3 control-label">Código</label>
+				<label for="codigo" class="col-sm-3 control-label">Cod producto</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="codigo" name="codigo" placeholder="Código del producto" required maxlength="255" ></input>				  
 				</div>
@@ -30,7 +32,15 @@
 
 
 			  <div class="form-group">
-				<label for="nombre" class="col-sm-3 control-label">Nombre</label>
+				<label for="codigoi" class="col-sm-3 control-label">Cod inventario</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="codigoi" name="codigoi" placeholder="Código del inventario" required maxlength="255" ></input>	  
+				</div>
+			  </div>
+
+
+			  <div class="form-group">
+				<label for="nombre" class="col-sm-3 control-label">Descripción</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto" required maxlength="255" ></input>				  
 				</div>
@@ -90,7 +100,7 @@
 			 <div class="form-group">
 				<label for="numero" class="col-sm-3 control-label">N° Bien</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="numero" name="numero" placeholder="Número de bien del producto" required maxlength="100" ></textarea>				  
+					<input class="form-control" id="numero" name="numero" placeholder="Número de bien del producto" required maxlength="100" ></input>				  
 				</div>
 			  </div> 
 
@@ -120,14 +130,14 @@
 			  </div> 
 
 			 <div class="form-group">
-				<label for="responsable" class="col-sm-3 control-label">Responsable</label>
+				<label for="responsable" class="col-sm-3 control-label">Recibido por</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="responsable" name="responsable" placeholder="Responsable de la entrega del producto" required maxlength="100" ></input>		  
 				</div>
 			  </div>
 
 			 <div class="form-group">
-				<label for="asignacion" class="col-sm-3 control-label">Asignación</label>
+				<label for="asignacion" class="col-sm-3 control-label">Asignado a</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="asignacion" name="asignacion" placeholder="Asignación del producto" required maxlength="100" ></input>		  
 				</div>
@@ -192,7 +202,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
+			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar Datos</button>
 		  </div>
 		  </form>
 		</div>
