@@ -34,6 +34,9 @@
 		} else if(empty($_POST['mod_asignacion'])){
 			$errors[] = "Campo Asignada A vacío";
 
+		} else if (empty($_POST['mod_concepto'])) {
+			$errors[] = "Campo concepto vacío";
+
 		} else if (
 			!empty($_POST['mod_id']) &&
 				!empty($_POST['mod_codigo']) &&
@@ -46,7 +49,8 @@
 											!empty($_POST['mod_modelo']) &&
 												!empty($_POST['mod_condicion']) &&
 													!empty($_POST['mod_responsable']) &&
-														!empty($_POST['mod_asignacion'])
+														!empty($_POST['mod_asignacion']) &&
+															!empty($_POST['mod_concepto'])
 
 		){
 		/* Connect To Database*/
@@ -56,7 +60,6 @@
 		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
 		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
 		$categoria=intval($_POST['mod_categoria']);
-		$stock=intval($_POST['mod_stock']);
 		$precio_venta=floatval($_POST['mod_precio']);
 		$serial=mysqli_real_escape_string($con,(strip_tags($_POST["mod_serial"],ENT_QUOTES)));
 		$numero=mysqli_real_escape_string($con,(strip_tags($_POST["mod_numero"],ENT_QUOTES)));
@@ -65,10 +68,11 @@
 		$cond=mysqli_real_escape_string($con,(strip_tags($_POST['mod_condicion'], ENT_QUOTES)));
 		$resp=mysqli_real_escape_string($con,(strip_tags($_POST['mod_responsable'], ENT_QUOTES)));
 		$asig=mysqli_real_escape_string($con,(strip_tags($_POST['mod_asignacion'], ENT_QUOTES)));
+		$conc=mysqli_real_escape_string($con,(strip_tags($_POST['mod_concepto'], ENT_QUOTES)));
 		$id_producto=$_POST['mod_id'];
 
 		//Query de actualizacion de datos
-		$sql="UPDATE products SET codigo_producto='".$codigo."', nombre_producto='".$nombre."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', serial='".$serial."', numero_bien='".$numero."', marca_producto='".$marca."', modelo_producto='".$modelo."', condicion_producto='".$cond."', responsable_entrega='".$resp."', asignacion_producto='".$asig."' WHERE id_producto='".$id_producto."'";
+		$sql="UPDATE products SET codigo_producto='".$codigo."', nombre_producto='".$nombre."', id_categoria='".$categoria."', precio_producto='".$precio_venta."', serial='".$serial."', numero_bien='".$numero."', marca_producto='".$marca."', modelo_producto='".$modelo."', condicion_producto='".$cond."', responsable_entrega='".$resp."', asignacion_producto='".$asig."', concepto_inventario='".$conc."' WHERE id_producto='".$id_producto."'";
 		
 
 
@@ -84,7 +88,7 @@
 			$errors []= "Error desconocido.";
 		}
 		
-		if (isset($errors)){
+			if (isset($errors)){
 			
 			?>
 			<div class="alert alert-danger" role="alert">

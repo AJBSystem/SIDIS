@@ -20,33 +20,38 @@
 				</div>
 			  </div>
 
+
 			  <div class="form-group">
 				<label for="codigo" class="col-sm-3 control-label">Código</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="codigo" name="codigo" placeholder="Código del producto" required maxlength="255" ></textarea>				  
+					<input class="form-control" id="codigo" name="codigo" placeholder="Código del producto" required maxlength="255" ></input>				  
 				</div>
 			  </div>
+
 
 			  <div class="form-group">
 				<label for="nombre" class="col-sm-3 control-label">Nombre</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto" required maxlength="255" ></textarea>				  
+					<input class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto" required maxlength="255" ></input>				  
 				</div>
 			  </div>			
+
 
 			  <div class="form-group">
 				<label for="marca" class="col-sm-3 control-label">Marca</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="marca" name="marca" placeholder="Marca del producto" required maxlength="255" ></textarea>				  
+					<input class="form-control" id="marca" name="marca" placeholder="Marca del producto" required maxlength="255" ></input>				  
 				</div>
 			  </div>
+
 
 			  <div class="form-group">
 				<label for="modelo" class="col-sm-3 control-label">Modelo</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="modelo" name="modelo" placeholder="Modelo del producto" required maxlength="255" ></textarea>				  
+					<input class="form-control" id="modelo" name="modelo" placeholder="Modelo del producto" required maxlength="255" ></input>				  
 				</div>
 			  </div>
+
 
 			 <div class="form-group">
 				<label for="categoria" class="col-sm-3 control-label">Categoría</label>
@@ -65,7 +70,7 @@
 				</div>
 			  </div>
 			
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label for="area" class="col-sm-3 control-label">Área</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='area' id='area' required>
@@ -80,14 +85,15 @@
 							?>
 					</select>			  
 				</div>
-			  </div>
+			  </div> -->
 
 			 <div class="form-group">
-				<label for="numero" class="col-sm-3 control-label">Número de Bien</label>
+				<label for="numero" class="col-sm-3 control-label">N° Bien</label>
 				<div class="col-sm-8">
 					<textarea class="form-control" id="numero" name="numero" placeholder="Número de bien del producto" required maxlength="100" ></textarea>				  
 				</div>
 			  </div> 
+
 
 			<div class="form-group">
 				<label for="motivo" class="col-sm-3 control-label">Motivo</label>
@@ -109,25 +115,25 @@
 			 <div class="form-group">
 				<label for="condicion" class="col-sm-3 control-label">Condición</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="condicion" name="condicion" placeholder="Condición del producto" required maxlength="100" ></textarea>				  
+					<input class="form-control" id="condicion" name="condicion" placeholder="Condición del producto" required maxlength="100" ></input>				  
 				</div>
 			  </div> 
 
 			 <div class="form-group">
 				<label for="responsable" class="col-sm-3 control-label">Responsable</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="responsable" name="responsable" placeholder="Responsable de la entrega del producto" required maxlength="100" ></textarea>		  
+					<input class="form-control" id="responsable" name="responsable" placeholder="Responsable de la entrega del producto" required maxlength="100" ></input>		  
 				</div>
 			  </div>
 
 			 <div class="form-group">
 				<label for="asignacion" class="col-sm-3 control-label">Asignación</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="asignacion" name="asignacion" placeholder="Asignación del producto" required maxlength="100" ></textarea>		  
+					<input class="form-control" id="asignacion" name="asignacion" placeholder="Asignación del producto" required maxlength="100" ></input>		  
 				</div>
 			  </div> 	
 
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label for="rango" class="col-sm-3 control-label">Rango</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='rango' id='rango' required>
@@ -159,12 +165,12 @@
 							?>
 					</select>			  
 				</div>
-			  </div>
+			  </div> -->
 
 			  <div class="form-group">
 				<label for="concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" id="concepto" name="concepto" placeholder="Concepto del Inventario" required maxlength="255" ></textarea>				  
+					<input class="form-control" id="concepto" name="concepto" placeholder="Concepto del Inventario" required maxlength="255" ></input>				  
 				</div>
 			  </div>
 

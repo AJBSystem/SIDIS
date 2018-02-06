@@ -91,7 +91,7 @@
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>'  data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>'  data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
               </div>
 			  
               <div class="col-sm-4 col-md-5 col-xs-6 text-left">
@@ -320,6 +320,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		var cond = button.data('cond')
 		var resp = button.data('resp')
 		var asig = button.data('asig')
+		var conc = button.data('conc')
 		var id = button.data('id')
 
 		var modal = $(this)
@@ -332,9 +333,10 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_numero').val(numero)
 		modal.find('.modal-body #mod_marca').val(marca)
 		modal.find('.modal-body #mod_modelo').val(modelo)
-		modal.find('.modal-body #mod_condicion' ).val(cond)
-		modal.find('.modal-body #mod_responsable' ).val(resp)
-		modal.find('.modal-body #mod_asignacion' ).val(asig)
+		modal.find('.modal-body #mod_condicion').val(cond)
+		modal.find('.modal-body #mod_responsable').val(resp)
+		modal.find('.modal-body #mod_asignacion').val(asig)
+		modal.find('.modal-body #mod_concepto').val(conc)
 
 
 		modal.find('.modal-body #mod_id').val(id)
