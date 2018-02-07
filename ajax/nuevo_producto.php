@@ -3,7 +3,8 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['serial'])) {
-           $errors[] = "Serial vacío";   
+           $errors[] = "Serial vacío";
+              
 	        } else if (empty($_POST['codigo'])){
 				$errors[] = "Codigo del producto vacío";  
 
@@ -65,26 +66,26 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		// escaping, additionally removing everything that could be (html/javascript-) code
 
 		$serial=mysqli_real_escape_string($con,(strip_tags($_POST["serial"],ENT_QUOTES)));
-		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
-		$codigi=mysqli_real_escape_string($con,(strip_tags($_POST['codigoi'],ENT_QUOTES)));
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-		$marca=mysqli_real_escape_string($con,(strip_tags($_POST["marca"],ENT_QUOTES)));
-		$modelo=mysqli_real_escape_string($con,(strip_tags($_POST["modelo"],ENT_QUOTES)));
-		$numero=mysqli_real_escape_string($con,(strip_tags($_POST["numero"],ENT_QUOTES)));
-		$stock=intval($_POST['stock']);
-		$id_categoria=intval($_POST['categoria']);
-		// $id_area=intval($_POST['area']);
-		$condicion=mysqli_real_escape_string($con,(strip_tags($_POST["condicion"],ENT_QUOTES)));
-		$motivo=intval($_POST['motivo']);
-		$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["responsable"],ENT_QUOTES)));
-		$asignacion=mysqli_real_escape_string($con,(strip_tags($_POST["asignacion"],ENT_QUOTES)));
-		$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
-		// $id_rango=intval($_POST['rango']);
-		// $id_cargo=intval($_POST['cargo']);
-		$precio_venta=floatval($_POST['precio']);
-		$fecha=date("Y-m-d H:i:s");
-		
-		$sql="INSERT INTO products ( serial, codigo_producto, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha_products, precio_producto, stock, id_categoria, condicion_producto, id_motivo, responsable_entrega, asignacion_producto, concepto_inventario,  	codigo_inventario ) VALUES ('$serial','$codigo','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$condicion','$motivo','$responsable','$asignacion','$concepto', '$codigi')";
+			$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
+				$codigi=mysqli_real_escape_string($con,(strip_tags($_POST['codigoi'],ENT_QUOTES)));
+					$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+						$marca=mysqli_real_escape_string($con,(strip_tags($_POST["marca"],ENT_QUOTES)));
+							$modelo=mysqli_real_escape_string($con,(strip_tags($_POST["modelo"],ENT_QUOTES)));
+								$numero=mysqli_real_escape_string($con,(strip_tags($_POST["numero"],ENT_QUOTES)));
+									$stock=intval($_POST['stock']);
+										$id_categoria=intval($_POST['categoria']);
+											// $id_area=intval($_POST['area']);
+												$condicion=mysqli_real_escape_string($con,(strip_tags($_POST["condicion"],ENT_QUOTES)));
+													$motivo=intval($_POST['motivo']);
+														$responsable=mysqli_real_escape_string($con,(strip_tags($_POST["responsable"],ENT_QUOTES)));
+															$asignacion=mysqli_real_escape_string($con,(strip_tags($_POST["asignacion"],ENT_QUOTES)));
+																$concepto=mysqli_real_escape_string($con,(strip_tags($_POST["concepto"],ENT_QUOTES)));
+																	// $id_rango=intval($_POST['rango']);
+																		// $id_cargo=intval($_POST['cargo']);
+																			$precio_venta=floatval($_POST['precio']);
+																				$fecha=date("Y-m-d H:i:s");
+			
+		$sql="INSERT INTO products ( serial, codigo_producto, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha_products, precio_producto, stock, id_categoria, condicion_producto, id_motivo, responsable_entrega, asignacion_producto, concepto_inventario, codigo_inventario ) VALUES ('$serial','$codigo','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$condicion','$motivo','$responsable','$asignacion','$concepto', '$codigi')";
 		$query_new_insert = mysqli_query($con,$sql);
 
 
@@ -132,5 +133,3 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				<?php
 			}
 ?>
-
-

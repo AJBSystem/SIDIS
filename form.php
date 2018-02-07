@@ -5,7 +5,7 @@
 	<title>Prueba</title>
 </head>
 <body>
-	<form method="post" enctype="multipart/form-data" action="subir.<?php  ?>">
+	<form method="post" enctype="multipart/form-data" action="subir.<?php  ?>"
 
 		<input type="file" name="archivo" />
 

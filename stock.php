@@ -26,7 +26,7 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Nuevo Producto</button>
 			</div>
 			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
 		</div>
