@@ -32,14 +32,6 @@
 
 
 			  <div class="form-group">
-				<label for="codigoi" class="col-sm-3 control-label">Cod inventario</label>
-				<div class="col-sm-8">
-					<input class="form-control" id="codigoi" name="codigoi" placeholder="Código del inventario" required maxlength="255" ></input>	  
-				</div>
-			  </div>
-
-
-			  <div class="form-group">
 				<label for="nombre" class="col-sm-3 control-label">Descripción</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto" required maxlength="255" ></input>				  
@@ -177,6 +169,14 @@
 				</div>
 			  </div> -->
 
+				<div class="form-group">
+				<label for="codigoi" class="col-sm-3 control-label">Cod inventario</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="codigoi" name="codigoi" placeholder="Código del inventario" required maxlength="255" ></input>	  
+				</div>
+			  	</div>
+
+
 			  <div class="form-group">
 				<label for="concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
@@ -202,6 +202,8 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			<!-- <button type="reset" class="btn btn-default">Limpiar</button> -->
+			<!-- <button type="submit" class="btn btn-primary" id="guardar_datos" onclick="location='stock.php'">Guardar Datos</button> -->
 			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar Datos</button>
 		  </div>
 		  </form>

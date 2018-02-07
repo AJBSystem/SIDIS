@@ -13,13 +13,17 @@
 		  <div class="modal-body">
 			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto">
 			<div id="resultados_ajax2"></div>
+
+
 			  <div class="form-group">
-				<label for="mod_codigo" class="col-sm-3 control-label">Código</label>
+				<label for="mod_codigo" class="col-sm-3 control-label">Cod producto</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_codigo" name="mod_codigo" required>
 					<input type="hidden" name="mod_id" id="mod_id">
 				</div>
 			  </div>
+
+
 			   <div class="form-group">
 				<label for="mod_nombre" class="col-sm-3 control-label">Descripción</label>
 				<div class="col-sm-8">
@@ -112,6 +116,15 @@
 				</div>
 			  </div>
 			 
+				
+				<div class="form-group">
+				<label for="mod_codi" class="col-sm-3 control-label">Cod inventario</label>
+				<div class="col-sm-8">
+				  <input type="text" class="form-control" id="mod_codi" name="mod_codi" required>
+				</div>
+			  </div>
+
+
 			<div class="form-group">
 				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">

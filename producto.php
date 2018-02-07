@@ -21,15 +21,15 @@
 	$title="Productos | SIDIS";
 	
 	if (isset($_POST['reference']) and isset($_POST['quantity'])){
-		$quantity=intval($_POST['quantity']);
-		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference"],ENT_QUOTES)));
-		$id_producto=intval($_GET['id']);
-		$user_id=$_SESSION['user_id'];
-		$firstname=$_SESSION['firstname'];
-		$nota="$firstname agregó $quantity producto(s) al inventario";
-		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
-		$update=agregar_stock($id_producto,$quantity);
+			$quantity=intval($_POST['quantity']);
+			$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference"],ENT_QUOTES)));
+			$id_producto=intval($_GET['id']);
+			$user_id=$_SESSION['user_id'];
+			$firstname=$_SESSION['firstname'];
+			$nota="$firstname agregó $quantity producto(s) al inventario";
+			$fecha=date("Y-m-d H:i:s");
+			guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+			$update=agregar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
 		} else {
@@ -38,15 +38,15 @@
 	}
 	
 	if (isset($_POST['reference_remove']) and isset($_POST['quantity_remove'])){
-		$quantity=intval($_POST['quantity_remove']);
-		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference_remove"],ENT_QUOTES)));
-		$id_producto=intval($_GET['id']);
-		$user_id=$_SESSION['user_id'];
-		$firstname=$_SESSION['firstname'];
-		$nota="$firstname eliminó $quantity producto(s) del inventario";
-		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
-		$update=eliminar_stock($id_producto,$quantity);
+			$quantity=intval($_POST['quantity_remove']);
+			$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference_remove"],ENT_QUOTES)));
+			$id_producto=intval($_GET['id']);
+			$user_id=$_SESSION['user_id'];
+			$firstname=$_SESSION['firstname'];
+			$nota="$firstname eliminó $quantity producto(s) del inventario";
+			$fecha=date("Y-m-d H:i:s");
+			guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+			$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
 		} else {
@@ -91,7 +91,7 @@
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>'  data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>'  data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
               </div>
 			  
               <div class="col-sm-4 col-md-5 col-xs-6 text-left">
@@ -132,9 +132,6 @@
              		<tr><td><span class="current-stock"> Precio venta</span></td><td>BsF.<?php echo number_format($row['precio_producto']);?></span></td></tr>
 
              		<tr><td><span class="current-stock"> Disponible</span></td><td><?php echo number_format($row['stock']);?></span> disponibles </td></tr>
-
-
-
 </table>
 </div>
 </div>
@@ -321,6 +318,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		var resp = button.data('resp')
 		var asig = button.data('asig')
 		var conc = button.data('conc')
+		var codi = button.data('codi')
 		var id = button.data('id')
 
 		var modal = $(this)
@@ -337,6 +335,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_responsable').val(resp)
 		modal.find('.modal-body #mod_asignacion').val(asig)
 		modal.find('.modal-body #mod_concepto').val(conc)
+		modal.find('.modal-body #mod_codi').val(codi)
 
 
 		modal.find('.modal-body #mod_id').val(id)
