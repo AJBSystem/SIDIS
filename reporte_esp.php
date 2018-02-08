@@ -10,7 +10,7 @@
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
 	$active_productos="active";
-	$title="Inventario | División de Sistemas";
+	$title="Reportes | División de Sistemas";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +24,25 @@
 	
     <div class="container">
 	<div class="panel panel-primary">
-		<div class="panel-heading">
-		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Nuevo Producto</button>
+
+		<div style="background:#0079a3" class="panel-heading">
+		    <div class="btn-group pull-right"><a href="pdf/reporteserial.php">
+				<button type='button' style="background:#00b3b3" class="btn btn-primary" data-toggle="modal" data-target="#nuevoProducto">
+					<span class="glyphicon glyphicon-print" ></span> Imprimir</button></a>
+
+				
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Consulta de Inventario</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Imprimir Reporte Específico</h4>
 		</div>
-		<div class="panel-body">
-		
+				
+
+
+				<!-- <div class="btn-group pull-justify"> <a href="pdf/reportearea.php">
+        <button  style="background:#00b3b3" type='button' class="btn btn-info btn-lg" data-toggle="modal" data-target=""><i class=' glyphicon glyphicon-paste'></i> Imprimir</button>
+      </div> -->
+				
 			
+		<div class="panel-body">
 			
 			<?php
 			include("modal/registro_productos.php");
@@ -43,35 +53,44 @@
 						
 				<div class="row">
 					<div class='col-md-4'>
-						<label>Filtrar por serial o nombre</label>
-						<input type="text" class="form-control" id="q" placeholder="Serial o nombre del producto" onkeyup='load(1);'>
+						<label>Filtrar por serial</label>
+						<input type="text" class="form-control" id="q" placeholder="Serial del producto" onkeyup='load(1);'>
 					</div>
-					
+
+<!---///////////////////////////////////SELECT DINAMICO PARA LAS AREAS/////////////////////////////////////////////////-->
 					<div class='col-md-4'>
-						<label>Filtrar por categoría</label>
+						<label>Filtrar por Área</label>
 						<select class='form-control' name='id_categoria' id='id_categoria' onchange="load(1);">
-							<option value="">Selecciona una categoría</option>
+							<option value="">Selecciona un área</option>
 							<?php 
-							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
-							while($rw=mysqli_fetch_array($query_categoria))	{
+							$query_area=mysqli_query($con,"select * from area order by nombre_area");
+							while($rw=mysqli_fetch_array($query_area))	{
 							?>
-							<option value="<?php echo $rw['id_categoria'];?>"><?php echo $rw['nombre_categoria'];?></option>			
+							<option value="<?php echo $rw['id_area'];?>"><?php echo $rw['nombre_area'];?></option>			
 								<?php
 							}
 							?>
 						</select>
 					</div>
-					<div class='col-md-12 text-center'>
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+					 <div class='col-md-12 text-center'>
 						<span id="loader"></span>
-					</div>
+					</div> 
 				</div>
 				<hr>
-				<div class='row-fluid'>
-					<div id="resultados"></div><!-- Carga los datos ajax -->
-				</div>	
-				<div class='row'>
-					<div class='outer_div'></div><!-- Carga los datos ajax -->
-				</div>
+				 <div class='row-fluid'> 
+					 <div id="resultados"></div> <!-- Carga los datos ajax -->
+				 </div>	 
+							
+			 <div class='row'>  
+					  <!-- <div class='outer_div'></div> --> <!-- Carga los datos ajax -->
+				 </div> 
+
+
+
+				
 			</form>
 				
 			
