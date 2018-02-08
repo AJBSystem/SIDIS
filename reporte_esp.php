@@ -9,7 +9,7 @@
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
-	$active_productos="active";
+	$active_reporte="active";
 	$title="Reportes | División de Sistemas";
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
 
 				
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Imprimir Reporte Específico</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Reporte Específico</h4>
 		</div>
 				
 
@@ -55,7 +55,7 @@
 					<div class='col-md-4'>
 						<label>Filtrar por serial</label>
 						<input type="text" class="form-control" id="q" placeholder="Serial del producto" onkeyup='load(1);'>
-					</div>
+				</div>
 
 <!---///////////////////////////////////SELECT DINAMICO PARA LAS AREAS/////////////////////////////////////////////////-->
 					<div class='col-md-4'>

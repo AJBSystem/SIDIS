@@ -35,7 +35,7 @@
 
 				
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Imprimir Reporte</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Reporte General</h4>
 		</div>
 		<div class="panel-body">
 		
