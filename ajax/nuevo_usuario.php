@@ -53,7 +53,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 				$user_name = mysqli_real_escape_string($con,(strip_tags($_POST["user_name"],ENT_QUOTES)));
                 $user_email = mysqli_real_escape_string($con,(strip_tags($_POST["user_email"],ENT_QUOTES)));
 				$user_password = $_POST['user_password_new'];
-				$date_added=date("Y-m-d H:i:s");
+				$fecha=date("Y-m-d H:i:s");
                 // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character
                 // hash string. the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using
                 // PHP 5.3/5.4, by the password hashing compatibility library
@@ -67,8 +67,8 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
                     $errors[] = "Lo sentimos , el nombre de usuario ó la dirección de correo electrónico ya está en uso.";
                 } else {
 					// write new user's data into database
-                    $sql = "INSERT INTO users (firstname, lastname, user_name, user_password_hash, user_email, date_added)
-                            VALUES('".$firstname."','".$lastname."','" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','".$date_added."');";
+                    $sql = "INSERT INTO users (firstname, lastname, user_name, user_password_hash, user_email, fecha)
+                            VALUES('".$firstname."','".$lastname."','" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','".$fecha."');";
                     $query_new_user_insert = mysqli_query($con,$sql);
 
                     // if user has been added successfully

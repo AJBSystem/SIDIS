@@ -35,17 +35,28 @@
 
 				
 			</div>
+<<<<<<< HEAD
 			<h4><i class='glyphicon glyphicon-search'></i> Imprimir Reporte</h4>
+=======
+			<h4><i class='glyphicon glyphicon-search'></i> Reporte General</h4>
+>>>>>>> origin/Iskander
 		</div>
 		<div class="panel-body">
 		
 			<table class="table">
 				<tr>
 					<th>Cantidad</th>
+<<<<<<< HEAD
 					<th>Código</th>
 					<th>N° de Bien</th>
 					<th>Descripción</th>
 					<th>Código</th>
+=======
+					<th>Cod Producto</th>
+					<th>N° de Bien</th>
+					<th>Descripción</th>
+					<th>Cod Inventario</th>
+>>>>>>> origin/Iskander
 					<th>Concepto</th>
 					<th>Valor</th>
 					<th>Condición</th>
@@ -59,7 +70,11 @@
 							<td>'.$row['codigo_producto'].'</td>
 							<td>'.$row['numero_bien'].'</td>
 							<td>'.$row['nombre_producto'].'</td>
+<<<<<<< HEAD
 							<td>'.$row['codigo_producto'].'</td>
+=======
+							<td>'.$row['codigo_inventario'].'</td>
+>>>>>>> origin/Iskander
 							<td>'.$row['concepto_inventario'].'</td>
 							<td>'.$row['precio_producto'].'</td>
 							<td>'.$row['condicion_producto'].'</td>
@@ -71,6 +86,28 @@
 </div>
 		 
 	</div>
+<<<<<<< HEAD
+=======
+
+<td colspan="4"><span class="pull-right">
+					<ul class="pagination pagination-large"><li class="disabled"><span><a>‹ Prev</a></span></li><li class="active"><a>1</a></li><li><a href="javascript:void(0);" onclick="load(2)">2</a></li><li><a href="javascript:void(0);" onclick="load(3)">3</a></li><li><a href="javascript:void(0);" onclick="load(4)">4</a></li><li><span><a href="javascript:void(0);" onclick="load(2)">Next ›</a></span></li></ul></span></td>
+
+
+<!-- <div class='col-md-12 text-center'>
+						<span id="loader"></span>
+					</div>
+				</div>
+				<hr>
+				 <div class='row-fluid'>
+					<div id="resultados"></div> --><!-- Carga los datos ajax -->
+				<!-- </div>	 
+				<div class='row'>
+					 <div class='outer_div'></div> --> <!-- Carga los datos ajax 
+				</div>
+
+
+
+>>>>>>> origin/Iskander
 	<hr>
 	<?php
 	include("footer.php");

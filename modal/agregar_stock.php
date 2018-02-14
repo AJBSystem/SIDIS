@@ -17,6 +17,63 @@
               <input type="number" min="1" name="quantity" class="form-control" id="quantity" value="" placeholder="Cantidad" required="">
             </div>
           </div>
+
+          <!-- <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Serial</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Serial del producto">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Nombre</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Nombre del producto">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Marca</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Marca del producto">
+            </div>
+          </div>
+
+           <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Modelo</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Modelo del producto">
+            </div>
+          </div>         
+
+           <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Número de bien</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Número de bien del producto">
+            </div>
+          </div> 
+          
+           <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Condición</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Condición del producto">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Responsable</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Responsable de la entrega del producto">
+            </div>
+          </div>
+
+           <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Asignación</label>
+            <div class="col-sm-6">
+              <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Asignación del producto">
+            </div>
+          </div>  -->        
+
           <div class="form-group">
             <label for="reference" class="col-sm-2 control-label">Referencia</label>
             <div class="col-sm-6">

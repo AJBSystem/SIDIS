@@ -6,11 +6,14 @@
 	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 	//Archivo de funciones PHP
 	include("../funciones.php");
+
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if (isset($_GET['id'])){
 		$id_producto=intval($_GET['id']);
 		if ($delete1=mysqli_query($con,"DELETE FROM products WHERE id_producto='".$id_producto."'")){
 		?>
+
+
 			<div class="alert alert-primary alert-dismissible" role="alert">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Aviso!</strong> Datos eliminados exitosamente.
@@ -29,7 +32,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 $id_categoria =intval($_REQUEST['id_categoria']);
-		 $aColumns = array('codigo_producto', 'nombre_producto');//Columnas de busqueda
+		 $aColumns = array('serial', 'nombre_producto');//Columnas de busqueda
 		 $sTable = "products";
 		 $sWhere = "";
 		
@@ -69,19 +72,19 @@
 				$nums=1;
 				while ($row=mysqli_fetch_array($query)){
 						$id_producto=$row['id_producto'];
-						$codigo_producto=$row['codigo_producto'];
+						$id_serial=$row['serial'];
 						$nombre_producto=$row['nombre_producto'];
 						$stock=$row['stock'];
 					?>
 					
 					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 thumb text-center ng-scope" ng-repeat="item in records">
 						  <a class="thumbnail" href="producto.php?id=<?php echo $id_producto;?>">
-							  <span title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock,2); ?></span>
+							  <span title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock); ?></span>
 							  <span title="Low stock" class="low-stock-alert ng-hide" ng-show="item.current_quantity <= item.low_stock_threshold"><i class="fa fa-exclamation-triangle"></i></span>
 							  <img class="img-responsive" src="img/stock.png" alt="<?php echo $nombre_producto;?>">
 						  </a>
 						  <span class="thumb-name"><strong><?php echo $nombre_producto;?></strong></span>
-						  <span class="thumb-code ng-binding"><?php echo $codigo_producto;?></span>
+						  <span class="thumb-code ng-binding"><?php echo $id_serial;?></span>
 					</div>
 					<?php
 					if ($nums%6==0){

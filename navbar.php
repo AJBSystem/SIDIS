@@ -12,19 +12,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Inventario División de Sistemas</a>
+      <a class="navbar-brand" href="stock.php">Inventario División de Sistemas</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
-        <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario</a></li>
-
-    <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Pedidos</a></li> 
 
 
-    <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="#"><i class='glyphicon glyphicon-barcode'></i> Estatus</a></li> 
+      <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i>  Categorías</a></li>
+
+
+        <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Control de Inventario</a></li>
+
+          <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>">
+          <a data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Reportes</a>
+            <ul class= "dropdown-menu">
+              <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="listado_rep.php">Reporte General</a></li>
+              <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="reporte_esp.php">Reportes Específicos</a></li>
+            </ul>
+          </li>
+
 
 
 
