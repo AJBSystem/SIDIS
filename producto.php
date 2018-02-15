@@ -53,16 +53,22 @@
 			$error=1;
 		}
 	}
-	
+	// Este es el SELECT de la tabla que muestra la informacion anteriormente guardada por el form de agregar productos 
 	if (isset($_GET['id'])){
 		$id_producto=intval($_GET['id']);
-		$query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
+		// $query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
+		$query=mysqli_query($con,"SELECT * FROM products
+ INNER JOIN categorias on products.id_categoria = categorias.id_categoria
+ INNER JOIN motivo on products.id_motivo = motivo.id_motivo 
+ WHERE id_producto = '$id_producto'");
+
+
 		$row=mysqli_fetch_array($query);
 		
 	} else {
 		die("Producto no existe");
 	}
-	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,11 +119,13 @@
 
 					<tr><td><span class="current-stock">Modelo</td><td><?php echo $row['modelo_producto'];?></span></td></tr>
 
-					<tr><td><span class="current-stock">Categoría</td><td><?php echo $row['id_categoria'];?></span></td></tr>
+					<tr><td><span class="current-stock">Categoría</td><td><?php echo $row['nombre_categoria'];?></span></td></tr>
 
 					<!-- <tr><td><span class="current-stock">Área</td><td><?php echo $row['id_area'];?></span></td></tr> -->
 
 					<tr><td><span class="current-stock">N° de Bien</td><td><?php echo $row['numero_bien'];?></span> </td></tr>
+
+					<tr><td><span class="current-stock">Motivo</td><td><?php echo $row['nombre_motivo'];?></span> </td></tr>
 
 					<tr><td><span class="current-stock">Condición</td><td><?php echo $row['condicion_producto'];?></span> </td></tr>
 
