@@ -103,7 +103,7 @@
 
 					<tr><td><span class="current-stock">Fecha de Registro</td><td><?php echo $row['fecha_products'];?></span></td></tr>
 
-					<tr><td><span class="current-stock">Código</td><td><?php echo $row['codigo_producto'];?></span> </td></tr>
+					<tr><td><span class="current-stock">Cod. Productos</td><td><?php echo $row['codigo_producto'];?></span> </td></tr>
 
 					<tr><td><span class="current-stock">Serial</td><td><?php echo $row['serial'];?></span> </td></tr>
 

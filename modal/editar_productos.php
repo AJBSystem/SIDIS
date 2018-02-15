@@ -16,6 +16,14 @@
 
 
 			  <div class="form-group">
+				<label for="mod_serial" class="col-sm-3 control-label">Serial</label>
+				<div class="col-sm-8">
+				  <input class="form-control" id="mod_serial" name="mod_serial" required></input>
+				</div>
+			</div>
+
+
+			  <div class="form-group">
 				<label for="mod_codigo" class="col-sm-3 control-label">Cod producto</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_codigo" name="mod_codigo" required>
@@ -31,6 +39,24 @@
 				</div>
 			  </div>
 			  
+
+			<div class="form-group">
+				<label for="mod_marca" class="col-sm-3 control-label">Marca</label>
+				<div class="col-sm-8">
+				  <input class="form-control" id="mod_marca" name="mod_marca" required></input>
+				</div>
+			  </div>
+
+
+
+			   <div class="form-group">
+				<label for="mod_modelo" class="col-sm-3 control-label">Modelo</label>
+				<div class="col-sm-8">
+				  <input class="form-control" id="mod_modelo" name="mod_modelo" required></input>
+				</div>
+			  </div>
+
+
 			  <div class="form-group">
 				<label for="mod_categoria" class="col-sm-3 control-label">Categoría</label>
 				<div class="col-sm-8">
@@ -48,30 +74,8 @@
 				</div>
 			  </div>
 
-			<div class="form-group">
-				<label for="mod_serial" class="col-sm-3 control-label">Serial</label>
-				<div class="col-sm-8">
-				  <input class="form-control" id="mod_serial" name="mod_serial" required></input>
-				</div>
-			</div>
 
 
-
-			<div class="form-group">
-				<label for="mod_marca" class="col-sm-3 control-label">Marca</label>
-				<div class="col-sm-8">
-				  <input class="form-control" id="mod_marca" name="mod_marca" required></input>
-				</div>
-			  </div>
-
-
-
-			   <div class="form-group">
-				<label for="mod_modelo" class="col-sm-3 control-label">Modelo</label>
-				<div class="col-sm-8">
-				  <input class="form-control" id="mod_modelo" name="mod_modelo" required></input>
-				</div>
-			  </div>
 
 
 			  <div class="form-group">
