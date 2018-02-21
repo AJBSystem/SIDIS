@@ -58,9 +58,9 @@
 		$id_producto=intval($_GET['id']);
 		// $query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
 		$query=mysqli_query($con,"SELECT * FROM products
- INNER JOIN categorias on products.id_categoria = categorias.id_categoria
- INNER JOIN motivo on products.id_motivo = motivo.id_motivo 
- WHERE id_producto = '$id_producto'");
+									 INNER JOIN categorias on products.id_categoria = categorias.id_categoria
+									 INNER JOIN motivo on products.id_motivo = motivo.id_motivo 
+									 WHERE id_producto = '$id_producto'");
 
 
 		$row=mysqli_fetch_array($query);

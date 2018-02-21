@@ -8,32 +8,28 @@
 	include("../funciones.php");
 
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
-	if (isset($_GET['id'])){
-		$id_producto=intval($_GET['id']);
-		if ($delete1=mysqli_query($con,"DELETE FROM products WHERE id_producto='".$id_producto."'")){
-		?>
+	// if (isset($_GET['id'])){
+	// 	$id_producto=intval($_GET['id']);
+	// 	if ($delete1=mysqli_query($con,"DELETE FROM products WHERE id_producto='".$id_producto."'")){
+	// 	?>
 
 
-			<div class="alert alert-primary alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Aviso!</strong> Datos eliminados exitosamente.
-			</div>
-			<?php 
-		}else {
-			?>
-			<div class="alert alert-danger alert-dismissible" role="alert">
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
-			</div>
-			<?php
+	 		<!-- <div class="alert alert-primary alert-dismissible" role="alert"> -->
+	 		  <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+	 		  <!-- <strong>Aviso!</strong> Datos eliminados exitosamente. -->
+	 		<!-- </div> -->
+	 		<?php 
+	// 	}else {
+	// 		?>
+	 		<!-- <div class="alert alert-danger alert-dismissible" role="alert"> -->
+	 		  <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+	 		  <!-- <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente. -->
+	 		<!-- </div> -->
+	 		<?php
 			
-		}
-			
-		 
+	// 	}
 		
-		
-		
-	}
+	// }
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
@@ -83,15 +79,48 @@
 						$stock=$row['stock'];
 					?>
 					
-					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 thumb text-center ng-scope" ng-repeat="item in records">
-						  <a class="thumbnail" href="producto.php?id=<?php echo $id_producto;?>">
-							  <span title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock); ?></span>
-							  <span title="Low stock" class="low-stock-alert ng-hide" ng-show="item.current_quantity <= item.low_stock_threshold"><i class="fa fa-exclamation-triangle"></i></span>
-							  <img class="img-responsive" src="img/stock.png" alt="<?php echo $nombre_producto;?>">
-						  </a>
-						  <span class="thumb-name"><strong><?php echo $nombre_producto;?></strong></span>
-						  <span class="thumb-code ng-binding"><?php echo $id_serial;?></span>
-					</div>
+			<div class="table-responsive">
+			  <table class="table">
+				<tr  class="success">
+					<th>Cantidad</th>
+					<th>Cod Producto</th>
+					<th>N° de Bien</th>
+					<th>Descripción</th>
+					<th>Cod Inventario</th>
+					<th>Concepto</th>
+					<th>Valor</th>
+					<th>Condición</th>
+					
+				</tr>
+				<?php
+				while ($row=mysqli_fetch_array($query)){
+						$can=$row['stock'];
+						$cod=$row['codigo_producto'];
+						$num=$row['numero_bien'];
+						$nom=$row['nombre_producto'];
+						$codI=$row['codigo_inventario'];
+						$conI=$row['concepto_inventario'];
+						$pre=$row['precio_producto'];
+						$conP=$row['condicion_producto'];
+						
+					?>
+					<tr>
+						<td><?php echo $can; ?></td>
+						<td><?php echo $cod; ?></td>
+						<td><?php echo $num; ?></td>
+						<td><?php echo $nom; ?></td>
+						<td><?php echo $codI; ?></td>
+						<td><?php echo $conI; ?></td>
+						<td><?php echo $pre; ?></td>
+						<td><?php echo $conP; ?></td>
+					</tr>
+					<?php
+				}
+				?>
+				
+			  </table>
+			</div>
+
 					<?php
 					if ($nums%6==0){
 						echo "<div class='clearfix'></div>";
