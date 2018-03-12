@@ -28,15 +28,13 @@
 		    <div class="btn-group pull-right"><a href="pdf/reportegeneral.php">
 				<button type='button' style="background:#00b3b3" class="btn btn-primary" data-toggle="modal" data-target="#nuevoProducto">
 					<span class="glyphicon glyphicon-print" ></span> Imprimir</button></a>
-
-				
 			</div>
+
 			<h4><i class='glyphicon glyphicon-search'></i> Reporte General</h4>
 		</div>
+
 		<div class="panel-body">
 		
-			
-			
 			<?php
 			include("modal/registro_productos.php");
 			include("modal/editar_productos.php");
@@ -45,24 +43,40 @@
 				
 						
 				<div class="row">
-					<div class='col-md-4'>
-						<!-- <label>Filtrar por serial o nombre</label> -->
+					 <div class='col-md-4'>
+						<label>Filtrar por serial o nombre</label>
 						<input type="text" class="form-control" id="q" placeholder="Serial o nombre del producto" onkeyup='load(1);'>
 					</div>
 					
+					<!-- <div class='col-md-4'>
+						<label>Filtrar por categoría</label>
+						<select class='form-control' name='id_categoria' id='id_categoria' onchange="load(1);">
+							<option value="">Selecciona una categoría</option>
+							<?php 
+							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
+							while($rw=mysqli_fetch_array($query_categoria))	{
+							?>
+							<option value="<?php echo $rw['id_categoria'];?>"><?php echo $rw['nombre_categoria'];?></option>			
+								<?php
+							}
+							?>
+						</select>
+					</div> -->
 					<div class='col-md-12 text-center'>
 						<span id="loader"></span>
 					</div>
+
 				</div>
 				<hr>
+
 				<div class='row-fluid'>
 					<div id="resultados"></div><!-- Carga los datos ajax -->
 				</div>	
+
 				<div class='row'>
 					<div class='outer_div'></div><!-- Carga los datos ajax -->
 				</div>
 			</form>
-				
 			
   </div>
 </div>
@@ -76,53 +90,53 @@
   </body>
 </html>
 <script>
-function eliminar (id){
-		var q= $("#q").val();
-		var id_categoria= $("#id_categoria").val();
-		$.ajax({
-			type: "GET",
-			url: "./ajax/buscar_productos.php",
-			data: "id="+id,"q":q+"id_categoria="+id_categoria,
-			 beforeSend: function(objeto){
-				$("#resultados").html("Mensaje: Cargando...");
-			  },
-			success: function(datos){
-			$("#resultados").html(datos);
-			load(1);
-			}
-		});
-	}
+// function eliminar (id){
+// 		var q= $("#q").val();
+// 		var id_categoria= $("#id_categoria").val();
+// 		$.ajax({
+// 			type: "GET",
+// 			url: "./ajax/buscar_productos.php",
+// 			data: "id="+id,"q":q+"id_categoria="+id_categoria,
+// 			 beforeSend: function(objeto){
+// 				$("#resultados").html("Mensaje: Cargando...");
+// 			  },
+// 			success: function(datos){
+// 			$("#resultados").html(datos);
+// 			load(1);
+// 			}
+// 		});
+// 	}
 		
-	$(document).ready(function(){
+	// $(document).ready(function(){
 			
-		<?php 
-			if (isset($_GET['delete'])){
-		?>
-			eliminar(<?php echo intval($_GET['delete'])?>);	
-		<?php
-			}
+	// 	<?php 
+	// 		if (isset($_GET['delete'])){
+	// 	?>
+	// 		eliminar(<?php echo intval($_GET['delete'])?>);	
+	// 	<?php
+	// 		}
 		
-		?>	
-	});
+	// 	?>	
+	// });
 		
-$( "#guardar_producto" ).submit(function( event ) {
-  $('#guardar_datos').attr("disabled", true);
+// $( "#guardar_producto" ).submit(function( event ) {
+//   $('#guardar_datos').attr("disabled", true);
   
- var parametros = $(this).serialize();
-	 $.ajax({
-			type: "POST",
-			url: "ajax/nuevo_producto.php",
-			data: parametros,
-			 beforeSend: function(objeto){
-				$("#resultados_ajax_productos").html("Mensaje: Cargando...");
-			  },
-			success: function(datos){
-			$("#resultados_ajax_productos").html(datos);
-			$('#guardar_datos').attr("disabled", false);
-			load(1);
-		  }
-	});
-  event.preventDefault();
-})
+//  var parametros = $(this).serialize();
+// 	 $.ajax({
+// 			type: "POST",
+// 			url: "ajax/nuevo_producto.php",
+// 			data: parametros,
+// 			 beforeSend: function(objeto){
+// 				$("#resultados_ajax_productos").html("Mensaje: Cargando...");
+// 			  },
+// 			success: function(datos){
+// 			$("#resultados_ajax_productos").html(datos);
+// 			$('#guardar_datos').attr("disabled", false);
+// 			load(1);
+// 		  }
+// 	});
+//   event.preventDefault();
+// })
 
 </script>

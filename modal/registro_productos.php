@@ -11,7 +11,7 @@
 			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar nuevo producto</h4>
 		  </div>
 		  <div class="modal-body">
-			<form class="form-horizontal" method="POST" id="guardar_producto" name="guardar_producto">
+			<form class="form-horizontal" method="POST" id="guardar_producto" name="guardar_producto" onsubmit="setTimeout('document.forms[0].reset()', 200)">
 			<div id="resultados_ajax_productos"></div>
 <!-- action="<?php echo $_SERVER['PHP_SELF'];?>" -->
 
@@ -201,7 +201,9 @@
 			
 		  </div>
 		  <div class="modal-footer">
-		  	<button type="submit" class="btn btn-primary"  id="guardar_datos" onclick = "location='stock.php'">Guardar Datos</button>
+		  <!-- <button type="submit" class="btn btn-primary"  id="guardar_datos" onclick = "location='stock.php'">Guardar Datos</button> -->
+		  	<button type="submit" class="btn btn-primary"  id="guardar_datos">Guardar Datos</button>
+		  	<!--  <input type="submit" class="btn btn-primary" id="guardar_datos" value="Guardar Datos"></input>	 -->
 		  <!-- 	<button type="reset" class="btn btn-primary">Limpiar</button> -->
 			<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 			

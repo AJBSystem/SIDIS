@@ -11,7 +11,7 @@
 			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Editar Producto</h4>
 		  </div>
 		  <div class="modal-body">
-			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto">
+			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto" >
 			<div id="resultados_ajax2"></div>
 
 

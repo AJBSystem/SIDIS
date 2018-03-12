@@ -11,7 +11,7 @@
 			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar nuevo usuario</h4>
 		  </div>
 		  <div class="modal-body">
-			<form class="form-horizontal" method="post" id="guardar_usuario" name="guardar_usuario">
+			<form class="form-horizontal" method="post" id="guardar_usuario" name="guardar_usuario" onsubmit="setTimeout('document.forms[0].reset()', 200)">
 			<div id="resultados_ajax"></div>
 			  <div class="form-group">
 				<label for="firstname" class="col-sm-3 control-label">Nombres</label>
@@ -57,7 +57,7 @@
 			
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
 		  </div>
 		  </form>

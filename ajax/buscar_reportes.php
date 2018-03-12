@@ -33,8 +33,8 @@
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		 $id_categoria =intval($_REQUEST['id_categoria']);
-		 $aColumns = array('serial', 'nombre_producto');//Columnas de busqueda
+		 // $id_categoria =intval($_REQUEST['id_categoria']);
+		 $aColumns = array('codigo_producto ', 'nombre_producto');//Columnas de busqueda
 		 $sTable = "products";
 		 $sWhere = "";
 		
@@ -46,10 +46,12 @@
 			$sWhere = substr_replace( $sWhere, "", -3 );
 			$sWhere .= ')';
 		
-		if ($id_categoria>0){
-			$sWhere .=" and id_categoria='$id_categoria'";
-		}
+		// if ($id_categoria>0){
+		// 	$sWhere .=" and id_categoria='$id_categoria'";
+		// }
 		$sWhere.=" order by id_producto desc";
+
+		
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
