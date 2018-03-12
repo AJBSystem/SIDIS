@@ -11,9 +11,15 @@
 			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar nuevo producto</h4>
 		  </div>
 		  <div class="modal-body">
-			<form class="form-horizontal" method="POST" id="guardar_producto" name="guardar_producto" onsubmit="setTimeout('document.forms[0].reset()', 200)">
+			<form class="form-horizontal" method="POST" enctype="multipart/form-data" id="guardar_producto" name="guardar_producto" onsubmit="setTimeout('document.forms[0].reset()', 200)">
 			<div id="resultados_ajax_productos"></div>
 <!-- action="<?php echo $_SERVER['PHP_SELF'];?>" -->
+
+<!-- Imagen del producto -->
+		<center> <div id="vista-previa"></div></center>
+         <div id="respuesta" action="valida_foto.php" method="POST" enctype="multipart/form-data"></div>
+         <center> <input type="file" id="file" name="file['imagen']"></input></center>	
+<!-- fin de imagen del producto  -->
 
 			  <div class="form-group">
 				<label for="serial" class="col-sm-3 control-label">Serial</label>
@@ -215,6 +221,61 @@
 		</div>
 	  </div>
 	</div>
+
+ <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script>
+     $(function(){   
+       $("#file").on("change", function(){
+           /* Limpiar vista previa */
+           $("#vista-previa").html('');
+           var archivos = document.getElementById('file').files;
+           var navegador = window.URL || window.webkitURL;
+           /* Recorrer los archivos */
+           for(x=0; x<archivos.length; x++)
+           {
+               /* Validar tamaño y tipo de archivo */
+               var size = archivos[x].size;
+               var type = archivos[x].type;
+               var name = archivos[x].name;
+               if (size > 1024*1024)
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" supera el máximo permitido 1MB</p>");
+               }
+               else if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png' && type != 'image/gif')
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" no es del tipo de imagen permitida.</p>");
+               }
+               else
+               {
+                 var objeto_url = navegador.createObjectURL(archivos[x]);
+                 $("#vista-previa").append("<img src="+objeto_url+" width='250' height='250'>");
+               }
+           }
+       });
+       
+       $("#guardar_datos").on("click", function(){
+            var formData = new FormData($("#formulario")[0]);
+            var ruta = "validar_imagenes";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+           });
+       
+     });
+
+      
+    </script>
+ 
+
+	
 	<?php
 		}
 	?>
