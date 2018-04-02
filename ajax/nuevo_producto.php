@@ -57,12 +57,13 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 																										!empty($_POST['asignacion']) &&
 																											!empty($_POST['concepto']) &&
 																												   $_POST['stock']!="" &&
-																												!empty($_POST['precio'])
+																														!empty($_POST['precio'])
 																){
 		/* Connect To Database*/
 		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		include("../funciones.php");
+
 		// escaping, additionally removing everything that could be (html/javascript-) code
 
 		$serial=mysqli_real_escape_string($con,(strip_tags($_POST["serial"],ENT_QUOTES)));
@@ -84,9 +85,13 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 																		// $id_cargo=intval($_POST['cargo']);
 																			$precio_venta=floatval($_POST['precio']);
 																				$fecha=date("Y-m-d H:i:s");
-			
-		$sql="INSERT INTO products ( serial, codigo_producto, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha_products, precio_producto, stock, id_categoria, condicion_producto, id_motivo, responsable_entrega, asignacion_producto, concepto_inventario, codigo_inventario ) VALUES ('$serial','$codigo','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$condicion','$motivo','$responsable','$asignacion','$concepto', '$codigi')";
-		$query_new_insert = mysqli_query($con,$sql);
+ 
+
+
+		$sql="INSERT INTO products ( serial, codigo_producto, nombre_producto, marca_producto, modelo_producto, numero_bien, fecha_products, precio_producto, stock, id_categoria, condicion_producto, id_motivo, responsable_entrega, asignacion_producto, concepto_inventario, codigo_inventario) VALUES ('$serial','$codigo','$nombre','$marca','$modelo','$numero','$fecha','$precio_venta', '$stock', '$id_categoria','$condicion','$motivo','$responsable','$asignacion','$concepto', '$codigi')";
+
+		 $query_new_insert = mysqli_query($con,$sql);
+		
 
 
 			if ($query_new_insert){
