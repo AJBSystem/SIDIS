@@ -11,9 +11,11 @@
 			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Agregar nuevo producto</h4>
 		  </div>
 		  <div class="modal-body">
-			<form class="form-horizontal" method="POST" id="guardar_producto" name="guardar_producto">
+
+		<form class="form-horizontal" method="POST" id="guardar_producto" name="guardar_producto" enctype="multipart/form-data" onsubmit="setTimeout('document.forms[0].reset()', 200)" action="../ajax/nuevo_producto.php">
 			<div id="resultados_ajax_productos"></div>
-<!-- action="<?php echo $_SERVER['PHP_SELF'];?>" -->
+		<!-- action="<?php echo $_SERVER['PHP_SELF'];?>" -->
+
 
 			  <div class="form-group">
 				<label for="serial" class="col-sm-3 control-label">Serial</label>
@@ -72,22 +74,6 @@
 				</div>
 			  </div>
 			
-			<!-- <div class="form-group">
-				<label for="area" class="col-sm-3 control-label">Área</label>
-				<div class="col-sm-8">
-					<select class='form-control' name='area' id='area' required>
-						<option value="">Selecciona un área</option>
-							<?php 
-							$query_area=mysqli_query($con,"select * from area order by nombre_area");
-							while($rw=mysqli_fetch_array($query_area))	{
-								?>
-							<option value="<?php echo $rw['id_area'];?>"><?php echo $rw['nombre_area'];?></option>			
-								<?php
-							}
-							?>
-					</select>			  
-				</div>
-			  </div> -->
 
 			 <div class="form-group">
 				<label for="numero" class="col-sm-3 control-label">N° Bien</label>
@@ -95,7 +81,6 @@
 					<input class="form-control" id="numero" name="numero" placeholder="Número de bien del producto" required maxlength="100" ></input>				  
 				</div>
 			  </div> 
-
 
 			<div class="form-group">
 				<label for="motivo" class="col-sm-3 control-label">Motivo</label>
@@ -135,40 +120,6 @@
 				</div>
 			  </div> 	
 
-			<!-- <div class="form-group">
-				<label for="rango" class="col-sm-3 control-label">Rango</label>
-				<div class="col-sm-8">
-					<select class='form-control' name='rango' id='rango' required>
-						<option value="">Selecciona un rango</option>
-							<?php 
-							$query_rango=mysqli_query($con,"select * from rango order by nombre_rango");
-							while($rw=mysqli_fetch_array($query_rango))	{
-								?>
-							<option value="<?php echo $rw['id_rango'];?>"><?php echo $rw['nombre_rango'];?></option>			
-								<?php
-							}
-							?>
-					</select>			  
-				</div>
-			  </div>
-
-			  <div class="form-group">
-				<label for="cargo" class="col-sm-3 control-label">Cargo</label>
-				<div class="col-sm-8">
-					<select class='form-control'  name='cargo' id='cargo' >
-						<option value="">Selecciona un cargo</option>
-							<?php 
-							$query_cargo=mysqli_query($con,"select * from cargo order by nombre_cargo");
-							while($rw=mysqli_fetch_array($query_cargo))	{
-								?>
-							<option value="<?php echo $rw['id_cargo'];?>"><?php echo $rw['nombre_cargo'];?></option>			
-								<?php
-							}
-							?>
-					</select>			  
-				</div>
-			  </div> -->
-
 				<div class="form-group">
 				<label for="codigoi" class="col-sm-3 control-label">Cod inventario</label>
 				<div class="col-sm-8">
@@ -198,21 +149,112 @@
 				</div>
 			</div>
 			
+
+			<!-- Imagen del producto -->
+ <div class="form-group">
+	
+	
+<input type="file" name="file-7" id="file-7" class="inputfile inputfile-7 col-sm-offset-4" data-multiple-caption="{count} archivos seleccionados" multiple />
+<label for="file-7">
+<span class="iborrainputfile"></span>
+<strong>
+<svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+Seleccionar archivo
+</strong>
+</label>
+	
+	
+</div>			
+
+<!-- <div class="form-group">
+				 <label for="stock" class="col-sm-3 control-label">Imagen</label>
+				<div class="col-sm-8">
+					<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+					  <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+					  <span class="input-group-addon btn btn-default btn-file">
+					  <span class="fileinput-new">Seleccionar imagen</span>
+					  
+						<input type="hidden">
+					  <input name="imagefile" id="imagefile" type="file"></span>
+					  
+					</div>
+				</div> 
+</div> -->
+
+				
+				
+			
+
+			<!-- fin de imagen del producto  -->
 			
 		  </div>
 		  <div class="modal-footer">
-		  	<button type="submit" class="btn btn-primary"  id="guardar_datos" onclick = "location='stock.php'">Guardar Datos</button>
+		  <!-- <button type="submit" class="btn btn-primary"  id="guardar_datos" onclick = "location='stock.php'">Guardar Datos</button> -->
+		  	<button type="submit" class="btn btn-primary"  id="guardar_datos">Guardar Datos</button>
+		  	<!--  <input type="submit" class="btn btn-primary" id="guardar_datos" value="Guardar Datos"></input>	 -->
 		  <!-- 	<button type="reset" class="btn btn-primary">Limpiar</button> -->
 			<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-			
-			
-			<!-- <button type="submit" class="btn btn-primary" id="guardar_datos" onclick = "location='stock.php'">Guardar Datos</button> -->
-			
+		
 		  </div>
 		  </form>
+		  
 		</div>
 	  </div>
 	</div>
+<script src="../js/jquery.custom-file-input.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script>
+     $(function(){   
+       $("#file").on("change", function(){
+           /* Limpiar vista previa */
+           $("#vista-previa").html('');
+           var archivos = document.getElementById('file').files;
+           var navegador = window.URL || window.webkitURL;
+           /* Recorrer los archivos */
+           for(x=0; x<archivos.length; x++)
+           {
+               /* Validar tamaño y tipo de archivo */
+               var size = archivos[x].size;
+               var type = archivos[x].type;
+               var name = archivos[x].name;
+               if (size > 1024*1024)
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" supera el máximo permitido 1MB</p>");
+               }
+               else if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png' && type != 'image/gif')
+               {
+                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" no es del tipo de imagen permitida.</p>");
+               }
+               else
+               {
+                 var objeto_url = navegador.createObjectURL(archivos[x]);
+                 $("#vista-previa").append("<img src="+objeto_url+" width='250' height='250'>");
+               }
+           }
+       });
+       
+       $("#btn").on("click", function(){
+            var formData = new FormData($("#guardar_producto")[0]);
+            var ruta = "../img/multiple-ajax.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+           });
+     });
+
+
+    
+    </script>
+
+
 	<?php
 		}
 	?>

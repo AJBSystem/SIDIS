@@ -14,7 +14,7 @@
 
 
 		  <div class="modal-body">
-			<form class="form-horizontal" method="post" id="guardar_categoria" name="guardar_categoria">
+			<form class="form-horizontal" method="post" id="guardar_categoria" name="guardar_categoria" onsubmit="setTimeout('document.forms[0].reset()', 200)">
 			<div id="resultados_ajax"></div>
 			  <div class="form-group">
 
@@ -40,7 +40,7 @@
 	 
 			   </div>
 			 <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 			<button type="submit" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
 		  </div>
 		  </form>

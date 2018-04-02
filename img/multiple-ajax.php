@@ -5,15 +5,15 @@ if (isset($_FILES["file"]))
    $reporte = null;
      for($x=0; $x<count($_FILES["file"]["name"]); $x++)
     {
-    $file = $_FILES["file"];
-    $nombre = $file["name"][$x];
-    $tipo = $file["type"][$x];
-    $ruta_provisional = $file["tmp_name"][$x];
-    $size = $file["size"][$x];
-    $dimensiones = getimagesize($ruta_provisional);
+    $file = $_FILES["file"];// nombre del input type file de la imagen
+    $nombre = $file["name"][$x];// captura el nombre de la imagen como tal 
+    $tipo = $file["type"][$x]; //indica el tipo de imagen
+    $ruta_provisional = $file["tmp_name"][$x]; // carpeta temporal dende se guardará la imagen 
+    $size = $file["size"][$x]; // indica tamaño de imagen
+    $dimensiones = getimagesize($ruta_provisional); 
     $width = $dimensiones[0];
     $height = $dimensiones[1];
-    $carpeta = "imagenes/";
+    $carpeta = "img/";
     
     if ($tipo != 'image/jpeg' && $tipo != 'image/jpg' && $tipo != 'image/png' && $tipo != 'image/gif')
     {
