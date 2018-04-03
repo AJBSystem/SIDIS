@@ -154,14 +154,14 @@
  <div class="form-group">
 	
 	
-<input type="file" name="file-7" id="file-7" class="inputfile inputfile-7 col-sm-offset-4" data-multiple-caption="{count} archivos seleccionados" multiple />
+<!-- <input type="file" name="file-7" id="file-7" class="inputfile inputfile-7 col-sm-offset-4" data-multiple-caption="{count} archivos seleccionados" multiple />
 <label for="file-7">
 <span class="iborrainputfile"></span>
 <strong>
 <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
 Seleccionar archivo
 </strong>
-</label>
+</label> -->
 	
 	
 </div>			
@@ -181,9 +181,26 @@ Seleccionar archivo
 				</div> 
 </div> -->
 
-				
-				
-			
+<!-- <div class="form-group">
+	Subir imagen: <input type="file" id="file" name="file[]" multiple>
+    <button type="button" id="btn">Subir imágenes</button>
+    <div id="vista-previa"></div>
+  	<div id="respuesta"></div>
+
+</div> -->
+
+<div class="form-group">
+<label for="stock" class="col-sm-3 control-label">Imagen</label>
+<div class="col-sm-8">
+<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+<span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Seleccionar imagen</span><span class="fileinput-exists">Cambiar</span><input name="imagefile" id="imagefile" type="file"></span>
+<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+		</div>
+	</div>
+</div>
+<div id="vista-previa"></div>
+  	<div id="respuesta"></div>
 
 			<!-- fin de imagen del producto  -->
 			
@@ -196,13 +213,14 @@ Seleccionar archivo
 			<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 		
 		  </div>
+
 		  </form>
 		  
 		</div>
 	  </div>
 	</div>
 <script src="../js/jquery.custom-file-input.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="../jquery-1.11.1.min.js"></script>
    <script>
      $(function(){   
        $("#file").on("change", function(){
@@ -249,12 +267,7 @@ Seleccionar archivo
             });
            });
      });
-
-
-    
     </script>
-
-
 	<?php
 		}
 	?>
