@@ -29,7 +29,7 @@
           <a href="#"data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Reportes</a>
             <ul class= "dropdown-menu">
               <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="listado_rep.php">Reporte General</a></li>
-              <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="listado_arbn.php">Acta Reasignación</a></li>
+              <!-- <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="listado_arbn.php">Acta Reasignación</a></li> -->
             </ul>
           </li>
 
