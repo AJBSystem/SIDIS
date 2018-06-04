@@ -3,8 +3,10 @@
   include('plantilla_reasignacion_global.php');
   require('conexion.php');
   
-  $query="SELECT * FROM `products` WHERE asignacion_producto = 'Anthony Benitez'";             
-  
+  $query = "SELECT numero_bien,nombre_producto,asignacion_producto,precio_producto 
+            FROM products 
+            ORDER BY asignacion_producto";
+
   $resultado = $mysqli->query($query);
 
   $pdf = new PDF('L', 'mm', array(400,300));

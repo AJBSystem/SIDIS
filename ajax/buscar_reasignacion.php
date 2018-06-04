@@ -13,7 +13,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 // $id_categoria =intval($_REQUEST['id_categoria']);
-		 $aColumns = array('codigo_producto ', 'nombre_producto');//Columnas de busqueda
+		 $aColumns = array('numero_bien', 'asignacion_producto');//Columnas de busqueda
 		 $sTable = "products";
 		 $sWhere = "";
 		
@@ -47,30 +47,28 @@
 			
 			?>
 			  <div class="table-responsive">
+			  	<!--  <a class="thumbnail" href="producto.php?id=<?php echo $id_producto;?>"> -->
 			  <table class="table">
 				<tr  class="success">
 					<th>Cod. Bien</th>
-					<th>Cantidad</th>
 					<th>Descripción</th>
+					<th>Reasignado a</th>
 					<th>Precio Unit.</th>
-					<th>Propietario</th>
-					
+					<th>Acción</th>
 				</tr>
 				<?php
 				while ($row=mysqli_fetch_array($query)){
-						$can=$row['stock'];
 						$num=$row['numero_bien'];
 						$nom=$row['nombre_producto'];
-						$pre=$row['precio_producto'];
 						$pro=$row['asignacion_producto'];
-
+						$pre=$row['precio_producto'];
 					?>
 					<tr>
-						<td><?php echo $can; ?></td>
 						<td><?php echo $num; ?></td>
 						<td><?php echo $nom; ?></td>
-						<td><?php echo $pre; ?></td>
 						<td><?php echo $pro; ?></td>
+						<td><?php echo $pre; ?></td>
+						<td><a href="pdf/reporte_reasignacion.php?id_producto=<?php echo $row ['id_producto']?>"><button type='button' class='btn btn-default btn-primary' title="Reporte factura"><span class='fa fa-file-pdf-o' aria-hidden='true' value='repor'></span></button></a></td>
 					</tr>
 					<?php
 				}
