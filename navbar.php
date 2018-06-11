@@ -22,8 +22,8 @@
 
       <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i>  Categorías</a></li>
       <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Control de Inventario</a></li>
-      <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="listado_rea.php"><i class='glyphicon glyphicon-transfer'></i> Reasignación</a></li>
-      <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="listado_des.php"><i class='glyphicon glyphicon-trash'></i> Desincorporación</a></li>
+      <li class="<?php if (isset($active_reasignacion)){echo $active_reasignacion;}?>"><a href="listado_rea.php"><i class='glyphicon glyphicon-transfer'></i> Reasignación</a></li>
+      
           <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>">
           <a href="#"data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Reportes</a>
             <ul class= "dropdown-menu">

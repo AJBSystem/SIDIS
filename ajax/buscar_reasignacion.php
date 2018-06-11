@@ -68,7 +68,12 @@
 						<td><?php echo $nom; ?></td>
 						<td><?php echo $pro; ?></td>
 						<td><?php echo $pre; ?></td>
-						<td><a href="pdf/reporte_reasignacion.php?id_producto=<?php echo $row ['id_producto']?>"><button type='button' class='btn btn-default btn-primary' title="Reporte factura"><span class='fa fa-file-pdf-o' aria-hidden='true' value='repor'></span></button></a></td>
+
+						<td><a href="pdf/reporte_reasignacion.php?id_producto=<?php echo $row ['id_producto']?>"><button type='button' class='btn btn-default btn-primary' title="Reporte factura"><span class='fa fa-file-pdf-o' aria-hidden='true' value='repor'></span></button></a>
+
+						<a href="pdf/reporte_reasignacion2.php?id_producto=<?php echo $row ['id_producto']?>"><button type='button' class='btn btn-default btn-primary' title="Reporte factura"><span class='fa fa-file-pdf-o' aria-hidden='true' value='repor'></span></button></a>
+						</td>
+
 					</tr>
 					<?php
 				}

@@ -4,7 +4,7 @@
   require('conexion.php');
   
 $id_pro = $_GET['id_producto'];
-$query = "SELECT id_producto, numero_bien,nombre_producto, asignacion_producto, COUNT(asignacion_producto) as cantidad, precio_producto 
+$query = "SELECT id_producto, numero_bien, nombre_producto, asignacion_producto, COUNT(asignacion_producto) as cantidad, precio_producto 
           FROM products 
           WHERE id_producto = $id_pro"; 
 
