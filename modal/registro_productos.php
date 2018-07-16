@@ -149,15 +149,15 @@
 				</div>
 			</div>
 			<!-- Imagen del producto -->
-<div class="form-group">
-<label for="stock" class="col-sm-3 control-label">Imagen</label>
-<div class="col-sm-8">
-<div class="fileinput fileinput-new input-group" data-provides="fileinput">
-<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-<span class="input-group-addon btn btn-default btn-file" style="padding-bottom: 2px;"><span class="fileinput-new"></span><span class="fileinput-exists"></span><input name="imagefile" id="imagefile" type="file"></span>
-		</div>
-	</div>
-</div>
+			<div class="form-group">
+			<label for="stock" class="col-sm-3 control-label">Imagen</label>
+			<div class="col-sm-8">
+			<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+			<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+			<span class="input-group-addon btn btn-default btn-file" style="padding-bottom: 2px;"><span class="fileinput-new"></span><span class="fileinput-exists"></span><input name="file" id="file" type="file"></span>
+					</div>
+				</div>
+			</div>
 			<!-- fin de imagen del producto  -->
 		  </div>
 		  <div class="modal-footer">

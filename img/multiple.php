@@ -54,7 +54,7 @@
  </head>
  <body>
  <form method="post" id="formulario" enctype="multipart/form-data">
-    Subir imagen: <input type="file" id="file" name="file[]" multiple>
+    Subir imagen: <input type="file" id="file" name="imagefile[]" multiple>
     <button type="button" id="btn">Subir imágenes</button>
  </form>
   <div id="vista-previa"></div>
