@@ -1,8 +1,8 @@
 <?php
 	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
+	Autor: Arnaldo Bonillo
+	Web: www.pwr.com.ve
+	Mail: bonillaarnaldo@gmail.com
 	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
@@ -64,7 +64,7 @@
 
 
 		$row=mysqli_fetch_array($query);
-		
+		$ruta_img=$row['foto'];
 	} else {
 		die("Producto no existe");
 	}
@@ -81,7 +81,6 @@
 	include("modal/agregar_stock.php");
 	include("modal/eliminar_stock.php");
 	include("modal/editar_productos.php");
-	
 	?>
 	
 	<div class="container">
@@ -93,7 +92,7 @@
             <div class="row">
 
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <img class="item-img img-responsive" src="img/<?php echo $ruta_img; ?>" alt=""> 
 				  <br>
 
 				  <div class="form-group">

@@ -68,7 +68,7 @@ if (isset($_FILES["file"]))
         $file = $_FILES["file"];// nombre del input type file de la imagen
         $nombre_foto = $file["name"][$x];// captura el nombre de la imagen como tal 
         $tipo = $file["type"][$x]; //indica el tipo de imagen
-        $ruta_provisional = $file["tmp_name"][$x]; // carpeta temporal dende se guardará la imagen 
+        $ruta_provisional = $file["tmp_name"][$x]; // carpeta temporal donde se guardará la imagen 
         $size = $file["size"][$x]; // indica tamaño de imagen
         $dimensiones = getimagesize($ruta_provisional); // devuelve el tamaño de la imagen
         $width = $dimensiones[0];
@@ -95,16 +95,11 @@ if (isset($_FILES["file"]))
         {																															
             $src = $carpeta.$nombre_foto;																		
             move_uploaded_file($ruta_provisional, $src);
-            echo "<p style='color: blue'>La imagen $nombre_foto ha sido subida con éxito</p>";											
+            // echo "<p style='color: blue'>La imagen $nombre_foto ha sido subida con éxito</p>";											
         }																																
     }																																	
         echo $mensaje;																													
 }						
-
-
-
-
-
 
 		/* Connect To Database*/
 		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
@@ -142,7 +137,7 @@ if (isset($_FILES["file"]))
 		// $sql="INSERT INTO products (foto) VALUES ('$nombre_foto')";
 
 		 $query_new_insert = mysqli_query($con,$sql);
-			print_r($sql);
+			
 
 
 			if ($query_new_insert){
