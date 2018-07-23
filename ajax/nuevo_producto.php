@@ -63,13 +63,13 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 if (isset($_FILES["file"]))																							 
 {																													 	
    $mensaje = null;																									 
-     for($x=0; $x<count($_FILES["file"]["name"]); $x++)																 
-    {
+    //  for($x=0; $x<count($_FILES["file"]["name"]); $x++)																 
+    // {
         $file = $_FILES["file"];// nombre del input type file de la imagen
-        $nombre_foto = $file["name"][$x];// captura el nombre de la imagen como tal 
-        $tipo = $file["type"][$x]; //indica el tipo de imagen
-        $ruta_provisional = $file["tmp_name"][$x]; // carpeta temporal donde se guardará la imagen 
-        $size = $file["size"][$x]; // indica tamaño de imagen
+        $nombre_foto = $file["name"];// captura el nombre de la imagen como tal 
+        $tipo = $file["type"]; //indica el tipo de imagen
+        $ruta_provisional = $file["tmp_name"]; // carpeta temporal donde se guardará la imagen 
+        $size = $file["size"]; // indica tamaño de imagen
         $dimensiones = getimagesize($ruta_provisional); // devuelve el tamaño de la imagen
         $width = $dimensiones[0];
         $height = $dimensiones[1];
@@ -97,7 +97,7 @@ if (isset($_FILES["file"]))
             move_uploaded_file($ruta_provisional, $src);
             // echo "<p style='color: blue'>La imagen $nombre_foto ha sido subida con éxito</p>";											
         }																																
-    }																																	
+    //}																																	
         echo $mensaje;																													
 }						
 
