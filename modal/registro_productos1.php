@@ -13,12 +13,12 @@
 		  <div class="modal-body">
 
 		<form class="form-horizontal" method="POST" id="guardar_producto" name="guardar_producto" enctype="multipart/form-data" 
-		onsubmit="setTimeout('document.forms[0].reset()', 200)" action="#">
+		onsubmit="setTimeout('document.forms[0].reset()', 200)" action="../ajax/nuevo_producto.php">
 			<div id="resultados_ajax_productos"></div>
 		<!-- action="<?php echo $_SERVER['PHP_SELF'];?>" -->
 
 
-			  <div class="form-group">
+			 <!--  <div class="form-group">
 				<label for="serial" class="col-sm-3 control-label">Serial</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="serial" name="serial" placeholder="Serial del producto" required>
@@ -148,7 +148,7 @@
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio de venta del producto" required pattern="^[0-9]{1,5}(\.[0-9]{0,2})?$" title="Ingresa sólo números con 0 ó 2 decimales" maxlength="8">
 				</div>
-			</div> 
+			</div> -->
 			<!-- Imagen del producto -->
 			<div class="form-group">
 			<label for="stock" class="col-sm-3 control-label">Imagen</label>
@@ -156,7 +156,7 @@
 			<div class="fileinput fileinput-new input-group" data-provides="fileinput">
 			<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
 			<span class="input-group-addon btn btn-default btn-file" style="padding-bottom: 2px;"><span class="fileinput-new"></span><span class="fileinput-exists"></span>
-			<input name="file[]" multiple id="file" type="file"></span>
+			<input  id="file" type="file" name="file[]" multiple></span>
 					</div>
 				</div>
 			</div>
