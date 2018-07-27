@@ -11,7 +11,7 @@
 			<h4 class="modal-title" id="myModalLabel"><i class='glyphicon glyphicon-edit'></i> Editar Producto</h4>
 		  </div>
 		  <div class="modal-body">
-			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto" >
+			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto" enctype="multipart/form-data">
 			<div id="resultados_ajax2"></div>
 
 
@@ -27,7 +27,7 @@
 				<label for="mod_codigo" class="col-sm-3 control-label">Cod producto</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_codigo" name="mod_codigo" required>
-					<input type="hidden" name="mod_id" id="mod_id">
+					<input type="hidden" name="mod_id" id="mod_id"> 
 				</div>
 			  </div>
 
@@ -146,11 +146,29 @@
 			<div class="form-group">
 				<label for="mod_concepto" class="col-sm-3 control-label">Concepto</label>
 				<div class="col-sm-8">
-				  <textarea class="form-control" id="mod_concepto" name="mod_concepto" placeholder="Concepto del Inventario" required></textarea>
+				  <input class="form-control" id="mod_concepto" name="mod_concepto" placeholder="Concepto del Inventario" required>
 				</div>
 			  </div>
-			 
 			
+
+			<!-- Imagen del producto -->
+			<div class="form-group">
+			<label for="mod_imagen" class="col-sm-3 control-label">Imagen</label>
+			<div class="col-sm-8">
+			<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+			<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+			<span class="input-group-addon btn btn-default btn-file" style="padding-bottom: 2px;"><span class="fileinput-new"></span><span class="fileinput-exists"></span>
+			<input name="mod_imagen" id="mod_imagen" type="file"></span>
+			
+					</div>
+					<input class="form-control" id="mod_foto" name="mod_foto">
+				</div>
+			</div>
+
+
+			
+
+
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

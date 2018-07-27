@@ -101,7 +101,7 @@
 				  	</div>
 
 				  		<div class="col-sm-8">
-				  		<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>'  data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar  </a>
+				  		<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>' data-img='<?php echo $row['foto'];?>' data-id='<?php echo $row['id_producto'];?>'  class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar  </a>
 				  	</div>
 
 				  	<div class=" col-sm-4" style="bottom: 34px;left: 220px;">
@@ -110,19 +110,10 @@
 				  	</div>
 				  
 
-
 				  </div>
 					<br><br>
 
-				
-                    
-
-						
 <br>
-
-					
-
-					
 
               </div>
 			  
@@ -313,14 +304,18 @@
   </body>
 </html>
 <script>
-$( "#editar_producto" ).submit(function( event ) {
+  $( "#editar_producto" ).submit(function( event ) {
   $('#actualizar_datos').attr("disabled", true);
   
- var parametros = $(this).serialize();
+ //var formulario = $(this).serialize();
+ var ruta = "ajax/editar_producto.php";
+ var formData = new FormData($("#editar_producto")[0]);
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_producto.php",
-			data: parametros,
+			url: ruta,
+			data: formData,
+			contentType: false, // agregado y se coloco en false
+            processData: false, // agregado y se coloco en false
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");
 			  },
@@ -331,12 +326,11 @@ $( "#editar_producto" ).submit(function( event ) {
 				$(".alert").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove();});
 				location.replace('stock.php');
-			}, 4000);
+			}, 500);
 		  }
 	});
   event.preventDefault();
 })
-
 	$('#myModal2').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var codigo = button.data('codigo') // Extract info from data-* attributes
@@ -354,7 +348,9 @@ $( "#editar_producto" ).submit(function( event ) {
 		var asig = button.data('asig')
 		var conc = button.data('conc')
 		var codi = button.data('codi')
+		var foto = button.data('img')
 		var id = button.data('id')
+
 
 		var modal = $(this)
 		modal.find('.modal-body #mod_codigo').val(codigo)
@@ -372,8 +368,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_asignacion').val(asig)
 		modal.find('.modal-body #mod_concepto').val(conc)
 		modal.find('.modal-body #mod_codi').val(codi)
-
-
+		modal.find('.modal-body #mod_foto').val(foto)
 		modal.find('.modal-body #mod_id').val(id)
 	})
 	

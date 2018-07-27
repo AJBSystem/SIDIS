@@ -84,7 +84,7 @@
 						  <a class="thumbnail" href="producto.php?id=<?php echo $id_producto;?>">
 							  <span title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock); ?></span>
 							  <span title="Low stock" class="low-stock-alert ng-hide" ng-show="item.current_quantity <= item.low_stock_threshold"><i class="fa fa-exclamation-triangle"></i></span>
-							  <img class="img-responsive" src="img/<?php echo $ruta_img;?>" alt="<?php echo $nombre_producto;?>">
+							  <img class="img-responsive" src="img/<?php echo $ruta_img;?>" alt="<?php echo $nombre_producto;?>" style="width: 125; height: 125px;">
 
 						  </a>
 						  <span class="thumb-name"><strong><?php echo $nombre_producto;?></strong></span>
