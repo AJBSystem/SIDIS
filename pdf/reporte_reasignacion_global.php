@@ -31,8 +31,41 @@
    $pdf->Cell(120,6,utf8_decode($row['nombre_producto']),1,0,'C',0);
    $pdf->Cell(120,6,utf8_decode($row['asignacion_producto']),1,0,'C',0);
    $pdf->Cell(35,6,utf8_decode($row['precio_producto']),1,1,'C',0);  
+
+
   }
-  
+  $pdf->SetY(395);
+  $pdf->SetX(75);
+  $pdf->Cell(375,10,utf8_decode('Haciendo constar que dichos activos se encuentran en óptimas condiciones físicas. Se levanta la presente acta y en señal de conformidad firma'),0,0,'R');
+  $pdf->Ln(10);
+
+  $pdf->Cell(355,10,utf8_decode('el funcionario receptor, quedando este responsable del uso, conservación y custodia de estos bienes:'),0,0,'R');
+  $pdf->Ln(10);
+ 
+  $pdf->SetY(420);
+  $pdf->Cell(307,10,utf8_decode('Recibe Conforme'),0,0,'C');
+  $pdf->Ln(10);
+
+  $pdf->SetY(430);
+  $pdf->SetX(145);
+  $pdf->Cell(946,15,utf8_decode('Nombre y Apellido -------------------------------------------------------------------------------------'),0,0,'L');
+  $pdf->Ln(30);
+
+  $pdf->SetY(440);
+  $pdf->SetX(147);
+  $pdf->Cell(946,10,utf8_decode('C.I. ----------------------------------   Credencial ---------------------------------    Cargo -------------------------------------------------------------------------------------------------------------------------------------------------------------'),0,0,'L');
+  $pdf->Ln(30);
+
+  $pdf->SetY(450);
+  $pdf->SetX(147);
+  $pdf->Cell(946,10,utf8_decode('Firma -------------------------------------------------------------------------------------------------'),0,0,'L');
+  $pdf->Ln(10);
+
+
+  $pdf->SetY(460);
+  $pdf->SetX(147);
+  $pdf->Cell(846,10,utf8_decode('NOTA: ESTOS EQUIPOS NO PUEDEN SER INCLUIDOS EN SU INVENTARIO, YA QUE PERTENECEN A UN PROYECTO DE LA VICEPRESIDENCIA DE LA REPUBLICA. '),0,0,'L');
+
 
 
   $pdf->SetFont('Arial','',8);

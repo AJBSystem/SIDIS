@@ -14,6 +14,8 @@ class PDF extends FPDF
 		$this->Cell(30);
 		$this->SetX(100);
 		$this->Cell(290,10,utf8_decode ('ACTA DE REASIGNACIÓN DE BIENES NACIONALES'),0,0,'C');
+		$this->SetX(178);
+		$this->Cell(40,100,date('d/m/Y'),0,0,'L');	
 		$this->Ln(5);
 
 		$this->Ln(10);
@@ -23,7 +25,8 @@ class PDF extends FPDF
 		$this->Ln(20);
 
 				$this->SetX(135);
-				$this->Cell(865,10,utf8_decode('En la ciudad de Caracas, se llevó a cabo por parte de la división de sistemas la entrega a la: de los bienes muebles que se especifican a continuación'),0,0,'L');
+				$this->Cell(865,10,utf8_decode('En la ciudad de Caracas,                     se llevó a cabo por parte de la división de sistemas la entrega de los bienes muebles que se especifican a continuación'),0,0,'L');
+				
 				$this->Ln(10);
 				
 
