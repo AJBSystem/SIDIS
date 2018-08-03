@@ -9,17 +9,10 @@ $query = "SELECT id_producto, numero_bien,nombre_producto, asignacion_producto, 
           WHERE id_producto = $id_pro"; 
 
   $resultado = $mysqli->query($query);
-  //$ruta_img=$resultado['foto'];
   $pdf = new PDF('L', 'mm', array(600,500));
   $pdf->AliasNbPages();
   $pdf->AddPage();
 
-
-  // AQUI VA LA FOTO//
-  // $pdf->SetFillColor(80,150,200);
-  // $pdf->Rect(80,70,100,100,'F');
- 
-  /// FIN FOTO//
 
   $pdf->SetFillColor(232,232,232);
   $pdf->SetFont('Arial','B',12);
