@@ -1,8 +1,8 @@
 <?php
 	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
+	Autor: Arnaldo Bonillo
+	Web: www.pwr.com.ve
+	Mail: bonillaarnaldo@gmail.com
 	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
@@ -64,7 +64,7 @@
 
 
 		$row=mysqli_fetch_array($query);
-		
+		$ruta_img=$row['foto'];
 	} else {
 		die("Producto no existe");
 	}
@@ -81,7 +81,6 @@
 	include("modal/agregar_stock.php");
 	include("modal/eliminar_stock.php");
 	include("modal/editar_productos.php");
-	
 	?>
 	
 	<div class="container">
@@ -93,15 +92,28 @@
             <div class="row">
 
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <img class="item-img img-responsive" src="img/<?php echo $ruta_img; ?>" alt=""> 
 				  <br>
-                    <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>'  data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+				  <div class="form-group">
+				  	<div class="col-sm-2">
+				  		<a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a>
+				  	</div>
 
+				  		<div class="col-sm-8">
+				  		<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>' data-img='<?php echo $row['foto'];?>' data-id='<?php echo $row['id_producto'];?>'  class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar  </a>
+				  	</div>
 
-					<a href="pdf/reporteserial.php?id_producto=<?php echo $row['id_producto'];?>" class="btn btn-primary" style="background:#00b3b3" 
-					title= "imprimir"> <i class="glyphicon  glyphicon-print"></i> Imprimir </a>
+				  	<div class=" col-sm-4" style="bottom: 34px;left: 220px;">
+				  		<a href="pdf/reporteserial.php?id_producto=<?php echo $row['id_producto'];?>" class="btn btn-primary"  
+					title= "imprimir"> <i class="glyphicon  glyphicon-print"></i> Reporte  </a>
+				  	</div>
+				  
+
+				  </div>
+					<br><br>
+
+<br>
 
               </div>
 			  
@@ -292,14 +304,18 @@
   </body>
 </html>
 <script>
-$( "#editar_producto" ).submit(function( event ) {
+  $( "#editar_producto" ).submit(function( event ) {
   $('#actualizar_datos').attr("disabled", true);
   
- var parametros = $(this).serialize();
+ //var formulario = $(this).serialize();
+ var ruta = "ajax/editar_producto.php";
+ var formData = new FormData($("#editar_producto")[0]);
 	 $.ajax({
 			type: "POST",
-			url: "ajax/editar_producto.php",
-			data: parametros,
+			url: ruta,
+			data: formData,
+			contentType: false, // agregado y se coloco en false
+            processData: false, // agregado y se coloco en false
 			 beforeSend: function(objeto){
 				$("#resultados_ajax2").html("Mensaje: Cargando...");
 			  },
@@ -310,12 +326,11 @@ $( "#editar_producto" ).submit(function( event ) {
 				$(".alert").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove();});
 				location.replace('stock.php');
-			}, 4000);
+			}, 500);
 		  }
 	});
   event.preventDefault();
 })
-
 	$('#myModal2').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var codigo = button.data('codigo') // Extract info from data-* attributes
@@ -333,7 +348,9 @@ $( "#editar_producto" ).submit(function( event ) {
 		var asig = button.data('asig')
 		var conc = button.data('conc')
 		var codi = button.data('codi')
+		var foto = button.data('img')
 		var id = button.data('id')
+
 
 		var modal = $(this)
 		modal.find('.modal-body #mod_codigo').val(codigo)
@@ -351,8 +368,7 @@ $( "#editar_producto" ).submit(function( event ) {
 		modal.find('.modal-body #mod_asignacion').val(asig)
 		modal.find('.modal-body #mod_concepto').val(conc)
 		modal.find('.modal-body #mod_codi').val(codi)
-
-
+		modal.find('.modal-body #mod_foto').val(foto)
 		modal.find('.modal-body #mod_id').val(id)
 	})
 	

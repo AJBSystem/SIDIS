@@ -4,10 +4,11 @@
 	require('conexion.php');
 	$id_producto = $_GET['id_producto'];
 
-	$query = "SELECT fecha_products, codigo_producto, serial,  nombre_producto, `marca_producto`,modelo_producto , categorias.nombre_categoria , numero_bien, motivo.nombre_motivo `nombre_motivo`, `condicion_producto`, `responsable_entrega`, `asignacion_producto`, `codigo_inventario`, `precio_producto` ,stock FROM `products` 
-	INNER JOIN categorias on products.id_categoria = categorias.id_categoria	
-	INNER JOIN motivo on products.id_motivo = motivo.id_motivo 
-	WHERE id_producto = $id_producto";
+	$query = "SELECT fecha_products, codigo_producto, serial,  nombre_producto, `marca_producto`,modelo_producto , categorias.nombre_categoria , numero_bien, motivo.nombre_motivo `						 nombre_motivo`, `condicion_producto`, `responsable_entrega`, `asignacion_producto`, `codigo_inventario`, `precio_producto` ,stock
+			  FROM `products` 
+			  INNER JOIN categorias on products.id_categoria = categorias.id_categoria	
+			  INNER JOIN motivo on products.id_motivo = motivo.id_motivo 
+			  WHERE id_producto = $id_producto";
  
 									 
 	

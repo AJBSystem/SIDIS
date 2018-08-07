@@ -42,9 +42,9 @@ if ($login->isUserLoggedIn() == true) {
 </head>
 <body>
  <div class="container">
-        <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="img/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
+        <div class="card card-container" style="margin-top: 125px;padding-top: 40px;">
+            <img id="profile-img" class="profile-img-card" src="img/cicpc_logo_trns.png" />
+            <p id="profile-name" class="profile-name-card">SIDIS<br>Sistema de Inventario División de Sistemas</p>
             <form method="post" accept-charset="utf-8" action="login.php" name="loginform" autocomplete="off" role="form" class="form-signin">
 			<?php
 				// show potential errors / feedback (from login object)
@@ -80,6 +80,8 @@ if ($login->isUserLoggedIn() == true) {
                 <input class="form-control" placeholder="Usuario" name="user_name" type="text" value="" autofocus="" required>
                 <input class="form-control" placeholder="Contraseña" name="user_password" type="password" value="" autocomplete="off" required>
                 <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin" name="login" id="submit">Iniciar Sesión</button>
+
+                <img id="profile-img" class="profile-img-card" src="img/codigo-barra.jpg" />
             </form><!-- /form -->
             
         </div><!-- /card-container -->

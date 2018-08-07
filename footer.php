@@ -1,7 +1,7 @@
 <div class="navbar navbar-default navbar-fixed-bottom" >
     <div class="container">
-      <p class="navbar-text pull-left">&copy <?php echo date('Y');?> - Dirección de Tecnología | División de Sistemas.
-           <a href="http://www.cicpc.gob.ve/" target="_blank" style="color: #ecf0f1"><strong>CICPC</strong></a>
+      <p class="navbar-text pull-left" style="margin-left: 270px;">&copy <?php echo date('Y');?> - Dirección de Tecnología | División de Sistemas | Sistema de Inventario.
+           <a href="http://www.cicpc.gob.ve/" target="_blank" style="color: #FFFFE0"><strong>CICPC</strong></a>
       </p>
    </div>
 </div>

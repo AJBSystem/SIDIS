@@ -119,11 +119,16 @@ function eliminar (id){
 $( "#guardar_producto" ).submit(function( event ) {
   $('#guardar_datos').attr("disabled", true);
   
- var parametros = $(this).serialize();
+    var parametros = $(this).serialize();
+ 	var ruta = "ajax/nuevo_producto.php";
+ 	var formData = new FormData($("#guardar_producto")[0]);// agregado
+
 	 $.ajax({
 			type: "POST",
-			url: "ajax/nuevo_producto.php",
-			data: parametros,
+			url: ruta,
+			data: formData,
+			contentType: false, // agregado y se coloco en false
+            processData: false, // agregado y se coloco en false
 			 beforeSend: function(objeto){
 				$("#resultados_ajax_productos").html("Mensaje: Cargando...");
 			  },

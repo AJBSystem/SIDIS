@@ -55,7 +55,7 @@
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
-		$per_page = 10; //how much records you want to show
+		$per_page = 8; //how much records you want to show
 		$adjacents  = 4; //gap between pages after number of adjacents
 		$offset = ($page - 1) * $per_page;
 		//Count the total number of row in your table*/
@@ -71,17 +71,7 @@
 		if ($numrows>0){
 			
 			?>
-			  
-				<?php
-				$nums=1;
-				while ($row=mysqli_fetch_array($query)){
-						$id_producto=$row['id_producto'];
-						$id_serial=$row['serial'];
-						$nombre_producto=$row['nombre_producto'];
-						$stock=$row['stock'];
-					?>
-					
-			<div class="table-responsive">
+			  <div class="table-responsive">
 			  <table class="table">
 				<tr  class="success">
 					<th>Cantidad</th>
@@ -122,6 +112,16 @@
 				
 			  </table>
 			</div>
+				<?php
+				$nums=1;
+				while ($row=mysqli_fetch_array($query)){
+						$id_producto=$row['id_producto'];
+						$id_serial=$row['serial'];
+						$nombre_producto=$row['nombre_producto'];
+						$stock=$row['stock'];
+					?>
+					
+			
 
 					<?php
 					if ($nums%6==0){

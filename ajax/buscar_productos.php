@@ -1,5 +1,4 @@
 <?php
-
 	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	/* Connect To Database*/
 	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
@@ -68,25 +67,24 @@
 			
 			?>
 
-
-			
-
-
 			  
 				<?php
 				$nums=1;
 				while ($row=mysqli_fetch_array($query)){
-						$id_producto=$row['id_producto'];
+						$id_producto=$row['id_producto'];//con el nombre del campo de la tabla
 						$id_serial=$row['serial'];
 						$nombre_producto=$row['nombre_producto'];
 						$stock=$row['stock'];
+						$ruta_img=$row['foto'];
+
 					?>
 					
 					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 thumb text-center ng-scope" ng-repeat="item in records">
 						  <a class="thumbnail" href="producto.php?id=<?php echo $id_producto;?>">
 							  <span title="Current quantity" class="badge badge-default stock-counter ng-binding"><?php echo number_format($stock); ?></span>
 							  <span title="Low stock" class="low-stock-alert ng-hide" ng-show="item.current_quantity <= item.low_stock_threshold"><i class="fa fa-exclamation-triangle"></i></span>
-							  <img class="img-responsive" src="img/stock.png" alt="<?php echo $nombre_producto;?>">
+							  <img class="img-responsive" src="img/<?php echo $ruta_img;?>" alt="<?php echo $nombre_producto;?>" style="width: 125; height: 125px;">
+
 						  </a>
 						  <span class="thumb-name"><strong><?php echo $nombre_producto;?></strong></span>
 						  <span class="thumb-code ng-binding"><?php echo $id_serial;?></span>
