@@ -22,8 +22,8 @@
 	include("navbar.php");
 	?>
 	
-    <div class="container">
-	<div class="panel panel-primary">
+    <div class="container" >
+	<div class="panel panel-primary" >
 		<div style="background:#0079a3" class="panel-heading">
 		    <div class="btn-group pull-right"><a href="pdf/reporte_reasignacion_global.php">
 				<button type='button' style="background:#00b3b3" class="btn btn-primary" data-toggle="modal" data-target="#nuevoProducto">

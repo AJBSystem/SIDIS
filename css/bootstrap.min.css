@@ -1231,7 +1231,8 @@ pre code {
  padding-right:15px;
  padding-left:15px;
  margin-right:auto;
- margin-left:auto
+ margin-left:auto;
+ margin-top:95px
 }
 @media (min-width:768px) {
  .container {
@@ -4278,6 +4279,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:hover,a.list-gro
 }
 .panel {
  margin-bottom:20px;
+ margin-top: 50px;
  background-color:#fff;
  border:1px solid transparent;
  border-radius:4px;

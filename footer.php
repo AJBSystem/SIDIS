@@ -1,7 +1,6 @@
 <div class="navbar navbar-default navbar-fixed-bottom" >
-    <div class="container">
-      <p class="navbar-text pull-left" style="margin-left: 270px;">&copy <?php echo date('Y');?> - Dirección de Tecnología | División de Sistemas | Sistema de Inventario.
-           <a href="http://www.cicpc.gob.ve/" target="_blank" style="color: #FFFFE0"><strong>CICPC</strong></a>
+    <div class="">
+      <p class="navbar-text pull-left" >&copy <?php echo date('Y');?> - Dirección de Tecnología | División de Sistemas | <strong>Cuerpo de Investigaciones Cientìficas, Penales y Criminalisticas C.I.C.P.C.</strong></a>
       </p>
    </div>
 </div>

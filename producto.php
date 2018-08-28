@@ -91,7 +91,7 @@
           <div class="panel-body">
             <div class="row">
 
-              <div class="col-sm-4 col-sm-offset-2 text-center">
+              <div class="col-sm-4 text-center">
 				 <img class="item-img img-responsive" src="img/<?php echo $ruta_img; ?>" alt=""> 
 				  <br>
 
@@ -100,11 +100,11 @@
 				  		<a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a>
 				  	</div>
 
-				  		<div class="col-sm-8">
+				  	<div class="col-sm-2">
 				  		<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>' data-img='<?php echo $row['foto'];?>' data-id='<?php echo $row['id_producto'];?>'  class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar  </a>
 				  	</div>
 
-				  	<div class=" col-sm-4" style="bottom: 34px;left: 220px;">
+				  	<div class=" col-sm-2" >
 				  		<a href="pdf/reporteserial.php?id_producto=<?php echo $row['id_producto'];?>" class="btn btn-primary"  
 					title= "imprimir"> <i class="glyphicon  glyphicon-print"></i> Reporte  </a>
 				  	</div>
@@ -162,12 +162,12 @@
 </div>
                     <div class="col-sm-12 margin-btm-10"></div>
 
-                    <div class="col-sm-6 col-xs-6 col-md-2 col-sm-offset-6" style="margin-bottom: 20px;">
+                    <div class="col-sm-4 col-xs-6 col-md-2 col-sm-offset-6" style="margin-bottom: 20px;">
                       <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
                     </div>
 
 
-                    <div class="col-sm-6 col-xs-6 col-md-2">
+                    <div class="col-sm-4 col-xs-6 col-md-2">
                       <a href="" data-toggle="modal" data-target="#remove-stock" style="margin-bottom: 20px;"><img width="100px"  src="img/stock-out.png"></a>
                     </div>
 

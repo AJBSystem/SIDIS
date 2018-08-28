@@ -13,7 +13,8 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#"> <img class="item-img img-responsive" src="img/CICPC_logo verdadero.png" style="width: 50px; height: 50px; margin-top: -13px;" alt="logo" ></a> 
+      <!-- <a class="navbar-brand" href="#"><img class="item-img img-responsive" src="img/CICPC_logo verdadero.png" style="width: 50px; height: 50px; margin-top: -13px;" alt="logo" ></a>  -->
+      <a class="navbar-brand" href="#">Sistema de Inventario División de Sistemas</a> 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,11 +22,11 @@
       <ul class="nav navbar-nav">
 
 
-      <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>" style="left: 315px;"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i>  Categorías</a></li>
-      <li class="<?php if (isset($active_productos)){echo $active_productos;}?>" style="left: 335px;"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Control de Inventario</a></li>
-      <li class="<?php if (isset($active_reasignacion)){echo $active_reasignacion;}?>" style="left: 355px;"><a href="listado_rea.php"><i class='glyphicon glyphicon-transfer'></i> Reasignación</a></li>
+      <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>" ><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i>  Categorías</a></li>
+      <li class="<?php if (isset($active_productos)){echo $active_productos;}?>" ><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Control de Inventario</a></li>
+      <li class="<?php if (isset($active_reasignacion)){echo $active_reasignacion;}?>" ><a href="listado_rea.php"><i class='glyphicon glyphicon-transfer'></i> Reasignación</a></li>
       
-          <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>" style="left: 375px;">
+          <li class="<?php if (isset($active_reporte)){echo $active_reporte;}?>">
           <a href="#"data-toggle="dropdown"><i class="glyphicon glyphicon-list"></i> Reportes</a>
             <ul class= "dropdown-menu">
               <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="listado_rep.php">Reporte General</a></li>
@@ -35,7 +36,7 @@
 
 
 
-		<li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>" style="left: 400px;"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
+		<li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
        </ul>
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
