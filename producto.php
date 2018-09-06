@@ -91,33 +91,27 @@
           <div class="panel-body">
             <div class="row">
 
-              <div class="col-sm-4 text-center">
+              <div class="col-sm-4 col-sm-offset-2 text-center">
 				 <img class="item-img img-responsive" src="img/<?php echo $ruta_img; ?>" alt=""> 
 				  <br>
 
 				  <div class="form-group">
-				  	<div class="col-sm-2">
+				  	<div class="col-sm-12">
 				  		<a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a>
-				  	</div>
 
-				  	<div class="col-sm-2">
-				  		<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>' data-img='<?php echo $row['foto'];?>' data-id='<?php echo $row['id_producto'];?>'  class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar  </a>
-				  	</div>
 
-				  	<div class=" col-sm-2" >
-				  		<a href="pdf/reporteserial.php?id_producto=<?php echo $row['id_producto'];?>" class="btn btn-primary"  
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-serial='<?php echo $row['serial'];?>' data-numero='<?php echo $row['numero_bien'];?>' data-motivo='<?php echo $row['id_motivo'];?>' data-marca='<?php echo $row['marca_producto'];?>' data-modelo='<?php echo $row['modelo_producto'];?>' data-cond='<?php echo $row["condicion_producto"];?>' data-resp='<?php echo $row["responsable_entrega"];?>' data-asig='<?php echo $row["asignacion_producto"];?>' data-conc='<?php echo $row['concepto_inventario'] ?>' data-codi='<?php echo $row['codigo_inventario'];?>' data-img='<?php echo $row['foto'];?>' data-id='<?php echo $row['id_producto'];?>'  class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar  </a>
+
+
+					<a href="pdf/reporteserial.php?id_producto=<?php echo $row['id_producto'];?>" class="btn btn-primary"  
 					title= "imprimir"> <i class="glyphicon  glyphicon-print"></i> Reporte  </a>
 				  	</div>
-				  
-
 				  </div>
-					<br><br>
-
-<br>
-
+					<br>
+					<br>
+					<br>
               </div>
-			  
-              <div class="col-sm-4 col-md-5 col-xs-6 text-left">
+              <div class="col-sm-4 text-left">
                 <div class="row margin-btm-20">
 
 
@@ -160,83 +154,29 @@
 </table>
 </div>
 </div>
-                    <div class="col-sm-12 margin-btm-10"></div>
+                    <div class="col-sm-12 margin-btm-5"></div>
 
-                    <div class="col-sm-4 col-xs-6 col-md-2 col-sm-offset-6" style="margin-bottom: 20px;">
+                    <div class="col-sm-4 col-xs-6 col-md-2 col-sm-offset-6">
                       <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
                     </div>
 
 
                     <div class="col-sm-4 col-xs-6 col-md-2">
-                      <a href="" data-toggle="modal" data-target="#remove-stock" style="margin-bottom: 20px;"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
                     </div>
 
 
 
-
-
-
                     <div class="col-sm-12 margin-btm-10"></div>
-                    
-
-<div class="col-sm-8 col-sm-offset-2 text-left">
-                  <div class="row">
-                    <?php
-						if (isset($message)){
-							?>
-						<div class="alert alert-success alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>Aviso!</strong> Datos procesados exitosamente.
-						</div>	
-							<?php
-						}
-						if (isset($error)){
-							?>
-						<div class="alert alert-danger alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>Error!</strong> No se pudo procesar los datos.
-						</div>	
-							<?php
-						}
-					?>	
-					 <table class='table table-bordered'>
-						<tr>
-							<th class='text-center' colspan=5 >HISTORIAL DE INVENTARIO</th>
-						</tr>
-						<tr>
-							<td>Fecha</td>
-							<td>Hora</td>
-							<td>Acción de Usuario</td>
-							<td>Código Afectado</td>
-							<td class='text-center'>Total</td>
-						</tr>
-						<?php
-							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
-							while ($row=mysqli_fetch_array($query)){
-								?>
-						<tr>
-							<td><?php echo date('d/m/Y', strtotime($row['fecha']));?></td>
-							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
-							<td><?php echo $row['nota'];?></td>
-							<td><?php echo $row['referencia'];?></td>
-							<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
-						</tr>		
-								<?php
-							}
-						?>
-					 </table>
-                  </div>
-                                    
-				</div>
 
                 </div>
               </div>
             </div>
             <br>
-            <div class="row">
+            <div class="row"> 
 
 
-            <!-- <div class="col-sm-8 col-sm-offset-2 text-left">
+            <div class="col-sm-8 col-sm-offset-2 text-left">
                   <div class="row">
                     <?php
 						if (isset($message)){
@@ -265,7 +205,7 @@
 							<td>Hora</td>
 							<td>Acción de Usuario</td>
 							<td>Código Afectado</td>
-							<td class='text-center'>Total</td>
+							<td class='text-center'>Total Bs.S</td>
 						</tr>
 						<?php
 							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
@@ -285,7 +225,7 @@
                   </div>
                                     
                                     
-				</div> -->
+				</div>
             </div>
           </div>
         </div>

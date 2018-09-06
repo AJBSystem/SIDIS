@@ -42,7 +42,6 @@ if ($login->isUserLoggedIn() == true) {
 </head>
 <body>
  <div class="container">
-       <!--  <div class="card card-container" style="margin-top: 125px;padding-top: 40px;"> -->
        	<div class="card card-container">
             <img id="profile-img" class="profile-img-card" src="img/cicpc_logo_trns.png" />
             <p id="profile-name" class="profile-name-card">SIDIS<br>Sistema de Inventario División de Sistemas</p>
