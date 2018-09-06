@@ -13,8 +13,8 @@
         <span class="icon-bar"></span>
       </button>
 
-      <!-- <a class="navbar-brand" href="#"><img class="item-img img-responsive" src="img/CICPC_logo verdadero.png" style="width: 50px; height: 50px; margin-top: -13px;" alt="logo" ></a>  -->
-      <a class="navbar-brand" href="#">Sistema de Inventario División de Sistemas</a> 
+      <a class="navbar-brand" href="#"><img class="item-img img-responsive" src="img/CICPC_logo verdadero.png" id="logo" alt="logo" ></a> 
+      <!-- <a class="navbar-brand" href="#">Sistema de Inventario División de Sistemas</a>  -->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
